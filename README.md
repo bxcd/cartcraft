@@ -14,4 +14,4 @@ Users can generate product/service recommendations by indicating their circumsta
 
 ## Releases
 
-Planned for release to both Android and iOS platforms using Flutter
+Planned for release to both Android and iOS platforms
