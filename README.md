@@ -10,8 +10,7 @@ Users can generate product/service recommendations by indicating their circumsta
 4. Rate the importance of each selected area and/or subarea
 5. Enter your budget if applicable
 6. Submit your entry to view the recommended products/services with estimated costs
-7a. Optionally shop recommendations with in-app purchases.
-7b. Optionally send a message to Code Dart with your recommendations to initiate a free consult
+7. a.  Optionally shop recommendations with in-app purchases.  b.  Optionally send a message to Code Dart with your recommendations to initiate a free consult.
 
 ## Dependencies
 
