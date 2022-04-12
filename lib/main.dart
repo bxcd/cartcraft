@@ -82,14 +82,14 @@ class _MyAppState extends State<MyHomePage> {
                         onPrimary: Colors.black87,
                       ),
                       primaryColor: Colors.red,
-                      backgroundColor: Colors.black87,
+                      backgroundColor: Colors.white,
                       appBarTheme: const AppBarTheme(
-                        color: Colors.black87,
+                        color: Colors.black26,
                         iconTheme: IconThemeData(
                           color: Colors.red,
                         ),
                         titleTextStyle: TextStyle(
-                          color: Colors.red,
+                          color: Colors.white,
                         ),
                       ),
                       iconTheme: const IconThemeData(
@@ -157,24 +157,24 @@ class _MyAppState extends State<MyHomePage> {
                       textTheme: const TextTheme(
                         headline2: TextStyle(
                           fontSize: 28.0,
-                          color: Colors.white,
+                          color: Colors.red,
                         ),
                         headline5: TextStyle(
                           fontSize: 24.0,
-                          color: Colors.white,
+                          color: Colors.red,
                         ),
                         bodyText2: TextStyle(
                           fontSize: 18.0,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         subtitle1: TextStyle(
                           fontSize: 18.0,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                       inputDecorationTheme: const InputDecorationTheme(
                         labelStyle: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                       ),
                     ),
