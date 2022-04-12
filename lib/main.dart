@@ -200,6 +200,38 @@ class _MyAppState extends State<MyHomePage> {
           text: 'Get service recommendations from Code Dart\nby submitting a brief form.\n\nAll responses are optional\nand your information is kept anonymous.',
           buttonText: 'Start',
         ),
+        QuestionStep(
+          title: 'Business Area',
+          text: 'What aspect of your business can be improved?',
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Systems', value: 'systems'),
+              TextChoice(text: 'Software', value: 'software'),
+              TextChoice(text: 'Web', value: 'web'),
+              TextChoice(text: 'Products', value: 'products'),
+              TextChoice(text: 'Processes', value: 'processes'),
+              TextChoice(text: 'Branding', value: 'branding'),
+              TextChoice(text: 'Communications', value: 'communications'),
+              TextChoice(text: 'Controls', value: 'controls'),
+              TextChoice(text: 'Strategy', value: 'strategy'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: 'Function Area',
+          text: 'What aspect of your software can be improved?',
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'App development', value: 'systems'),
+              TextChoice(text: 'UX design', value: 'software'),
+              TextChoice(text: 'Graphic design', value: 'web'),
+              TextChoice(text: 'Content production', value: 'products'),
+            ],
+          ),
+        )
       ],
     );
     return Future.value(task);
