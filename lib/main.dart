@@ -1,14 +1,9 @@
-import 'dart:convert' show json;
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:survey_kit/survey_kit.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -58,7 +53,7 @@ class _MyAppState extends State<MyHomePage> {
   Widget build(BuildContext context) => MaterialApp(
       home: Scaffold(
         body: Container(
-          color: Colors.white,
+          color: Colors.black87,
           child: Align(
             alignment: Alignment.center,
             child: FutureBuilder<Task>(
@@ -84,12 +79,12 @@ class _MyAppState extends State<MyHomePage> {
                       colorScheme: ColorScheme.fromSwatch(
                         primarySwatch: Colors.red,
                       ).copyWith(
-                        onPrimary: Colors.white,
+                        onPrimary: Colors.black87,
                       ),
                       primaryColor: Colors.red,
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.black87,
                       appBarTheme: const AppBarTheme(
-                        color: Colors.white,
+                        color: Colors.black87,
                         iconTheme: IconThemeData(
                           color: Colors.red,
                         ),
@@ -117,7 +112,7 @@ class _MyAppState extends State<MyHomePage> {
                                 (Set<MaterialState> state) {
                               if (state.contains(MaterialState.disabled)) {
                                 return const BorderSide(
-                                  color: Colors.grey,
+                                  color: Colors.white,
                                 );
                               }
                               return const BorderSide(
@@ -137,7 +132,7 @@ class _MyAppState extends State<MyHomePage> {
                                     .textTheme
                                     .button
                                     ?.copyWith(
-                                  color: Colors.grey,
+                                  color: Colors.white,
                                 );
                               }
                               return Theme.of(context)
@@ -162,29 +157,29 @@ class _MyAppState extends State<MyHomePage> {
                       textTheme: const TextTheme(
                         headline2: TextStyle(
                           fontSize: 28.0,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                         headline5: TextStyle(
                           fontSize: 24.0,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                         bodyText2: TextStyle(
                           fontSize: 18.0,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                         subtitle1: TextStyle(
                           fontSize: 18.0,
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       inputDecorationTheme: const InputDecorationTheme(
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                     surveyProgressbarConfiguration: SurveyProgressConfiguration(
-                      backgroundColor: Colors.white,
+                      backgroundColor: Colors.red,
                     ),
                   );
                 }
@@ -202,7 +197,7 @@ class _MyAppState extends State<MyHomePage> {
       steps: [
         InstructionStep(
           title: 'Service Matcher',
-          text: 'Get service recommendations from Code Dart by submitting a brief form.\nAll responses are optional and your information is kept anonymous.',
+          text: 'Get service recommendations from Code Dart\nby submitting a brief form.\n\nAll responses are optional\nand your information is kept anonymous.',
           buttonText: 'Start',
         ),
       ],
