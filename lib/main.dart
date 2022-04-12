@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.black,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(title: 'Code Dart'),
     );
@@ -53,7 +53,7 @@ class MyHomePage extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) => MaterialApp(
       home: Scaffold(
