@@ -191,6 +191,8 @@ class _MyAppState extends State<MyHomePage> {
       ),
     );
 
+  // var inputLastCompleted; // Updated each time Q2 is completed for a Q1 input
+  // var inputMap; // maps each Q1 input to corresponding Q2 selections
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -201,7 +203,7 @@ class _MyAppState extends State<MyHomePage> {
           buttonText: 'Start',
         ),
         QuestionStep(
-          title: 'Business Area',
+          title: 'Business Aspects',
           text: 'What aspects of your business can be improved?',
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
@@ -219,21 +221,63 @@ class _MyAppState extends State<MyHomePage> {
             ],
           ),
         ),
+        // General placeholder to Q2s customized for each input in Q1
         QuestionStep(
-          title: 'Function Area',
-          text: 'What aspects of your software can be improved?',
+          title: 'Selection  Aspects',
+          text: 'What aspects of your selections can be improved?',
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: 'App development', value: 'systems'),
-              TextChoice(text: 'UX design', value: 'software'),
-              TextChoice(text: 'Graphic design', value: 'web'),
-              TextChoice(text: 'Content production', value: 'products'),
+              TextChoice(text: 'App development', value: 'app'),
+              TextChoice(text: 'UX design', value: 'ux'),
+              TextChoice(text: 'Graphic design', value: 'graphics'),
+              TextChoice(text: 'Content production', value: 'content'),
+              TextChoice(text: 'Business operations', value: 'business')
             ],
           ),
-        )
+        ),
+        CompletionStep(
+          stepIdentifier: StepIdentifier(id: '100'),
+          text: 'Your recommendations are being generated.',
+          title: 'Thank you',
+          buttonText: 'Submit',
+        ),
       ],
     );
+    // Called back the first time Q1 is completed
+    // task.addNavigationRule(
+    //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
+    //   navigationRule: ConditionalNavigationRule(
+    //     resultToStepIdentifierMapper: (inputs) {
+    //       // for each input in inputs, add input to inputMap
+    //       var input = inputs[0]
+    //       switch (input) {
+    //         case :
+    //           return task.steps[].stepIdentifier;
+    //         default:
+    //           return null;
+    //       }
+    //     },
+    //   ),
+    // );
+    // Called back each time a Q2 is completed until all inputs from Q1 are cleared
+    // task.addNavigationRule(
+    //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
+    //   navigationRule: ConditionalNavigationRule(
+    //     resultToStepIdentifierMapper: (inputs) {
+    //     // add inputs to corresponding input in inputMap 
+    //     // finding index by ++inputLastCompleted (now incremented)
+    //     // either go to completion step if no more inputs or
+    //     // launch Q2 for next input found in inputMap by inputLastCompleted
+    //       switch (input) {
+    //         case :
+    //           return task.steps[].stepIdentifier;
+    //         default:
+    //           return null;
+    //       }
+    //     },
+    //   ),
+    // );
     return Future.value(task);
   }
 }
