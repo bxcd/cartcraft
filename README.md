@@ -10,9 +10,8 @@ An app for generating product/service recommendations from survey responses.
 4. Rate the importance of each selected area and/or subarea
 5. Enter your budget if applicable
 6. Submit your entry to view the recommended products/services with estimated costs
-7.
-a.  Optionally shop recommendations with in-app purchases.  
-b.  Optionally send a message to Code Dart with your recommendations to initiate a free consult.
+7. a.  Optionally shop recommendations with in-app purchases.  
+   b.  Optionally send a message to Code Dart with your recommendations to initiate a free consult.
 
 ## Dependencies
 
