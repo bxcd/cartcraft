@@ -202,7 +202,7 @@ class _MyAppState extends State<MyHomePage> {
         ),
         QuestionStep(
           title: 'Business Area',
-          text: 'What aspect of your business can be improved?',
+          text: 'What aspects of your business can be improved?',
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -221,7 +221,7 @@ class _MyAppState extends State<MyHomePage> {
         ),
         QuestionStep(
           title: 'Function Area',
-          text: 'What aspect of your software can be improved?',
+          text: 'What aspects of your software can be improved?',
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
