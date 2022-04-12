@@ -16,7 +16,7 @@ An app for generating product/service recommendations from survey responses.
 
 * Steps 1-6: [Survey Kit](https://pub.dev/packages/survey_kit)
 * Step 7a: Commerce API e.g. [WooSignal](https://woosignal.com). 
-  Until implementation is complete, stub with Intent to launch product webpage.
+  * Until implementation is complete, stub with Intent to launch product webpage.
 * Step 7b: ShareCompat
 
 
