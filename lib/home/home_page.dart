@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       });
     }
     return Scaffold(
+      backgroundColor: Colors.white,
 
       appBar: AppBar(
         backgroundColor: Colors.black87,
@@ -74,13 +75,16 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.none,
               ),
             ),
+            const Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            ),
             Text(
               'Learn about options\nor visit the store',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
             ),
             const Padding(
-               padding: const EdgeInsets.symmetric(vertical: 32.0),
+               padding: const EdgeInsets.symmetric(vertical: 24.0),
             ),
             OutlinedButton(
               style: ButtonStyle(
