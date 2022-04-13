@@ -72,6 +72,12 @@ class _HomePageState extends State<HomePage> {
 
               style: Theme.of(context).textTheme.headline5,
             ),
+            OutlinedButton(
+                onPressed:  _navigateToSurvey,
+                child: const Align(
+                  alignment: Alignment.center,
+                )
+            ),
           ],
         ),
       ),
