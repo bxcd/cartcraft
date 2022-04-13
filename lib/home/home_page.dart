@@ -73,9 +73,34 @@ class _HomePageState extends State<HomePage> {
               style: Theme.of(context).textTheme.headline5,
             ),
             OutlinedButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    const Size(150.0, 60.0),
+                  ),
+                  side: MaterialStateProperty.resolveWith(
+                        (Set<MaterialState> state) {
+                      if (state.contains(MaterialState.disabled)) {
+                        return const BorderSide(
+                          color: Colors.white,
+                        );
+                      }
+                      return const BorderSide(
+                        color: Colors.red,
+                      );
+                    },
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
                 onPressed:  _navigateToSurvey,
-                child: const Align(
+                child: Container(
+                  color: Colors.red,
                   alignment: Alignment.center,
+                  width: 150,
+
                 )
             ),
           ],
