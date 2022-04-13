@@ -67,10 +67,13 @@ class _HomePageState extends State<HomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Lottie.asset(
-            //   'codedart-icon.png',
-            //   repeat: false,
-            // ),
+            Container(
+              child: Image.asset(
+                'assets/codedart-icon.png',
+                height: 50.0,
+                fit: BoxFit.none,
+              ),
+            ),
             Text(
               'Learn about options\nor visit the store',
               textAlign: TextAlign.center,
