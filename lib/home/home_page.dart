@@ -39,7 +39,9 @@ class _HomePageState extends State<HomePage> {
       });
     }
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: Colors.black87,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -64,12 +66,11 @@ class _HomePageState extends State<HomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Some other description here:',
-            ),
             Text(
-              'Get recommendations or visit the store',
-              style: Theme.of(context).textTheme.headline4,
+              'Get recommendations\nor visit the store',
+              textAlign: TextAlign.center,
+
+              style: Theme.of(context).textTheme.headline5,
             ),
           ],
         ),
