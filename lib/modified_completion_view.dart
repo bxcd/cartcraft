@@ -34,15 +34,15 @@ class ModifiedCompletionView extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32.0),
-              child: Container(
-                width: 150.0,
-                height: 150.0,
-                child: Lottie.asset(
-                  'assets/fancy_checkmark.json',
-                  package: 'survey_kit',
-                  repeat: false,
-                ),
-              ),
+              // child: Container(
+              //   width: 150.0,
+              //   height: 150.0,
+              //   child: Lottie.asset(
+              //     'assets/fancy_checkmark.json',
+              //     package: 'survey_kit',
+              //     repeat: false,
+              //   ),
+              // ),
             )
           ],
         ),

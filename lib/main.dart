@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:survey_kit/survey_kit.dart';
 
+import 'modified_completion_step.dart';
+
 void main() async => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -236,7 +238,7 @@ class _MyAppState extends State<MyHomePage> {
             ],
           ),
         ),
-        CompletionStep(
+        ModifiedCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
           text: 'Your recommendations are being generated.',
           title: 'Thank you',
