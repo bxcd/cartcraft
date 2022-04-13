@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:survey_kit/survey_kit.dart';
 
-import 'survey/modified_completion_step.dart';
+import 'modified_completion_step.dart';
 
 class SurveyPage extends StatefulWidget {
   const SurveyPage({Key? key, required this.title}) : super(key: key);

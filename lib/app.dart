@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import '/survey_page.dart';
+import 'survey/survey_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
