@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:survey_kit/survey_kit.dart';
 
+import '../home/home_page.dart';
 import 'custom/custom_completion_step.dart';
 
 class SurveyPage extends StatefulWidget {
@@ -43,7 +44,16 @@ class _SurveyPageState extends State<SurveyPage> {
                   onResult: (SurveyResult result) {
                     if (kDebugMode) {
                       print(result.finishReason);
+                        setState(() {
+                          // This call to setState tells the Flutter framework that something has
+                          // changed in this State, which causes it to rerun the build method below
+                          // so that the display can reflect the updated values. If we changed
+                          // _counter without calling setState(), then the build method would not be
+                          // called again, and so nothing would appear to happen.
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Home")));
+                        });
                     }
+
                   },
                   task: task,
                   showProgress: true,
@@ -220,12 +230,12 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
       ],
     );
-    task.addNavigationRule(
-      forTriggerStepIdentifier: task.steps[3].stepIdentifier,
-      navigationRule: DirectNavigationRule(
-          task.steps[0].stepIdentifier
-      ),
-    );
+    // task.addNavigationRule(
+    //   forTriggerStepIdentifier: task.steps[3].stepIdentifier,
+    //   navigationRule: DirectNavigationRule(
+    //       task.steps[0].stepIdentifier
+    //   ),
+    // );
     // Called back the first time Q1 is completed
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
