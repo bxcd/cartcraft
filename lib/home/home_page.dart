@@ -1,5 +1,6 @@
 import 'package:cartcraft/survey/survey_page.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -66,9 +67,10 @@ class _HomePageState extends State<HomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Image(
-            //   image: ,
-            // )
+            // Lottie.asset(
+            //   'codedart-icon.png',
+            //   repeat: false,
+            // ),
             Text(
               'Learn about options\nor visit the store',
               textAlign: TextAlign.center,
