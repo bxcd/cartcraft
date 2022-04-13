@@ -67,10 +67,59 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Get recommendations\nor visit the store',
+              'Learn about options\nor visit the store',
               textAlign: TextAlign.center,
-
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            OutlinedButton(
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(
+                  const Size(150.0, 60.0),
+                ),
+                side: MaterialStateProperty.resolveWith(
+                      (Set<MaterialState> state) {
+                    if (state.contains(MaterialState.disabled)) {
+                      return const BorderSide(
+                        color: Colors.white,
+                      );
+                    }
+                    return const BorderSide(
+                      color: Colors.red,
+                    );
+                  },
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                textStyle: MaterialStateProperty.resolveWith(
+                      (Set<MaterialState> state) {
+                    if (state.contains(MaterialState.disabled)) {
+                      return Theme.of(context)
+                          .textTheme
+                          .button
+                          ?.copyWith(
+                        color: Colors.white,
+                      );
+                    }
+                    return Theme.of(context)
+                        .textTheme
+                        .button
+                        ?.copyWith(
+                      color: Colors.red,
+                    );
+                  },
+                ),
+              ),
+              onPressed:  _navigateToSurvey,
+              child: Container(
+                alignment: Alignment.center,
+                width: 150,
+                child: const Text(
+                  'LEARN',
+                ),
+              ),
             ),
             OutlinedButton(
                 style: ButtonStyle(
@@ -113,22 +162,17 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
-              onPressed:  _navigateToSurvey,
+              onPressed:  null,
               child: Container(
                 alignment: Alignment.center,
                 width: 150,
                 child: const Text(
-                  'Survey',
+                  'STORE',
                 ),
               ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _navigateToSurvey,
-        tooltip: 'Survey',
-        child: const Icon(Icons.add),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
