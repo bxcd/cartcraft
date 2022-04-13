@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                           .textTheme
                           .button
                           ?.copyWith(
-                        color: Colors.white,
+                        color: Colors.red,
                       );
                     }
                     return Theme.of(context)
@@ -129,6 +129,9 @@ class _HomePageState extends State<HomePage> {
                 width: 150,
                 child: const Text(
                   'LEARN',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               ),
             ),
