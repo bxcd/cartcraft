@@ -94,14 +94,33 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
+                  textStyle: MaterialStateProperty.resolveWith(
+                        (Set<MaterialState> state) {
+                      if (state.contains(MaterialState.disabled)) {
+                        return Theme.of(context)
+                            .textTheme
+                            .button
+                            ?.copyWith(
+                          color: Colors.white,
+                        );
+                      }
+                      return Theme.of(context)
+                          .textTheme
+                          .button
+                          ?.copyWith(
+                        color: Colors.red,
+                      );
+                    },
+                  ),
                 ),
-                onPressed:  _navigateToSurvey,
-                child: Container(
-                  color: Colors.red,
-                  alignment: Alignment.center,
-                  width: 150,
-
-                )
+              onPressed:  _navigateToSurvey,
+              child: Container(
+                alignment: Alignment.center,
+                width: 150,
+                child: const Text(
+                  'Survey',
+                ),
+              ),
             ),
           ],
         ),
