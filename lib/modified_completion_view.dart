@@ -4,6 +4,7 @@ import 'package:survey_kit/src/result/step/completion_step_result.dart';
 import 'package:survey_kit/src/steps/predefined_steps/completion_step.dart';
 import 'package:survey_kit/src/views/widget/step_view.dart';
 
+import 'modified_completion_step.dart';
 
 class ModifiedCompletionView extends StatelessWidget {
   final ModifiedCompletionStep modifiedCompletionStep;
@@ -15,7 +16,7 @@ class ModifiedCompletionView extends StatelessWidget {
   Widget build(BuildContext context) {
     return StepView(
       step: modifiedCompletionStep,
-      resultFunction: () => ModifiedCompletionStepResult(
+      resultFunction: () => CompletionStepResult(
         modifiedCompletionStep.stepIdentifier,
         _startDate,
         DateTime.now(),
@@ -37,7 +38,7 @@ class ModifiedCompletionView extends StatelessWidget {
                 width: 150.0,
                 height: 150.0,
                 child: Lottie.asset(
-                  'assets/fancy_checkmark.json', // To be replaced
+                  'assets/fancy_checkmark.json',
                   package: 'survey_kit',
                   repeat: false,
                 ),

@@ -1,11 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:survey_kit/src/result/question_result.dart';
-import 'package:survey_kit/src/steps/step.dart';
 import 'package:survey_kit/src/steps/identifier/step_identifier.dart';
-import 'package:survey_kit/src/views/completion_view.dart';
 import 'package:survey_kit/src/steps/predefined_steps/completion_step.dart';
-import '/ModifiedCompletionView.java';
+import 'modified_completion_view.dart';
 
 @JsonSerializable()
 class ModifiedCompletionStep extends CompletionStep {
@@ -30,7 +28,7 @@ class ModifiedCompletionStep extends CompletionStep {
 
   @override
   Widget createView({required QuestionResult? questionResult}) {
-    return ModifiedCompletionView(completionStep: this);
+    return ModifiedCompletionView(modifiedCompletionStep: this,);
   }
 
   bool operator ==(o) =>
