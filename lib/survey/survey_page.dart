@@ -51,7 +51,7 @@ class _SurveyPageState extends State<SurveyPage> {
                           // _counter without calling setState(), then the build method would not be
                           // called again, and so nothing would appear to happen.
                           Navigator.of(context).pop();
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Home")));
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Code Dart")));
                         });
                     }
 
