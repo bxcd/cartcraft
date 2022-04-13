@@ -66,10 +66,16 @@ class _HomePageState extends State<HomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Image(
+            //   image: ,
+            // )
             Text(
               'Learn about options\nor visit the store',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
+            ),
+            const Padding(
+               padding: const EdgeInsets.symmetric(vertical: 32.0),
             ),
             OutlinedButton(
               style: ButtonStyle(
