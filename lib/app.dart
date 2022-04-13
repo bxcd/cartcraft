@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import '/home_page.dart';
+import '/survey_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const HomePage(title: 'Code Dart'),
+      home: const SurveyPage(title: 'Code Dart'),
     );
   }
 }
