@@ -5,8 +5,8 @@ import 'package:survey_kit/survey_kit.dart';
 
 import 'survey/modified_completion_step.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -20,11 +20,11 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyAppState createState() => _MyAppState();
+  _HomePageState createState() => _HomePageState();
 }
 
 
-class _MyAppState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) => MaterialApp(
     home: Scaffold(

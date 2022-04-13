@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import '/home_page.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Code Dart'),
+      home: const HomePage(title: 'Code Dart'),
     );
   }
 }
