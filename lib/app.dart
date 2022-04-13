@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'home/home_page.dart';
 import 'survey/survey_page.dart';
 
 class App extends StatelessWidget {
@@ -23,7 +24,7 @@ class App extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const SurveyPage(title: 'Code Dart'),
+      home: const HomePage(title: 'Code Dart'),
     );
   }
 }

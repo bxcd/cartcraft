@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:cartcraft/survey/survey_page.dart';
 import 'package:flutter/material.dart';
 
