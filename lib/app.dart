@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:survey_kit/survey_kit.dart';
-import 'survey/modified_completion_step.dart';
 import '/home_page.dart';
 
 class MyApp extends StatelessWidget {
