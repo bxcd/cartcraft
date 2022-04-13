@@ -220,6 +220,12 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
       ],
     );
+    task.addNavigationRule(
+      forTriggerStepIdentifier: task.steps[3].stepIdentifier,
+      navigationRule: DirectNavigationRule(
+          task.steps[0].stepIdentifier
+      ),
+    );
     // Called back the first time Q1 is completed
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
