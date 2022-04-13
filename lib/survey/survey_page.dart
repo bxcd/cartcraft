@@ -50,6 +50,7 @@ class _SurveyPageState extends State<SurveyPage> {
                           // so that the display can reflect the updated values. If we changed
                           // _counter without calling setState(), then the build method would not be
                           // called again, and so nothing would appear to happen.
+                          Navigator.of(context).pop();
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Home")));
                         });
                     }
