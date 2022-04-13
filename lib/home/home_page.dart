@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               child: Image.asset(
                 'lib/home/assets/codedart-icon.png',
-                height: 50.0,
+                height: 175.0,
                 fit: BoxFit.none,
               ),
             ),
