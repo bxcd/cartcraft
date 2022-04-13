@@ -2,31 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:survey_kit/src/result/step/completion_step_result.dart';
 import 'package:survey_kit/src/views/widget/step_view.dart';
 
-import 'modified_completion_step.dart';
+import 'custom_completion_step.dart';
 
-class ModifiedCompletionView extends StatelessWidget {
-  final ModifiedCompletionStep modifiedCompletionStep;
+class CustomCompletionView extends StatelessWidget {
+  final CustomCompletionStep customCompletionStep;
   final DateTime _startDate = DateTime.now();
 
-  ModifiedCompletionView({required this.modifiedCompletionStep});
+  CustomCompletionView({Key? key, required this.customCompletionStep}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return StepView(
-      step: modifiedCompletionStep,
+      step: customCompletionStep,
       resultFunction: () => CompletionStepResult(
-        modifiedCompletionStep.stepIdentifier,
+        customCompletionStep.stepIdentifier,
         _startDate,
         DateTime.now(),
       ),
-      title: Text(modifiedCompletionStep.title,
+      title: Text(customCompletionStep.title,
           style: Theme.of(context).textTheme.headline2),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 64.0),
         child: Column(
           children: [
             Text(
-              modifiedCompletionStep.text,
+              customCompletionStep.text,
               style: Theme.of(context).textTheme.bodyText2,
               textAlign: TextAlign.center,
             ),

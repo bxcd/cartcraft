@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:survey_kit/survey_kit.dart';
 
-import 'modified_completion_step.dart';
+import 'custom/custom_completion_step.dart';
 
 class SurveyPage extends StatefulWidget {
   const SurveyPage({Key? key, required this.title}) : super(key: key);
@@ -212,7 +212,7 @@ class _SurveyPageState extends State<SurveyPage> {
             ],
           ),
         ),
-        ModifiedCompletionStep(
+        CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
           text: 'Your recommendations are being generated.',
           title: 'Thank you',

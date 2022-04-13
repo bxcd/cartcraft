@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:survey_kit/src/result/question_result.dart';
 import 'package:survey_kit/src/steps/identifier/step_identifier.dart';
 import 'package:survey_kit/src/steps/predefined_steps/completion_step.dart';
-import 'modified_completion_view.dart';
+import 'custom_completion_view.dart';
 
 @JsonSerializable()
-class ModifiedCompletionStep extends CompletionStep {
+class CustomCompletionStep extends CompletionStep {
   final String title;
   final String text;
 
-  ModifiedCompletionStep({
+  CustomCompletionStep({
     bool isOptional = false,
     required StepIdentifier stepIdentifier,
     String buttonText = 'End Survey',
@@ -28,10 +28,10 @@ class ModifiedCompletionStep extends CompletionStep {
 
   @override
   Widget createView({required QuestionResult? questionResult}) {
-    return ModifiedCompletionView(modifiedCompletionStep: this,);
+    return CustomCompletionView(customCompletionStep: this,);
   }
 
   bool operator ==(o) =>
-      super == (o) && o is ModifiedCompletionStep && o.title == title && o.text == text;
+      super == (o) && o is CustomCompletionStep && o.title == title && o.text == text;
   int get hashCode => super.hashCode ^ title.hashCode ^ text.hashCode;
 }
