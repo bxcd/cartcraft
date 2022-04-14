@@ -140,52 +140,55 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             OutlinedButton(
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all(
-                    const Size(150.0, 60.0),
-                  ),
-                  side: MaterialStateProperty.resolveWith(
-                        (Set<MaterialState> state) {
-                      if (state.contains(MaterialState.disabled)) {
-                        return const BorderSide(
-                          color: Colors.white,
-                        );
-                      }
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(
+                  const Size(150.0, 60.0),
+                ),
+                side: MaterialStateProperty.resolveWith(
+                      (Set<MaterialState> state) {
+                    if (state.contains(MaterialState.disabled)) {
                       return const BorderSide(
-                        color: Colors.red,
+                        color: Colors.white,
                       );
-                    },
+                    }
+                    return const BorderSide(
+                      color: Colors.red,
+                    );
+                  },
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                  textStyle: MaterialStateProperty.resolveWith(
-                        (Set<MaterialState> state) {
-                      if (state.contains(MaterialState.disabled)) {
-                        return Theme.of(context)
-                            .textTheme
-                            .button
-                            ?.copyWith(
-                          color: Colors.white,
-                        );
-                      }
+                ),
+                textStyle: MaterialStateProperty.resolveWith(
+                      (Set<MaterialState> state) {
+                    if (state.contains(MaterialState.disabled)) {
                       return Theme.of(context)
                           .textTheme
                           .button
                           ?.copyWith(
                         color: Colors.red,
                       );
-                    },
-                  ),
+                    }
+                    return Theme.of(context)
+                        .textTheme
+                        .button
+                        ?.copyWith(
+                      color: Colors.red,
+                    );
+                  },
                 ),
+              ),
               onPressed:  null,
               child: Container(
                 alignment: Alignment.center,
                 width: 150,
                 child: const Text(
-                  'STORE',
+                  'LEARN',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               ),
             ),
