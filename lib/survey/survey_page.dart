@@ -254,11 +254,11 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '\$0-\$1,000', value: 'Penicillin'),
-              TextChoice(text: '\$1,000-\$2,500', value: 'Latex'),
-              TextChoice(text: '\$2,500-\$5,000', value: 'Pet'),
-              TextChoice(text: '\$5,000-\$10,000', value: 'Pollen'),
-              TextChoice(text: '\$10,000-\$100,000', value: 'Pollen'),
+              TextChoice(text: '\$0 to \$1,000', value: 'Penicillin'),
+              TextChoice(text: '\$1,000 to \$2,500', value: 'Latex'),
+              TextChoice(text: '\$2,500 to \$10,000', value: 'Pet'),
+              TextChoice(text: '\$10,000 to \$25,000', value: 'Pollen'),
+              TextChoice(text: '\$25,000 to \$100,000', value: 'Pollen'),
               TextChoice(text: '\$100,000+', value: 'Pollen'),
             ],
           ),
