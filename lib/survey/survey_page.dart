@@ -247,6 +247,16 @@ class _SurveyPageState extends State<SurveyPage> {
             maxLines: 1,
           ),
         ),
+        QuestionStep(
+          title: 'Project Timeline',
+          text: 'Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.',
+          isOptional: true,
+          answerFormat: DateAnswerFormat(
+            minDate: DateTime.utc(1970),
+            defaultDate: DateTime.now(),
+            maxDate: DateTime.now(),
+          ),
+        ),
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
           text: 'Your recommendations are being generated.',
@@ -263,7 +273,7 @@ class _SurveyPageState extends State<SurveyPage> {
             case 'yes':
               return task.steps[4].stepIdentifier;
             default:
-              return task.steps[5].stepIdentifier;
+              return task.steps[6].stepIdentifier;
           }
         },
       ),
