@@ -228,7 +228,7 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         QuestionStep(
           title: 'Special offer',
-          text: 'Are you willing to answer more detailed questions to receive a special offer? Your information will not be shared without your express permission.',
+          text: 'Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.',
           isOptional: true,
           answerFormat: const SingleChoiceAnswerFormat(
             textChoices: [
@@ -259,7 +259,7 @@ class _SurveyPageState extends State<SurveyPage> {
               TextChoice(text: '\$2,500 to \$10,000', value: 'Pet'),
               TextChoice(text: '\$10,000 to \$25,000', value: 'Pollen'),
               TextChoice(text: '\$25,000 to \$100,000', value: 'Pollen'),
-              TextChoice(text: '\$100,000+', value: 'Pollen'),
+              TextChoice(text: 'Over \$100,000', value: 'Pollen'),
             ],
           ),
         ),
