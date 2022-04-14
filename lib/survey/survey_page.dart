@@ -226,6 +226,27 @@ class _SurveyPageState extends State<SurveyPage> {
             ],
           ),
         ),
+        QuestionStep(
+          title: 'Special offer',
+          text: 'Are you willing to answer more detailed questions to receive a special offer? Your information will not be shared without your express permission.',
+          isOptional: true,
+          answerFormat: const SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Yes', value: 'yes'),
+              TextChoice(text: 'No', value: 'no'),
+            ],
+            defaultSelection: TextChoice(text: 'No', value: 'No'),
+          ),
+        ),
+        QuestionStep(
+          title: 'Contact info',
+          text:
+          'What is an email address where your offer can be delivered?',
+          answerFormat: const TextAnswerFormat(
+            maxLines: 5,
+            validationRegEx: "^(?!s*\$).+",
+          ),
+        ),
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
           text: 'Your recommendations are being generated.',
@@ -233,6 +254,21 @@ class _SurveyPageState extends State<SurveyPage> {
           buttonText: 'Submit',
         ),
       ],
+    );
+    task.addNavigationRule(
+      forTriggerStepIdentifier: task.steps[3].stepIdentifier,
+      navigationRule: ConditionalNavigationRule(
+        resultToStepIdentifierMapper: (input) {
+          switch (input) {
+            case 'yes':
+              return task.steps[4].stepIdentifier;
+            case 'no':
+              return task.steps[5].stepIdentifier;
+            default:
+              return null;
+          }
+        },
+      ),
     );
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[3].stepIdentifier,
