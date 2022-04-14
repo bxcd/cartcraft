@@ -235,6 +235,7 @@ class _SurveyPageState extends State<SurveyPage> {
               TextChoice(text: 'Yes', value: 'yes'),
               TextChoice(text: 'No', value: 'no'),
             ],
+            defaultSelection: TextChoice(text: 'No', value: 'no'),
           ),
         ),
         QuestionStep(
