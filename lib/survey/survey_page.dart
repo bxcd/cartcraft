@@ -200,7 +200,7 @@ class _SurveyPageState extends State<SurveyPage> {
             textChoices: [
               TextChoice(text: 'Systems', value: 'systems'),
               TextChoice(text: 'Software', value: 'software'),
-              TextChoice(text: 'Web', value: 'web'),
+              TextChoice(text: 'Website', value: 'website'),
               TextChoice(text: 'Products', value: 'products'),
               TextChoice(text: 'Processes', value: 'processes'),
               TextChoice(text: 'Branding', value: 'branding'),
