@@ -1,6 +1,6 @@
 import 'package:cartcraft/survey/survey_page.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -38,6 +38,13 @@ class _HomePageState extends State<HomePage> {
         // called again, and so nothing would appear to happen.
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => SurveyPage(title: "Survey")));
       });
+    }
+    void _navigateToShop(url) async {
+      if (await canLaunch(url)) {
+        launch(url, forceWebView: true);
+      } else {
+        throw "Could not open webpage at the provided URL: " + url.toString();
+      }
     }
     return Scaffold(
       backgroundColor: Colors.white,
@@ -186,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  onPressed:  _navigateToSurvey,
+                  onPressed: /*_navigateToShop("https://coded.art/shop"),*/null,
                   child: Container(
                     alignment: Alignment.center,
                     width: 150,
