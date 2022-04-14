@@ -254,12 +254,12 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '\$0 to \$1,000', value: 'Penicillin'),
-              TextChoice(text: '\$1,000 to \$2,500', value: 'Latex'),
-              TextChoice(text: '\$2,500 to \$10,000', value: 'Pet'),
-              TextChoice(text: '\$10,000 to \$25,000', value: 'Pollen'),
-              TextChoice(text: '\$25,000 to \$100,000', value: 'Pollen'),
-              TextChoice(text: 'Over \$100,000', value: 'Pollen'),
+              TextChoice(text: '\$0 to \$1,000', value: '0'),
+              TextChoice(text: '\$1,000 to \$2,500', value: '1000'),
+              TextChoice(text: '\$2,500 to \$10,000', value: '2500'),
+              TextChoice(text: '\$10,000 to \$25,000', value: '10000'),
+              TextChoice(text: '\$25,000 to \$100,000', value: '25000'),
+              TextChoice(text: 'Over \$100,000', value: '100000'),
             ],
           ),
         ),
@@ -279,7 +279,7 @@ class _SurveyPageState extends State<SurveyPage> {
         QuestionStep(
           title: 'Contact address',
           text:
-          'What is an email address where your offer can be delivered?',
+          'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',
           isOptional: true,
           answerFormat: const TextAnswerFormat(
             maxLines: 1,
