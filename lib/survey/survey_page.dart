@@ -183,7 +183,7 @@ class _SurveyPageState extends State<SurveyPage> {
   );
 
   int currentSelection = 0; // Updated each time Q2 is completed for a Q1 input
-  late List<String> selections;
+  List<String> selections = List.generate(1, (index) => "");
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -331,17 +331,24 @@ class _SurveyPageState extends State<SurveyPage> {
         resultToStepIdentifierMapper: (input) {
           if (input != null && input.isNotEmpty) {
             selections = input.split(",");
+            CustomQuestionStep step = task.steps[2] as CustomQuestionStep;
+            step.selection = selections[0];
             return task.steps[2].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
+    //
     task.addNavigationRule(
       forTriggerStepIdentifier: task.steps[2].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (inputs) {
-          if (selections.length >= ++currentSelection) {
+          if (selections.length > currentSelection + 1) {
+            currentSelection++;
+            print(currentSelection);
+            CustomQuestionStep step = task.steps[2] as CustomQuestionStep;
+            step.selection = selections[currentSelection];
             return task.steps[2].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         },

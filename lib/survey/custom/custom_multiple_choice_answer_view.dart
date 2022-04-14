@@ -53,7 +53,7 @@ class _MultipleChoiceAnswerView extends State<CustomMultipleChoiceAnswerView> {
       isValid: widget.customQuestionStep.isOptional || _selectedChoices.isNotEmpty,
       title: widget.customQuestionStep.title.isNotEmpty
           ? Text(
-        widget.customQuestionStep.selection + " " + widget.customQuestionStep.title,
+        widget.customQuestionStep.selection,
         style: Theme.of(context).textTheme.headline2,
         textAlign: TextAlign.center,
       )
