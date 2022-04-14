@@ -183,7 +183,7 @@ class _SurveyPageState extends State<SurveyPage> {
   );
 
   int currentSelection = 0; // Updated each time Q2 is completed for a Q1 input
-  List<String> selections = List.empty();
+  late List<String> selections;
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -214,7 +214,7 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         // General placeholder to Q2s customized for each input in Q1
         CustomQuestionStep(
-          selection: 'Yes',
+          selection: selections[currentSelection],
           title: 'Aspects',
           text: 'What aspects can be improved',
           isOptional: true,
@@ -330,7 +330,7 @@ class _SurveyPageState extends State<SurveyPage> {
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           if (input != null && input.isNotEmpty) {
-            // selections.addAll(input.split(","));
+            selections = input.split(",");
             return task.steps[2].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         }
