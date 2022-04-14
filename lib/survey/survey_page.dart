@@ -5,6 +5,7 @@ import 'package:survey_kit/survey_kit.dart';
 
 import '../home/home_page.dart';
 import 'custom/custom_completion_step.dart';
+import 'custom/custom_question_step.dart';
 
 class SurveyPage extends StatefulWidget {
   const SurveyPage({Key? key, required this.title}) : super(key: key);
@@ -212,9 +213,10 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         // General placeholder to Q2s customized for each input in Q1
-        QuestionStep(
-          title: 'Selection  Aspects',
-          text: 'What aspects of your selections can be improved?',
+        CustomQuestionStep(
+          selection: 'Yes',
+          title: 'Aspects',
+          text: 'What aspects can be improved',
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -328,17 +330,13 @@ class _SurveyPageState extends State<SurveyPage> {
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           if (input != null && input.isNotEmpty) {
-            selections.addAll(input.split(","));
+            // selections.addAll(input.split(","));
             return task.steps[2].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
-    // Distinct callback implementations for each possible Q1 input are required;
-    // not possible to replace Q2 text String literal with variable from Q1 list dereference
-    // due to constant text field defined in QuestionTask class and implemented
-    // throughout library classes in order to enable serialization for Json I/O
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
     //   navigationRule: ConditionalNavigationRule(
