@@ -48,151 +48,159 @@ class _HomePageState extends State<HomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: Image.asset(
-                'assets/codedart-icon.png',
-                height: 175.0,
-                fit: BoxFit.none,
-              ),
-            ),
-            const Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-            ),
-            Text(
-              'Learn about options\nor visit the shop',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            const Padding(
-               padding: const EdgeInsets.symmetric(vertical: 24.0),
-            ),
-            OutlinedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(
-                  const Size(150.0, 60.0),
+      body: OrientationBuilder(
+      builder: (context, orientation) =>
+        Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: SingleChildScrollView(
+            child: Column(
+              // Column is also a layout widget. It takes a list of children and
+              // arranges them vertically. By default, it sizes itself to fit its
+              // children horizontally, and tries to be as tall as its parent.
+              //
+              // Invoke "debug painting" (press "p" in the console, choose the
+              // "Toggle Debug Paint" action from the Flutter Inspector in Android
+              // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+              // to see the wireframe for each widget.
+              //
+              // Column has various properties to control how it sizes itself and
+              // how it positions its children. Here we use mainAxisAlignment to
+              // center the children vertically; the main axis here is the vertical
+              // axis because Columns are vertical (the cross axis would be
+              // horizontal).
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
                 ),
-                side: MaterialStateProperty.resolveWith(
-                      (Set<MaterialState> state) {
-                    if (state.contains(MaterialState.disabled)) {
-                      return const BorderSide(
-                        color: Colors.white,
-                      );
-                    }
-                    return const BorderSide(
-                      color: Colors.red,
-                    );
-                  },
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+                Container(
+                  child: Image.asset(
+                    'assets/codedart-icon.png',
+                    height: 175.0,
+                    fit: BoxFit.none,
                   ),
                 ),
-                textStyle: MaterialStateProperty.resolveWith(
-                      (Set<MaterialState> state) {
-                    if (state.contains(MaterialState.disabled)) {
-                      return Theme.of(context)
-                          .textTheme
-                          .button
-                          ?.copyWith(
+                const Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                ),
+                Text(
+                  'Learn about options\nor visit the shop',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                const Padding(
+                   padding: const EdgeInsets.symmetric(vertical: 24.0),
+                ),
+                OutlinedButton(
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(
+                      const Size(150.0, 60.0),
+                    ),
+                    side: MaterialStateProperty.resolveWith(
+                          (Set<MaterialState> state) {
+                        if (state.contains(MaterialState.disabled)) {
+                          return const BorderSide(
+                            color: Colors.white,
+                          );
+                        }
+                        return const BorderSide(
+                          color: Colors.red,
+                        );
+                      },
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    textStyle: MaterialStateProperty.resolveWith(
+                          (Set<MaterialState> state) {
+                        if (state.contains(MaterialState.disabled)) {
+                          return Theme.of(context)
+                              .textTheme
+                              .button
+                              ?.copyWith(
+                            color: Colors.red,
+                          );
+                        }
+                        return Theme.of(context)
+                            .textTheme
+                            .button
+                            ?.copyWith(
+                          color: Colors.red,
+                        );
+                      },
+                    ),
+                  ),
+                  onPressed:  _navigateToSurvey,
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 150,
+                    child: const Text(
+                      'LEARN',
+                      style: TextStyle(
                         color: Colors.red,
-                      );
-                    }
-                    return Theme.of(context)
-                        .textTheme
-                        .button
-                        ?.copyWith(
-                      color: Colors.red,
-                    );
-                  },
-                ),
-              ),
-              onPressed:  _navigateToSurvey,
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                child: const Text(
-                  'LEARN',
-                  style: TextStyle(
-                    color: Colors.red,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            OutlinedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(
-                  const Size(150.0, 60.0),
-                ),
-                side: MaterialStateProperty.resolveWith(
-                      (Set<MaterialState> state) {
-                    if (state.contains(MaterialState.disabled)) {
-                      return const BorderSide(
-                        color: Colors.white,
-                      );
-                    }
-                    return const BorderSide(
-                      color: Colors.red,
-                    );
-                  },
-                ),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+                OutlinedButton(
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(
+                      const Size(150.0, 60.0),
+                    ),
+                    side: MaterialStateProperty.resolveWith(
+                          (Set<MaterialState> state) {
+                        if (state.contains(MaterialState.disabled)) {
+                          return const BorderSide(
+                            color: Colors.white,
+                          );
+                        }
+                        return const BorderSide(
+                          color: Colors.red,
+                        );
+                      },
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                    textStyle: MaterialStateProperty.resolveWith(
+                          (Set<MaterialState> state) {
+                        if (state.contains(MaterialState.disabled)) {
+                          return Theme.of(context)
+                              .textTheme
+                              .button
+                              ?.copyWith(
+                            color: Colors.red,
+                          );
+                        }
+                        return Theme.of(context)
+                            .textTheme
+                            .button
+                            ?.copyWith(
+                          color: Colors.red,
+                        );
+                      },
+                    ),
                   ),
-                ),
-                textStyle: MaterialStateProperty.resolveWith(
-                      (Set<MaterialState> state) {
-                    if (state.contains(MaterialState.disabled)) {
-                      return Theme.of(context)
-                          .textTheme
-                          .button
-                          ?.copyWith(
+                  onPressed:  _navigateToSurvey,
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 150,
+                    child: const Text(
+                      'SHOP',
+                      style: TextStyle(
                         color: Colors.red,
-                      );
-                    }
-                    return Theme.of(context)
-                        .textTheme
-                        .button
-                        ?.copyWith(
-                      color: Colors.red,
-                    );
-                  },
-                ),
-              ),
-              onPressed:  null,
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                child: const Text(
-                  'SHOP',
-                  style: TextStyle(
-                    color: Colors.red,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
