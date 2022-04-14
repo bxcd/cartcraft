@@ -183,6 +183,7 @@ class _SurveyPageState extends State<SurveyPage> {
 
   // var inputLastCompleted; // Updated each time Q2 is completed for a Q1 input
   // var inputMap; // maps each Q1 input to corresponding Q2 selections
+  List<String> inputs = List.empty();
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -323,21 +324,20 @@ class _SurveyPageState extends State<SurveyPage> {
     //   ),
     // );
     // Called back the first time Q1 is completed
-    // task.addNavigationRule(
-    //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
-    //   navigationRule: ConditionalNavigationRule(
-    //     resultToStepIdentifierMapper: (inputs) {
-    //       // for each input in inputs, add input to inputMap
-    //       var input = inputs[0]
-    //       switch (input) {
-    //         case :
-    //           return task.steps[].stepIdentifier;
-    //         default:
-    //           return null;
-    //       }
-    //     },
-    //   ),
-    // );
+    task.addNavigationRule(
+      forTriggerStepIdentifier: task.steps[1].stepIdentifier,
+      navigationRule: ConditionalNavigationRule(
+        resultToStepIdentifierMapper: (input) {
+            // for each input in inputs, add input to inputMap
+            // var input = inputs
+              if (input != null) {
+                inputs.addAll(input.split(","));
+                return task.steps[2].stepIdentifier;
+              } return task.steps[3].stepIdentifier;
+          }
+        // },
+      ),
+    );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
