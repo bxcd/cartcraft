@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   survey_kit: ^0.0.21
+  url_launcher: ^5.7.10
   flutter:
     sdk: flutter
 
