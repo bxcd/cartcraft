@@ -239,7 +239,17 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Contact info',
+          title: 'Project Timeline',
+          text: 'Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.',
+          isOptional: true,
+          answerFormat: DateAnswerFormat(
+            minDate: DateTime.utc(1970),
+            defaultDate: DateTime.now(),
+            maxDate: DateTime.utc(3000),
+          ),
+        ),
+        QuestionStep(
+          title: 'Contact address',
           text:
           'What is an email address where your offer can be delivered?',
           isOptional: true,
@@ -248,13 +258,13 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Project Timeline',
-          text: 'Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.',
-          isOptional: true,
-          answerFormat: DateAnswerFormat(
-            minDate: DateTime.utc(1970),
-            defaultDate: DateTime.now(),
-            maxDate: DateTime.now(),
+          title: 'Contact time',
+          text: 'What is the best time of day to contact you with your offer.',
+          answerFormat: const TimeAnswerFormat(
+            defaultValue: TimeOfDay(
+              hour: 12,
+              minute: 0,
+            ),
           ),
         ),
         CustomCompletionStep(
@@ -273,7 +283,7 @@ class _SurveyPageState extends State<SurveyPage> {
             case 'yes':
               return task.steps[4].stepIdentifier;
             default:
-              return task.steps[6].stepIdentifier;
+              return task.steps[7].stepIdentifier;
           }
         },
       ),
