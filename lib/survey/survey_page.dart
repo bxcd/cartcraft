@@ -146,11 +146,11 @@ class _SurveyPageState extends State<SurveyPage> {
                     ),
                     textTheme: const TextTheme(
                       headline2: TextStyle(
-                        fontSize: 28.0,
+                        fontSize: 27.0,
                         color: Colors.red,
                       ),
                       headline5: TextStyle(
-                        fontSize: 24.0,
+                        fontSize: 21.0,
                         color: Colors.red,
                       ),
                       bodyText2: TextStyle(
