@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
             ),
             Text(
-              'Learn about options\nor visit the store',
+              'Learn about options\nor visit the shop',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
             ),
@@ -180,12 +180,12 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              onPressed:  _navigateToSurvey,
+              onPressed:  null,
               child: Container(
                 alignment: Alignment.center,
                 width: 150,
                 child: const Text(
-                  'LEARN',
+                  'SHOP',
                   style: TextStyle(
                     color: Colors.red,
                   ),
