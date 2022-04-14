@@ -242,9 +242,9 @@ class _SurveyPageState extends State<SurveyPage> {
           title: 'Contact info',
           text:
           'What is an email address where your offer can be delivered?',
+          isOptional: true,
           answerFormat: const TextAnswerFormat(
-            maxLines: 5,
-            validationRegEx: "^(?!s*\$).+",
+            maxLines: 1,
           ),
         ),
         CustomCompletionStep(
@@ -262,10 +262,8 @@ class _SurveyPageState extends State<SurveyPage> {
           switch (input) {
             case 'yes':
               return task.steps[4].stepIdentifier;
-            case 'no':
-              return task.steps[5].stepIdentifier;
             default:
-              return null;
+              return task.steps[5].stepIdentifier;
           }
         },
       ),
