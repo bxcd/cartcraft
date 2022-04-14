@@ -245,7 +245,7 @@ class _SurveyPageState extends State<SurveyPage> {
           answerFormat: DateAnswerFormat(
             minDate: DateTime.utc(1970),
             defaultDate: DateTime.now(),
-            maxDate: DateTime.utc(3000),
+            maxDate: DateTime.now().add(const Duration(days: 365 * 10))
           ),
         ),
         QuestionStep(
