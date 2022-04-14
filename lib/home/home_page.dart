@@ -39,9 +39,10 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => SurveyPage(title: "Survey")));
       });
     }
-    void _navigateToShop(url) async {
+    void _navigateToShop() async {
+      const url = "https://coded.art/shop";
       if (await canLaunch(url)) {
-        launch(url, forceWebView: true);
+          launch(url, forceWebView: true);
       } else {
         throw "Could not open webpage at the provided URL: " + url.toString();
       }
@@ -193,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
-                  onPressed: /*_navigateToShop("https://coded.art/shop"),*/null,
+                  onPressed: _navigateToShop,
                   child: Container(
                     alignment: Alignment.center,
                     width: 150,
