@@ -181,9 +181,8 @@ class _SurveyPageState extends State<SurveyPage> {
     ),
   );
 
-  // var inputLastCompleted; // Updated each time Q2 is completed for a Q1 input
-  // var inputMap; // maps each Q1 input to corresponding Q2 selections
-  List<String> inputs = List.empty();
+  int currentSelection = 0; // Updated each time Q2 is completed for a Q1 input
+  List<String> selections = List.empty();
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -328,17 +327,18 @@ class _SurveyPageState extends State<SurveyPage> {
       forTriggerStepIdentifier: task.steps[1].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
-            // for each input in inputs, add input to inputMap
-            // var input = inputs
-              if (input != null) {
-                inputs.addAll(input.split(","));
-                return task.steps[2].stepIdentifier;
-              } return task.steps[3].stepIdentifier;
-          }
-        // },
+          if (input != null && input.isNotEmpty) {
+            selections.addAll(input.split(","));
+            return task.steps[2].stepIdentifier;
+          } return task.steps[3].stepIdentifier;
+        }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
+    // Distinct callback implementations for each possible Q1 input are required;
+    // not possible to replace Q2 text String literal with variable from Q1 list dereference
+    // due to constant text field defined in QuestionTask class and implemented
+    // throughout library classes in order to enable serialization for Json I/O
     // task.addNavigationRule(
     //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
     //   navigationRule: ConditionalNavigationRule(
