@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              onPressed:  null,
+              onPressed:  _navigateToSurvey,
               child: Container(
                 alignment: Alignment.center,
                 width: 150,
