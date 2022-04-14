@@ -337,23 +337,16 @@ class _SurveyPageState extends State<SurveyPage> {
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
-    // task.addNavigationRule(
-    //   forTriggerStepIdentifier: task.steps[].stepIdentifier,
-    //   navigationRule: ConditionalNavigationRule(
-    //     resultToStepIdentifierMapper: (inputs) {
-    //     // add inputs to corresponding input in inputMap
-    //     // finding index by ++inputLastCompleted (now incremented)
-    //     // either go to completion step if no more inputs or
-    //     // launch Q2 for next input found in inputMap by inputLastCompleted
-    //       switch (input) {
-    //         case :
-    //           return task.steps[].stepIdentifier;
-    //         default:
-    //           return null;
-    //       }
-    //     },
-    //   ),
-    // );
+    task.addNavigationRule(
+      forTriggerStepIdentifier: task.steps[2].stepIdentifier,
+      navigationRule: ConditionalNavigationRule(
+        resultToStepIdentifierMapper: (inputs) {
+          if (selections.length >= ++currentSelection) {
+            return task.steps[2].stepIdentifier;
+          } return task.steps[3].stepIdentifier;
+        },
+      ),
+    );
     return Future.value(task);
   }
 }
