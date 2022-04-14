@@ -249,6 +249,31 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          title: 'Project Cost',
+          text: 'Has your project set a target cost?',
+          answerFormat: const ScaleAnswerFormat(
+            step: 1,
+            minimumValue: 1,
+            maximumValue: 5,
+            defaultValue: 3,
+            minimumValueDescription: '1',
+            maximumValueDescription: '5',
+          ),
+        ),
+        QuestionStep(
+          title: 'Speed vs. Savings',
+          text: 'Rate your preference between cost savings and completion speed.',
+          isOptional: true,
+          answerFormat: const ScaleAnswerFormat(
+            step: 1,
+            minimumValue: 1,
+            maximumValue: 5,
+            defaultValue: 3,
+            minimumValueDescription: 'Cost',
+            maximumValueDescription: 'Speed',
+          ),
+        ),
+        QuestionStep(
           title: 'Contact address',
           text:
           'What is an email address where your offer can be delivered?',
@@ -283,7 +308,7 @@ class _SurveyPageState extends State<SurveyPage> {
             case 'yes':
               return task.steps[4].stepIdentifier;
             default:
-              return task.steps[7].stepIdentifier;
+              return task.steps[9].stepIdentifier;
           }
         },
       ),
