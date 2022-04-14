@@ -250,14 +250,17 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         QuestionStep(
           title: 'Project Cost',
-          text: 'Has your project set a target cost?',
-          answerFormat: const ScaleAnswerFormat(
-            step: 1,
-            minimumValue: 1,
-            maximumValue: 5,
-            defaultValue: 3,
-            minimumValueDescription: '1',
-            maximumValueDescription: '5',
+          text: 'Has your project set a target cost?\nCode Dart offers flexible package and bundle options to help you keep costs under control.',
+          isOptional: true,
+          answerFormat: const SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '\$0-\$1,000', value: 'Penicillin'),
+              TextChoice(text: '\$1,000-\$2,500', value: 'Latex'),
+              TextChoice(text: '\$2,500-\$5,000', value: 'Pet'),
+              TextChoice(text: '\$5,000-\$10,000', value: 'Pollen'),
+              TextChoice(text: '\$10,000-\$100,000', value: 'Pollen'),
+              TextChoice(text: '\$100,000+', value: 'Pollen'),
+            ],
           ),
         ),
         QuestionStep(
