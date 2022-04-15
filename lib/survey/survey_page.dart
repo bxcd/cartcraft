@@ -182,7 +182,7 @@ class _SurveyPageState extends State<SurveyPage> {
     ),
   );
 
-  final MultipleChoiceAnswerFormat format = const MultipleChoiceAnswerFormat(
+  static const MultipleChoiceAnswerFormat format = MultipleChoiceAnswerFormat(
     textChoices: [
       TextChoice(text: 'App development', value: 'app'),
       TextChoice(text: 'UX design', value: 'ux'),
@@ -191,8 +191,20 @@ class _SurveyPageState extends State<SurveyPage> {
       TextChoice(text: 'Business operations', value: 'business')
     ],
   );
+  static const List<String> areaSteps = [
+    'systems',
+    'software',
+    'website',
+    'product',
+    'processes',
+    'branding',
+    'communications',
+    'controls',
+    'strategy',
+    'other'
+  ];
   static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
-  int currentSelection = 0; // Updated each time Q2 is completed for a Q1 input
+  int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   Future<Task> getSampleTask() {
     var task = NavigableTask(
@@ -357,12 +369,11 @@ class _SurveyPageState extends State<SurveyPage> {
       forTriggerStepIdentifier: task.steps[2].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (inputs) {
-          if (selections.length > currentSelection + 1) {
-            currentSelection++;
-            print(currentSelection);
-            CustomQuestionStep step = task.steps[2] as CustomQuestionStep;
-            step.selection = selections[currentSelection];
-            return task.steps[2].stepIdentifier;
+          if (selections.length > currentSelectionIndex + 1) {
+            currentSelectionIndex++;
+            print(currentSelectionIndex);
+            int nextIndex = areaSteps.indexOf(selections[currentSelectionIndex]);
+            return task.steps[nextIndex].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         },
       ),
@@ -370,4 +381,5 @@ class _SurveyPageState extends State<SurveyPage> {
     return Future.value(task);
   }
 }
+
 
