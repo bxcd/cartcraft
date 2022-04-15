@@ -182,6 +182,16 @@ class _SurveyPageState extends State<SurveyPage> {
     ),
   );
 
+  MultipleChoiceAnswerFormat format = const MultipleChoiceAnswerFormat(
+    textChoices: [
+      TextChoice(text: 'App development', value: 'app'),
+      TextChoice(text: 'UX design', value: 'ux'),
+      TextChoice(text: 'Graphic design', value: 'graphics'),
+      TextChoice(text: 'Content production', value: 'content'),
+      TextChoice(text: 'Business operations', value: 'business')
+    ],
+  );
+  String text = "What aspects of your %s can be improved?";
   int currentSelection = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   Future<Task> getSampleTask() {
@@ -212,22 +222,8 @@ class _SurveyPageState extends State<SurveyPage> {
             ],
           ),
         ),
-        // General placeholder to Q2s customized for each input in Q1
-        CustomQuestionStep(
-          selection: selections[currentSelection],
-          title: 'Aspects',
-          text: 'What aspects can be improved',
-          isOptional: true,
-          answerFormat: const MultipleChoiceAnswerFormat(
-            textChoices: [
-              TextChoice(text: 'App development', value: 'app'),
-              TextChoice(text: 'UX design', value: 'ux'),
-              TextChoice(text: 'Graphic design', value: 'graphics'),
-              TextChoice(text: 'Content production', value: 'content'),
-              TextChoice(text: 'Business operations', value: 'business')
-            ],
-          ),
-        ),
+        // One question step for each possible input in QuestionStep1
+        QuestionStep(title: 'Systems Aspects', text: text, answerFormat: format),
         QuestionStep(
           title: 'Special offer',
           text: 'Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.',
