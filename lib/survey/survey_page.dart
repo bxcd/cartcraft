@@ -204,7 +204,8 @@ class _SurveyPageState extends State<SurveyPage> {
     'other'
   ];
   static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
-  int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
+  static int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
+  static int currentStepIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   Future<Task> getSampleTask() {
     var task = NavigableTask(
@@ -333,14 +334,14 @@ class _SurveyPageState extends State<SurveyPage> {
       ],
     );
     task.addNavigationRule(
-      forTriggerStepIdentifier: task.steps[3].stepIdentifier,
+      forTriggerStepIdentifier: task.steps[12].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           switch (input) {
             case 'yes':
-              return task.steps[4].stepIdentifier;
+              return task.steps[13].stepIdentifier;
             default:
-              return task.steps[9].stepIdentifier;
+              return task.steps[18].stepIdentifier;
           }
         },
       ),
@@ -358,13 +359,14 @@ class _SurveyPageState extends State<SurveyPage> {
         resultToStepIdentifierMapper: (input) {
           if (input != null && input.isNotEmpty) {
             selections = input.split(',');
-            return task.steps[2].stepIdentifier;
-          } return task.steps[3].stepIdentifier;
+            int nextIndex = 2 + areaSteps.indexOf(selections[0]);
+            return task.steps[nextIndex].stepIdentifier;
+          } return task.steps[12].stepIdentifier;
         }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
-    //
+    // for loop to attach navigation rule to each step
     task.addNavigationRule(
       forTriggerStepIdentifier: task.steps[2].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
@@ -372,9 +374,9 @@ class _SurveyPageState extends State<SurveyPage> {
           if (selections.length > currentSelectionIndex + 1) {
             currentSelectionIndex++;
             print(currentSelectionIndex);
-            int nextIndex = areaSteps.indexOf(selections[currentSelectionIndex]);
+            int nextIndex = 2 + areaSteps.indexOf(selections[currentSelectionIndex]);
             return task.steps[nextIndex].stepIdentifier;
-          } return task.steps[3].stepIdentifier;
+          } return task.steps[12].stepIdentifier;
         },
       ),
     );
