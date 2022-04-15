@@ -204,8 +204,8 @@ class _SurveyPageState extends State<SurveyPage> {
     'other'
   ];
   static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
-  static int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
-  static int currentStepIndex = 0; // Updated each time Q2 is completed for a Q1 input
+  int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
+  int currentStepIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   Future<Task> getSampleTask() {
     var task = NavigableTask(
@@ -366,20 +366,26 @@ class _SurveyPageState extends State<SurveyPage> {
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
-    // for loop to attach navigation rule to each step
-    task.addNavigationRule(
-      forTriggerStepIdentifier: task.steps[2].stepIdentifier,
-      navigationRule: ConditionalNavigationRule(
-        resultToStepIdentifierMapper: (inputs) {
-          if (selections.length > currentSelectionIndex + 1) {
-            currentSelectionIndex++;
+    for (int i = 2; i < 12; i++) {
+      task.addNavigationRule(
+        forTriggerStepIdentifier: task.steps[i].stepIdentifier,
+        navigationRule: ConditionalNavigationRule(
+          resultToStepIdentifierMapper: (inputs) {
             print(currentSelectionIndex);
-            int nextIndex = 2 + areaSteps.indexOf(selections[currentSelectionIndex]);
-            return task.steps[nextIndex].stepIdentifier;
-          } return task.steps[12].stepIdentifier;
-        },
-      ),
-    );
+            print(selections.length);
+            if (selections.length > currentSelectionIndex + 1) {
+              currentSelectionIndex++;
+              int nextIndex = 2 +
+                  areaSteps.indexOf(selections[currentSelectionIndex]);
+              return task.steps[nextIndex].stepIdentifier;
+            }
+            currentStepIndex = 0;
+            currentSelectionIndex = 0;
+            return task.steps[12].stepIdentifier;
+          },
+        ),
+      );
+    }
     return Future.value(task);
   }
 }
