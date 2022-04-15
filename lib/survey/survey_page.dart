@@ -223,16 +223,26 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         // One question step for each possible input in QuestionStep1
-        QuestionStep(title: 'Systems Aspects', text: formatText('systems'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Software Aspects', text: formatText('software'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Website Aspects', text: formatText('website'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Products Aspects', text: formatText('products'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Processes Aspects', text: formatText('processes'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Branding Aspects', text: formatText('branding'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Communications Aspects', text: formatText('communications'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Controls Aspects', text: formatText('controls'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Strategy Aspects', text: formatText('strategy'), answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Other Aspects', text: formatText('other'), answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Systems Aspects', text: formatText('systems'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Software Aspects', text: formatText('software'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Website Aspects', text: formatText('website'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Products Aspects', text: formatText('products'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Processes Aspects', text: formatText('processes'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Branding Aspects', text: formatText('branding'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Communications Aspects', text: formatText('communications'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Controls Aspects', text: formatText('controls'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Strategy Aspects', text: formatText('strategy'),
+            answerFormat: format, isOptional: true),
+        QuestionStep(title: 'Other Aspects', text: formatText('other'),
+            answerFormat: format, isOptional: true),
         QuestionStep(
           title: 'Special offer',
           text: 'Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.',
@@ -335,6 +345,7 @@ class _SurveyPageState extends State<SurveyPage> {
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           if (input != null && input.isNotEmpty) {
+            selections = input.split(',');
             return task.steps[2].stepIdentifier;
           } return task.steps[3].stepIdentifier;
         }
