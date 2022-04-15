@@ -5,8 +5,6 @@ import 'package:survey_kit/survey_kit.dart';
 
 import '../home/home_page.dart';
 import 'custom/custom_completion_step.dart';
-import 'custom/custom_question_step.dart';
-
 class SurveyPage extends StatefulWidget {
   const SurveyPage({Key? key, required this.title}) : super(key: key);
 
