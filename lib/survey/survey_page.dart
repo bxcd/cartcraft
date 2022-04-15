@@ -307,6 +307,15 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          title: 'Additional Details',
+          text:
+          'What other aspects of your project are important and how can they be addressed or improved?',
+          isOptional: true,
+          answerFormat: const TextAnswerFormat(
+            maxLines: 20,
+          ),
+        ),
+        QuestionStep(
           title: 'Contact address',
           text:
           'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',
@@ -341,7 +350,7 @@ class _SurveyPageState extends State<SurveyPage> {
             case 'yes':
               return task.steps[13].stepIdentifier;
             default:
-              return task.steps[18].stepIdentifier;
+              return task.steps[19].stepIdentifier;
           }
         },
       ),
