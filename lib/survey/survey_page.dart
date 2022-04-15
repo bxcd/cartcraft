@@ -195,7 +195,7 @@ class _SurveyPageState extends State<SurveyPage> {
     'systems',
     'software',
     'website',
-    'product',
+    'products',
     'processes',
     'branding',
     'communications',
