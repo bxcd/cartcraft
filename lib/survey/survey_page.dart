@@ -43,13 +43,20 @@ class _SurveyPageState extends State<SurveyPage> {
                   onResult: (SurveyResult r) {
                     if (kDebugMode) {
                       print(r.finishReason);
-                      List<StepResult> sRList = r.results;
-                      for (int i = 0; i < sRList.length; i++) {
-                        List<QuestionResult> qRList = sRList[i].results;
-                        for (int j = 0; j < qRList.length; j++) {
-                          String? s = qRList[j].valueIdentifier;
-                          if (s != null) {
-                            List<String> responses = s.split(',');
+                      List<String> s1ResultStrings = List.empty();
+                      List<List<String>> s2ResultStringsList = List.empty();
+                      List<StepResult> sResults = r.results;
+                      for (int i = 0; i < sResults.length; i++) {
+                        List<QuestionResult> qResults = sResults[i].results;
+                        for (int j = 0; j < qResults.length; j++) {
+                          if (j != 0) { break; }
+                          else if (i == 0) { continue; }
+                          else if (i < 12) {
+                            String? qResultString = qResults[j].valueIdentifier;
+                            if (qResultString != null) {
+                              if (i == 1) { s1ResultStrings.addAll(qResultString.split(',')); }
+                              else { s2ResultStringsList.add(qResultString.split(',')); }
+                            }
                           }
                         }
                       }
@@ -63,7 +70,6 @@ class _SurveyPageState extends State<SurveyPage> {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Code Dart")));
                       });
                     }
-
                   },
                   task: task,
                   showProgress: true,
