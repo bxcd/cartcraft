@@ -40,11 +40,18 @@ class _SurveyPageState extends State<SurveyPage> {
                   snapshot.data != null) {
                 final task = snapshot.data!;
                 return SurveyKit(
-                  onResult: (SurveyResult result) {
+                  onResult: (SurveyResult r) {
                     if (kDebugMode) {
-                      print(result.finishReason);
-                      for (StepResult r in result.results) {
-                        print(r.results.first.valueIdentifier);
+                      print(r.finishReason);
+                      List<StepResult> sRList = r.results;
+                      for (int i = 0; i < sRList.length; i++) {
+                        List<QuestionResult> qRList = sRList[i].results;
+                        for (int j = 0; j < qRList.length; j++) {
+                          String? s = qRList[j].valueIdentifier;
+                          if (s != null) {
+                            List<String> responses = s.split(',');
+                          }
+                        }
                       }
                       setState(() {
                         // This call to setState tells the Flutter framework that something has
