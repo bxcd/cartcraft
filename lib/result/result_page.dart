@@ -93,12 +93,12 @@ class _ResultPageState extends State<ResultPage> {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                 ),
                 Text(
-                  ResultUtils.generateRecommendations(widget.result).toString(),
+                  'Your recommendations:\n',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 Text(
-                  'Your recommendations:\n',
+                  ResultUtils.generateRecommendations(widget.result).toString(),
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headline6,
                 ),
@@ -151,7 +151,7 @@ class _ResultPageState extends State<ResultPage> {
                     alignment: Alignment.center,
                     width: 150,
                     child: const Text(
-                      'LEARN',
+                      'HOME',
                       style: TextStyle(
                         color: Colors.red,
                       ),
