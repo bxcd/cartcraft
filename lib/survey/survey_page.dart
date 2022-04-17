@@ -65,85 +65,40 @@ class _SurveyPageState extends State<SurveyPage> {
                         for (int j = 0; j < s2ResultStringsList[i].length; j++) {
                           String s2ResultString = s2ResultStringsList[i][j];
                           switch (s1ResultString) {
-                            case "systems":
+                            case "tech":
                               switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
+                                case "systems": break;
+                                case "software": break;
+                                case "website": break;
+                                case "other": break;
                               } break;
-                            case "software":
+                            case "product":
                               switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
+                                case "usability": break;
+                                case "appeal": break;
+                                case "conversion": break;
+                                case "other": break;
                               } break;
-                            case "website":
+                            case "business":
                               switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
+                                case "performance": break;
+                                case "continuity": break;
+                                case "integration": break;
+                                case "other": break;
                               } break;
-                            case "products":
+                            case "graphics":
                               switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
+                                case "logo": break;
+                                case "illustration": break;
+                                case "collateral": break;
+                                case "other": break;
                               } break;
-                            case "processes":
+                            case "content":
                               switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
-                              } break;
-                            case "branding":
-                              switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
-                              } break;
-                            case "communications":
-                              switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
-                              } break;
-                            case "controls":
-                              switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
-                              } break;
-                            case "strategy":
-                              switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
-                              } break;
-                            case "other":
-                              switch (s2ResultString) {
-                                case "app development": break;
-                                case "ux design": break;
-                                case "graphic design": break;
-                                case "business operations": break;
-                                case "content production": break;
+                                case "writing": break;
+                                case "audio": break;
+                                case "video": break;
+                                case "other": break;
                               } break;
                           }
                         }
@@ -281,31 +236,18 @@ class _SurveyPageState extends State<SurveyPage> {
     ),
   );
 
-  static const MultipleChoiceAnswerFormat format = MultipleChoiceAnswerFormat(
-    textChoices: [
-      TextChoice(text: 'App development', value: 'app'),
-      TextChoice(text: 'UX design', value: 'ux'),
-      TextChoice(text: 'Graphic design', value: 'graphics'),
-      TextChoice(text: 'Content production', value: 'content'),
-      TextChoice(text: 'Business operations', value: 'business')
-    ],
-  );
-  static const List<String> areaSteps = [
-    'systems',
-    'software',
-    'website',
-    'products',
-    'processes',
-    'branding',
-    'communications',
-    'controls',
-    'strategy',
-    'other'
-  ];
   static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
   int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
   int currentStepIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
+  static const List<String> areaSteps = [
+    'tech',
+    'product',
+    'business',
+    'graphics',
+    'content',
+    'other',
+  ];
   Future<Task> getSampleTask() {
     var task = NavigableTask(
       id: TaskIdentifier(),
@@ -321,40 +263,80 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: 'Systems', value: 'systems'),
-              TextChoice(text: 'Software', value: 'software'),
-              TextChoice(text: 'Website', value: 'website'),
-              TextChoice(text: 'Products', value: 'products'),
-              TextChoice(text: 'Processes', value: 'processes'),
-              TextChoice(text: 'Branding', value: 'branding'),
-              TextChoice(text: 'Communications', value: 'communications'),
-              TextChoice(text: 'Controls', value: 'controls'),
-              TextChoice(text: 'Strategy', value: 'strategy'),
+              TextChoice(text: 'Tech development', value: 'tech'),
+              TextChoice(text: 'Product design', value: 'product'),
+              TextChoice(text: 'Business operations', value: 'business'),
+              TextChoice(text: 'Graphic design', value: 'graphics'),
+              TextChoice(text: 'Content production', value: 'content'),
               TextChoice(text: 'Other', value: 'other'),
             ],
           ),
         ),
         // One question step for each possible input in QuestionStep1
-        QuestionStep(title: 'Systems Aspects', text: formatText('systems'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Software Aspects', text: formatText('software'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Website Aspects', text: formatText('website'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Products Aspects', text: formatText('products'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Processes Aspects', text: formatText('processes'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Branding Aspects', text: formatText('branding'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Communications Aspects', text: formatText('communications'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Controls Aspects', text: formatText('controls'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Strategy Aspects', text: formatText('strategy'),
-            answerFormat: format, isOptional: true),
-        QuestionStep(title: 'Other Aspects', text: formatText('other'),
-            answerFormat: format, isOptional: true),
+        QuestionStep(
+          title: 'Tech Development Aspects',
+          text: formatText('tech development'),
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Systems', value: 'systems'),
+              TextChoice(text: 'Software', value: 'software'),
+              TextChoice(text: 'Website', value: 'website'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
+        QuestionStep(title: 'Product Design Aspects',
+            text: formatText('product design'),
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Research', value: 'research'),
+              TextChoice(text: 'Usability', value: 'usability'),
+              TextChoice(text: 'Conversion', value: 'conversion'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: 'Business Operations Aspects',
+          text: formatText('processes'),
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Performance', value: 'performance'),
+              TextChoice(text: 'Continuity', value: 'continuity'),
+              TextChoice(text: 'Integration', value: 'integration'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
+        QuestionStep(
+            title: 'Graphic Design Aspects',
+            text: formatText('graphic design'),
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Logo', value: 'logo'),
+              TextChoice(text: 'Illustration', value: 'illustration'),
+              TextChoice(text: 'Collateral', value: 'collateral'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
+        QuestionStep(
+            title: 'Content Production Aspects',
+            text: formatText('content production'),
+          isOptional: true,
+          answerFormat: const MultipleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: 'Writing', value: 'writing'),
+              TextChoice(text: 'Audio', value: 'audio'),
+              TextChoice(text: 'Video', value: 'video'),
+              TextChoice(text: 'Other', value: 'other'),
+            ],
+          ),
+        ),
         QuestionStep(
           title: 'Special offer',
           text: 'Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.',
