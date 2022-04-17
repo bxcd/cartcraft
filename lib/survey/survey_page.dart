@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:survey_kit/survey_kit.dart';
 
-import '../home/home_page.dart';
+import '../result/result_page.dart';
 import 'custom/custom_completion_step.dart';
 class SurveyPage extends StatefulWidget {
   const SurveyPage({Key? key, required this.title}) : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
+  // This widget is the survey page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
 
@@ -44,7 +44,6 @@ class _SurveyPageState extends State<SurveyPage> {
                   onResult: (SurveyResult r) {
                     if (kDebugMode) {
                       print(r.finishReason);
-                      _generateRecommendations(r);
                       setState(() {
                         // This call to setState tells the Flutter framework that something has
                         // changed in this State, which causes it to rerun the build method below
@@ -54,7 +53,9 @@ class _SurveyPageState extends State<SurveyPage> {
                         Navigator.of(context).pop();
                         // launch result page passing r argument
                         // move/handle _generateRecommendations from result page
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage(title: "Code Dart")));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ResultPage(
+                                title: "ResultPage", result: r)));
                       });
                     }
                   },
@@ -413,75 +414,6 @@ class _SurveyPageState extends State<SurveyPage> {
       );
     }
     return Future.value(task);
-  }
-
-  List<String> _generateRecommendations(SurveyResult r) {
-    List<String> s1ResultStrings = List.generate(1, (index) => "");
-    List<String> s2ResultStrings = List.generate(1, (index) => "");
-    List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
-    List<StepResult> sResults = r.results;
-    for (int i = 0; i < sResults.length; i++) {
-      List<QuestionResult> qResults = sResults[i].results;
-      for (int j = 0; j < qResults.length; j++) {
-        if (j != 0) { break; }
-        else if (i == 0) { continue; }
-        else if (i < 7) {
-          String? qResultString = qResults[j].valueIdentifier;
-          if (qResultString != null) {
-            List<String> qResultStrings = qResultString.split(',');
-            if (i == 1) { s1ResultStrings.addAll(qResultStrings); }
-            else { s2ResultStringsList.add(qResultStrings); }
-          }
-        }
-      }
-    }
-    List<String> recommendations = List.generate(1, (index) => ',');
-    for (int i = 0; i < s1ResultStrings.length; i++) {
-      String s1ResultString = s1ResultStrings[i];
-      for (int j = 0; j < s2ResultStringsList[i].length; j++) {
-        String s2ResultString = s2ResultStringsList[i][j];
-        switch (s1ResultString) {
-          case "tech":
-            switch (s2ResultString) {
-              case "systems": break;
-              case "software": break;
-              case "website": break;
-              case "other": break;
-            } break;
-          case "product":
-            switch (s2ResultString) {
-              case "usability": break;
-              case "appeal": break;
-              case "conversion": break;
-              case "other": break;
-            } break;
-          case "business":
-            switch (s2ResultString) {
-              case "performance": break;
-              case "continuity": break;
-              case "integration": break;
-              case "other": break;
-            } break;
-          case "graphics":
-            switch (s2ResultString) {
-              case "logo": break;
-              case "illustration": break;
-              case "collateral": break;
-              case "other": break;
-            } break;
-          case "content":
-            switch (s2ResultString) {
-              case "writing": break;
-              case "audio": break;
-              case "video": break;
-              case "other": break;
-            } break;
-          default:
-            break;
-        }
-      }
-    }
-    return recommendations;
   }
 }
 
