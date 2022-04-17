@@ -51,7 +51,7 @@ class _SurveyPageState extends State<SurveyPage> {
                         for (int j = 0; j < qResults.length; j++) {
                           if (j != 0) { break; }
                           else if (i == 0) { continue; }
-                          else if (i < 12) {
+                          else if (i < 7) {
                             String? qResultString = qResults[j].valueIdentifier;
                             if (qResultString != null) {
                               if (i == 1) { s1ResultStrings.addAll(qResultString.split(',')); }
@@ -423,14 +423,14 @@ class _SurveyPageState extends State<SurveyPage> {
       ],
     );
     task.addNavigationRule(
-      forTriggerStepIdentifier: task.steps[12].stepIdentifier,
+      forTriggerStepIdentifier: task.steps[7].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
         resultToStepIdentifierMapper: (input) {
           switch (input) {
             case 'yes':
-              return task.steps[13].stepIdentifier;
+              return task.steps[8].stepIdentifier;
             default:
-              return task.steps[19].stepIdentifier;
+              return task.steps[14].stepIdentifier;
           }
         },
       ),
@@ -444,12 +444,12 @@ class _SurveyPageState extends State<SurveyPage> {
             selections = input.split(',');
             int nextIndex = 2 + areaSteps.indexOf(selections[0]);
             return task.steps[nextIndex].stepIdentifier;
-          } return task.steps[12].stepIdentifier;
+          } return task.steps[7].stepIdentifier;
         }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
-    for (int i = 2; i < 12; i++) {
+    for (int i = 2; i < 7; i++) {
       task.addNavigationRule(
         forTriggerStepIdentifier: task.steps[i].stepIdentifier,
         navigationRule: ConditionalNavigationRule(
@@ -463,7 +463,7 @@ class _SurveyPageState extends State<SurveyPage> {
               return task.steps[nextIndex].stepIdentifier;
             }
             currentSelectionIndex = 0;
-            return task.steps[12].stepIdentifier;
+            return task.steps[7].stepIdentifier;
           },
         ),
       );
