@@ -60,6 +60,94 @@ class _SurveyPageState extends State<SurveyPage> {
                           }
                         }
                       }
+                      for (int i = 0; i < s1ResultStrings.length; i++) {
+                        String s1ResultString = s1ResultStrings[i];
+                        for (int j = 0; j < s2ResultStringsList[i].length; j++) {
+                          String s2ResultString = s2ResultStringsList[i][j];
+                          switch (s1ResultString) {
+                            case "systems":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "software":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "websites":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "products":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "processes":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "branding":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "communications":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "controls":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "strategy":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                            case "other":
+                              switch (s2ResultString) {
+                                case "app development": break;
+                                case "ux design": break;
+                                case "graphic design": break;
+                                case "business operations": break;
+                                case "content production": break;
+                              } break;
+                          }
+                        }
+                      }
                       setState(() {
                         // This call to setState tells the Flutter framework that something has
                         // changed in this State, which causes it to rerun the build method below
