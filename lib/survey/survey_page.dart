@@ -81,7 +81,7 @@ class _SurveyPageState extends State<SurveyPage> {
                                 case "business operations": break;
                                 case "content production": break;
                               } break;
-                            case "websites":
+                            case "website":
                               switch (s2ResultString) {
                                 case "app development": break;
                                 case "ux design": break;
