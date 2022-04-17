@@ -43,19 +43,23 @@ class _SurveyPageState extends State<SurveyPage> {
                   onResult: (SurveyResult r) {
                     if (kDebugMode) {
                       print(r.finishReason);
-                      List<String> s1ResultStrings = List.empty();
-                      List<List<String>> s2ResultStringsList = List.empty();
+                      List<String> s1ResultStrings = List.generate(1, (index) => "");
+                      List<String> s2ResultStrings = List.generate(1, (index) => "");
+                      List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
                       List<StepResult> sResults = r.results;
                       for (int i = 0; i < sResults.length; i++) {
+                        print("1");
                         List<QuestionResult> qResults = sResults[i].results;
                         for (int j = 0; j < qResults.length; j++) {
+                          print("2");
                           if (j != 0) { break; }
                           else if (i == 0) { continue; }
                           else if (i < 7) {
                             String? qResultString = qResults[j].valueIdentifier;
                             if (qResultString != null) {
-                              if (i == 1) { s1ResultStrings.addAll(qResultString.split(',')); }
-                              else { s2ResultStringsList.add(qResultString.split(',')); }
+                              List<String> qResultStrings = qResultString.split(',');
+                              if (i == 1) { s1ResultStrings.addAll(qResultStrings); }
+                              else { s2ResultStringsList.add(qResultStrings); }
                             }
                           }
                         }
@@ -100,6 +104,8 @@ class _SurveyPageState extends State<SurveyPage> {
                                 case "video": break;
                                 case "other": break;
                               } break;
+                            default:
+                              break;
                           }
                         }
                       }
