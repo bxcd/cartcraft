@@ -238,7 +238,6 @@ class _SurveyPageState extends State<SurveyPage> {
 
   static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
   int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
-  int currentStepIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   static const List<String> areaSteps = [
     'tech',
@@ -291,8 +290,8 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: 'Research', value: 'research'),
               TextChoice(text: 'Usability', value: 'usability'),
+              TextChoice(text: 'Appeal', value: 'appeal'),
               TextChoice(text: 'Conversion', value: 'conversion'),
               TextChoice(text: 'Other', value: 'other'),
             ],
@@ -436,12 +435,6 @@ class _SurveyPageState extends State<SurveyPage> {
         },
       ),
     );
-    // task.addNavigationRule(
-    //   forTriggerStepIdentifier: task.steps[3].stepIdentifier,
-    //   navigationRule: DirectNavigationRule(
-    //       task.steps[0].stepIdentifier
-    //   ),
-    // );
     // Called back the first time Q1 is completed
     task.addNavigationRule(
       forTriggerStepIdentifier: task.steps[1].stepIdentifier,
@@ -469,7 +462,6 @@ class _SurveyPageState extends State<SurveyPage> {
                   areaSteps.indexOf(selections[currentSelectionIndex]);
               return task.steps[nextIndex].stepIdentifier;
             }
-            currentStepIndex = 0;
             currentSelectionIndex = 0;
             return task.steps[12].stepIdentifier;
           },
