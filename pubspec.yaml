@@ -27,7 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  woosignal: ^3.0.5
+  woocommerce: ^0.9.7
   survey_kit: ^0.0.21
   url_launcher: ^6.0.20
   flutter:
