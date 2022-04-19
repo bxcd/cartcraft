@@ -37,6 +37,12 @@ class _NoConnectionPageState extends State<NoConnectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ThemeColor.get(context).background,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text("Code Dart"),
+      ),
       body: SafeAreaWidget(
         child: Center(
           child: Column(
@@ -51,7 +57,7 @@ class _NoConnectionPageState extends State<NoConnectionPage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  trans("Oops, something went wrong"),
+                  trans("Oops, something went wrong\n\nCheck your connection and try again"),
                   style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),
