@@ -7,8 +7,6 @@ import 'package:survey_kit/survey_kit.dart';
 import '../../widgets/survey/custom_completion_step.dart';
 
 class SurveyPage extends StatefulWidget {
-  const SurveyPage({Key key, this.title}) : super(key: key);
-
   // This widget is the survey page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
@@ -17,8 +15,6 @@ class SurveyPage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   _SurveyPageState createState() => _SurveyPageState();
@@ -232,7 +228,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(title: 'Product Design Aspects',
-            text: formatText('product design'),
+          text: formatText('product design'),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -257,8 +253,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-            title: 'Graphic Design Aspects',
-            text: formatText('graphic design'),
+          title: 'Graphic Design Aspects',
+          text: formatText('graphic design'),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -270,8 +266,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-            title: 'Content Production Aspects',
-            text: formatText('content production'),
+          title: 'Content Production Aspects',
+          text: formatText('content production'),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -299,9 +295,9 @@ class _SurveyPageState extends State<SurveyPage> {
           text: 'Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.',
           isOptional: true,
           answerFormat: DateAnswerFormat(
-            minDate: DateTime.utc(1970),
-            defaultDate: DateTime.now(),
-            maxDate: DateTime.now().add(const Duration(days: 365 * 10))
+              minDate: DateTime.utc(1970),
+              defaultDate: DateTime.now(),
+              maxDate: DateTime.now().add(const Duration(days: 365 * 10))
           ),
         ),
         QuestionStep(
@@ -385,13 +381,13 @@ class _SurveyPageState extends State<SurveyPage> {
     task.addNavigationRule(
       forTriggerStepIdentifier: task.steps[1].stepIdentifier,
       navigationRule: ConditionalNavigationRule(
-        resultToStepIdentifierMapper: (input) {
-          if (input != null && input.isNotEmpty) {
-            selections = input.split(',');
-            int nextIndex = 2 + areaSteps.indexOf(selections[0]);
-            return task.steps[nextIndex].stepIdentifier;
-          } return task.steps[7].stepIdentifier;
-        }
+          resultToStepIdentifierMapper: (input) {
+            if (input != null && input.isNotEmpty) {
+              selections = input.split(',');
+              int nextIndex = 2 + areaSteps.indexOf(selections[0]);
+              return task.steps[nextIndex].stepIdentifier;
+            } return task.steps[7].stepIdentifier;
+          }
       ),
     );
     // Called back each time a Q2 is completed until all inputs from Q1 are cleared
