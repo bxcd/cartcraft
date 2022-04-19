@@ -15,6 +15,7 @@ import 'package:flutter_app/resources/pages/leave_review_page.dart';
 import 'package:flutter_app/resources/pages/no_connection_page.dart';
 import 'package:flutter_app/resources/pages/product/product_image_viewer_page.dart';
 import 'package:flutter_app/resources/pages/product/product_reviews_page.dart';
+import 'package:flutter_app/resources/pages/survey/survey_page.dart';
 import 'package:nylo_support/router/router.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -109,4 +110,7 @@ appRouter() => nyRoutes((router) {
 
       router.route("/account-shipping-details",
           (context) => AccountShippingDetailsPage());
-    });
+
+      router.route("/survey",
+            (context) => SurveyPage());
+      });

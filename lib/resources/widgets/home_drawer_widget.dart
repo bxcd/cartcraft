@@ -79,6 +79,18 @@ class _HomeDrawerWidgetState extends State<HomeDrawerWidget> {
                       leading: Icon(Icons.account_circle),
                       onTap: _actionProfile,
                     ),
+
+                    ListTile(
+                      title: Text(
+                        trans("Survey"),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            .copyWith(fontSize: 16),
+                      ),
+                      leading: Icon(Icons.account_circle),
+                      onTap: _actionSurvey,
+                    ),
                   if (widget.wooSignalApp.wishlistEnabled == true)
                     ListTile(
                       title: Text(
@@ -203,6 +215,11 @@ class _HomeDrawerWidgetState extends State<HomeDrawerWidget> {
       return;
     }
     Navigator.pushNamed(context, "/account-detail");
+  }
+
+  _actionSurvey() async {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, "/survey");
   }
 
   _actionWishlist() async {
