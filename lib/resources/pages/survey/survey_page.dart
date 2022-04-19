@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_app/resources/pages/survey/result_page.dart';
+import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
 
 import '../../widgets/survey/custom_completion_step.dart';
@@ -26,6 +27,29 @@ class _SurveyPageState extends State<SurveyPage> {
   @override
   Widget build(BuildContext context) => MaterialApp(
     home: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          trans("Shopping Cart"),
+        ),
+        elevation: 1,
+        actions: <Widget>[
+          InkWell(
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            child: Align(
+              child: Padding(
+                child: Text(
+                  trans("Clear Cart"),
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+                padding: EdgeInsets.only(right: 8),
+              ),
+              alignment: Alignment.centerLeft,
+            ),
+          )
+        ],
+        centerTitle: true,
+      ),
       body: Container(
         color: Colors.black87,
         child: Align(
@@ -63,33 +87,6 @@ class _SurveyPageState extends State<SurveyPage> {
                     'next': 'Next',
                   },
                   themeData: Theme.of(context).copyWith(
-                    colorScheme: ColorScheme.fromSwatch(
-                      primarySwatch: Colors.red,
-                    ).copyWith(
-                      onPrimary: Colors.black87,
-                    ),
-                    primaryColor: Colors.red,
-                    backgroundColor: Colors.white,
-                    appBarTheme: const AppBarTheme(
-                      color: Colors.black26,
-                      iconTheme: IconThemeData(
-                        color: Colors.red,
-                      ),
-                      titleTextStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    iconTheme: const IconThemeData(
-                      color: Colors.red,
-                    ),
-                    textSelectionTheme: const TextSelectionThemeData(
-                      cursorColor: Colors.red,
-                      selectionColor: Colors.red,
-                      selectionHandleColor: Colors.red,
-                    ),
-                    cupertinoOverrideTheme: const CupertinoThemeData(
-                      primaryColor: Colors.red,
-                    ),
                     outlinedButtonTheme: OutlinedButtonThemeData(
                       style: ButtonStyle(
                         minimumSize: MaterialStateProperty.all(
@@ -143,19 +140,19 @@ class _SurveyPageState extends State<SurveyPage> {
                     ),
                     textTheme: const TextTheme(
                       headline2: TextStyle(
-                        fontSize: 27.0,
-                        color: Colors.red,
-                      ),
-                      headline5: TextStyle(
                         fontSize: 21.0,
                         color: Colors.red,
                       ),
-                      bodyText2: TextStyle(
+                      headline5: TextStyle(
                         fontSize: 18.0,
+                        color: Colors.red,
+                      ),
+                      bodyText2: TextStyle(
+                        fontSize: 15.0,
                         color: Colors.black,
                       ),
                       subtitle1: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 15.0,
                         color: Colors.black,
                       ),
                     ),
