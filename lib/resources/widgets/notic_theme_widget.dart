@@ -15,14 +15,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/app/models/bottom_nav_item.dart';
 import 'package:flutter_app/bootstrap/app_helper.dart';
 import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
-import 'package:flutter_app/resources/pages/account_detail.dart';
-import 'package:flutter_app/resources/pages/account_landing.dart';
-import 'package:flutter_app/resources/pages/cart.dart';
-import 'package:flutter_app/resources/pages/wishlist_page_widget.dart';
+import 'package:flutter_app/resources/pages/product/cart.dart';
 import 'package:flutter_app/resources/pages/home_search.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
 import 'package:flutter_app/resources/widgets/notic_home_widget.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
+
+import '../pages/account/account_detail.dart';
+import '../pages/account/account_landing.dart';
+import '../pages/product/wishlist_page_widget.dart';
 
 class NoticThemeWidget extends StatefulWidget {
   NoticThemeWidget(

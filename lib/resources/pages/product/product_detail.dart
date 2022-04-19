@@ -16,10 +16,10 @@ import 'package:flutter_app/bootstrap/enums/wishlist_action_enums.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
 import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/cart_icon_widget.dart';
+import 'package:flutter_app/resources/widgets/product/cart_icon_widget.dart';
 import 'package:flutter_app/resources/widgets/future_build_widget.dart';
-import 'package:flutter_app/resources/widgets/product_detail_body_widget.dart';
-import 'package:flutter_app/resources/widgets/product_detail_footer_actions_widget.dart';
+import 'package:flutter_app/resources/widgets/product/product_detail_body_widget.dart';
+import 'package:flutter_app/resources/widgets/product/product_detail_footer_actions_widget.dart';
 import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/product_variation.dart'

@@ -18,7 +18,7 @@ import 'package:flutter_app/bootstrap/app_helper.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
 import 'package:flutter_app/resources/widgets/cached_image_widget.dart';
-import 'package:flutter_app/resources/widgets/no_results_for_products_widget.dart';
+import 'package:flutter_app/resources/widgets/product/no_results_for_products_widget.dart';
 import 'package:flutter_app/resources/widgets/top_nav_widget.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';

@@ -12,7 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/future_build_widget.dart';
-import 'package:flutter_app/resources/widgets/product_detail_review_tile_widget.dart';
+import 'package:flutter_app/resources/widgets/product/product_detail_review_tile_widget.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/product_review.dart';

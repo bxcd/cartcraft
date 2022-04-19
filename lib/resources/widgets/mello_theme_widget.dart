@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/app/controllers/product_loader_controller.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/cart_icon_widget.dart';
+import 'package:flutter_app/resources/widgets/product/cart_icon_widget.dart';
 import 'package:flutter_app/resources/widgets/home_drawer_widget.dart';
 import 'package:flutter_app/resources/widgets/safearea_widget.dart';
 import 'package:flutter_app/resources/widgets/woosignal_ui.dart';

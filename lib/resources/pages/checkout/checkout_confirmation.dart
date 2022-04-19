@@ -17,17 +17,18 @@ import 'package:flutter_app/bootstrap/app_helper.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
 import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/checkout_coupon_amount_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_payment_type_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_select_coupon_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_shipping_type_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_store_heading_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_user_details_widget.dart';
+import 'package:flutter_app/resources/widgets/checkout/checkout_coupon_amount_widget.dart';
+import 'package:flutter_app/resources/widgets/checkout/checkout_payment_type_widget.dart';
+import 'package:flutter_app/resources/widgets/checkout/checkout_select_coupon_widget.dart';
+import 'package:flutter_app/resources/widgets/checkout/checkout_shipping_type_widget.dart';
+import 'package:flutter_app/resources/widgets/checkout/checkout_user_details_widget.dart';
 import 'package:flutter_app/resources/widgets/safearea_widget.dart';
 import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
+
+import '../../widgets/checkout/checkout_store_heading_widget.dart';
 
 class CheckoutConfirmationPage extends StatefulWidget {
   CheckoutConfirmationPage({Key key}) : super(key: key);

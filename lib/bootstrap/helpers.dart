@@ -24,7 +24,7 @@ import 'package:flutter_app/config/app_currency.dart';
 import 'package:flutter_app/config/app_payment_gateways.dart';
 import 'package:flutter_app/config/app_theme.dart';
 import 'package:flutter_app/resources/themes/styles/base_styles.dart';
-import 'package:flutter_app/resources/widgets/no_results_for_products_widget.dart';
+import 'package:flutter_app/resources/widgets/product/no_results_for_products_widget.dart';
 import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:intl/intl.dart';

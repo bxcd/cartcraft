@@ -12,15 +12,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app/controllers/product_reviews_loader_controller.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/no_results_for_products_widget.dart';
-import 'package:flutter_app/resources/widgets/product_review_item_container_widget.dart';
+import 'package:flutter_app/resources/widgets/product/no_results_for_products_widget.dart';
+import 'package:flutter_app/resources/widgets/product/product_review_item_container_widget.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:woosignal/models/response/product_review.dart';
 import 'package:woosignal/models/response/products.dart';
-import '../../app/controllers/product_reviews_controller.dart';
+import '../../../app/controllers/product_reviews_controller.dart';
 
 class ProductReviewsPage extends NyStatefulWidget {
   final ProductReviewsController controller = ProductReviewsController();

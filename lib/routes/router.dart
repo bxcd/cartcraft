@@ -1,31 +1,32 @@
-import 'package:flutter_app/resources/pages/account_billing_details.dart';
-import 'package:flutter_app/resources/pages/account_detail.dart';
-import 'package:flutter_app/resources/pages/account_landing.dart';
-import 'package:flutter_app/resources/pages/account_order_detail.dart';
-import 'package:flutter_app/resources/pages/account_profile_update.dart';
-import 'package:flutter_app/resources/pages/account_register.dart';
-import 'package:flutter_app/resources/pages/account_shipping_details.dart';
-import 'package:flutter_app/resources/pages/browse_category.dart';
-import 'package:flutter_app/resources/pages/browse_search.dart';
-import 'package:flutter_app/resources/pages/cart.dart';
-import 'package:flutter_app/resources/pages/checkout_confirmation.dart';
-import 'package:flutter_app/resources/pages/checkout_details.dart';
-import 'package:flutter_app/resources/pages/checkout_payment_type.dart';
-import 'package:flutter_app/resources/pages/checkout_shipping_type.dart';
-import 'package:flutter_app/resources/pages/checkout_status.dart';
-import 'package:flutter_app/resources/pages/coupon_page.dart';
+import 'package:flutter_app/resources/pages/account/account_billing_details.dart';
+import 'package:flutter_app/resources/pages/account/account_order_detail.dart';
+import 'package:flutter_app/resources/pages/account/account_profile_update.dart';
+import 'package:flutter_app/resources/pages/account/account_register.dart';
+import 'package:flutter_app/resources/pages/product/browse_category.dart';
+import 'package:flutter_app/resources/pages/product/browse_search.dart';
+import 'package:flutter_app/resources/pages/product/cart.dart';
+import 'package:flutter_app/resources/pages/checkout/checkout_confirmation.dart';
+import 'package:flutter_app/resources/pages/checkout/checkout_details.dart';
+import 'package:flutter_app/resources/pages/checkout/checkout_status.dart';
 import 'package:flutter_app/resources/pages/customer_countries.dart';
 import 'package:flutter_app/resources/pages/home.dart';
 import 'package:flutter_app/resources/pages/home_search.dart';
 import 'package:flutter_app/resources/pages/leave_review_page.dart';
 import 'package:flutter_app/resources/pages/no_connection_page.dart';
-import 'package:flutter_app/resources/pages/product_detail.dart';
-import 'package:flutter_app/resources/pages/product_image_viewer_page.dart';
-import 'package:flutter_app/resources/pages/product_reviews_page.dart';
-import 'package:flutter_app/resources/pages/wishlist_page_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout_paypal.dart';
+import 'package:flutter_app/resources/pages/product/product_image_viewer_page.dart';
+import 'package:flutter_app/resources/pages/product/product_reviews_page.dart';
 import 'package:nylo_support/router/router.dart';
 import 'package:page_transition/page_transition.dart';
+
+import '../resources/pages/account/account_detail.dart';
+import '../resources/pages/account/account_landing.dart';
+import '../resources/pages/account/account_shipping_details.dart';
+import '../resources/pages/checkout/checkout_payment_type.dart';
+import '../resources/pages/checkout/checkout_shipping_type.dart';
+import '../resources/pages/product/coupon_page.dart';
+import '../resources/pages/product/product_detail.dart';
+import '../resources/pages/product/wishlist_page_widget.dart';
+import '../resources/widgets/checkout/checkout_paypal.dart';
 
 /*
 |--------------------------------------------------------------------------
