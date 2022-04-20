@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
 
@@ -61,6 +62,10 @@ class _SurveyPageState extends State<SurveyPage> {
                   'next': 'Next',
                 },
                 themeData: Theme.of(context).copyWith(
+                  colorScheme: ColorScheme.fromSwatch(
+                    primarySwatch: Colors.red,
+                    brightness: Theme.of(context).brightness,
+                  ),
                   primaryColor: Colors.red,
                   outlinedButtonTheme: OutlinedButtonThemeData(
                     style: ButtonStyle(
