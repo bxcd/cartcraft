@@ -29,6 +29,13 @@ class ResultPage extends StatefulWidget {
 //  3. When getRecommendations() is complete,
 //    a. Display recommendations on result page, and/or
 //    b. Provide link to add to and navigate to cart
+//  Considerations:
+//  * To add to cart, need SKU with options selected
+//  * To list product, need SKU (with or without options selected)
+//  * To select options, need service speed and cost survey responses
+//  * If survey questions are optional, adding to cart is conditional
+//  * If adding to cart is conditional, value of feature is limited 
+
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
