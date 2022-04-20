@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/resources/widgets/survey/custom_text_answer_format.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
@@ -260,7 +261,7 @@ class _SurveyPageState extends State<SurveyPage> {
           text:
           'What other aspects of your project are important and how can they be addressed or improved?',
           isOptional: true,
-          answerFormat: const TextAnswerFormat(
+          answerFormat: const CustomTextAnswerFormat(
             maxLines: 20,
           ),
         ),
@@ -269,7 +270,7 @@ class _SurveyPageState extends State<SurveyPage> {
           text:
           'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',
           isOptional: true,
-          answerFormat: const TextAnswerFormat(
+          answerFormat: const CustomTextAnswerFormat(
             maxLines: 1,
           ),
         ),
