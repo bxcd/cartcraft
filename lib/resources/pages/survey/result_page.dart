@@ -23,7 +23,12 @@ class ResultPage extends StatefulWidget {
   State<ResultPage> createState() => _ResultPageState();
 }
 
-// List recommended products and/or add to cart
+// TODO: Display recommendations
+//  1. Get List<Product> containing all products
+//  2. In getRecommendations(), add product from List<Product> to recommendations
+//  3. When getRecommendations() is complete,
+//    a. Display recommendations on result page, and/or
+//    b. Provide link to add to and navigate to cart
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
