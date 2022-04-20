@@ -23,6 +23,11 @@ b.  Optionally send a message to Code Dart with your recommendations to initiate
     * Until implementation is complete, stub with Intent to launch product webpage
 * Step 7b: ShareCompat
 
+## Attributions
+
+This app uses Label StoreMax. 
+* Created by Anthony Gordon
+* Copyright 2022, WooSignal Ltd. All rights reserved.
 
 ## Releases
 
