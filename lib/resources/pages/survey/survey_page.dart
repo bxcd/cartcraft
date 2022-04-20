@@ -67,6 +67,7 @@ class _SurveyPageState extends State<SurveyPage> {
                     primarySwatch: Colors.red,
                     brightness: Theme.of(context).brightness,
                   ),
+                  hintColor: Theme.of(context).backgroundColor,
                   primaryColor: Colors.red.shade500,
                   appBarTheme: AppBarTheme(
                       backgroundColor: Theme.of(context).backgroundColor,
