@@ -112,29 +112,6 @@ class _SurveyPageState extends State<SurveyPage> {
                       ),
                     ),
                   ),
-                  textTheme: const TextTheme(
-                    headline2: TextStyle(
-                      fontSize: 21.0,
-                      color: Colors.red,
-                    ),
-                    headline5: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.red,
-                    ),
-                    bodyText2: TextStyle(
-                      fontSize: 15.0,
-                      color: Colors.black,
-                    ),
-                    subtitle1: TextStyle(
-                      fontSize: 15.0,
-                      color: Colors.black,
-                    ),
-                  ),
-                  inputDecorationTheme: const InputDecorationTheme(
-                    labelStyle: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
                 surveyProgressbarConfiguration: SurveyProgressConfiguration(
                   backgroundColor: Colors.red,
