@@ -92,7 +92,7 @@ class _CustomTextAnswerViewState extends State<CustomTextAnswerView> {
               decoration: textFieldInputDecoration(
                 hint: _textAnswerFormat.hint,
               ),
-              minLines: 3,
+              minLines: 1,
               maxLines: _textAnswerFormat.maxLines,
               controller: _controller,
               style: TextStyle(
