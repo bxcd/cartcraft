@@ -23,6 +23,7 @@ class ResultPage extends StatefulWidget {
   State<ResultPage> createState() => _ResultPageState();
 }
 
+// List recommended products and/or add to cart
 class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
