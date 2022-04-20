@@ -20,7 +20,6 @@ b.  Optionally send a message to Code Dart with your recommendations to initiate
 
 * Steps 1-6: [Survey Kit](https://pub.dev/packages/survey_kit)
 * Step 7a: Commerce API e.g. [WooSignal](https://woosignal.com)
-    * Until implementation is complete, stub with Intent to launch product webpage
 * Step 7b: ShareCompat
 
 ## Attributions
@@ -28,6 +27,10 @@ b.  Optionally send a message to Code Dart with your recommendations to initiate
 This app uses Label StoreMax. 
 * Created by Anthony Gordon
 * Copyright 2022, WooSignal Ltd. All rights reserved.
+
+This app uses Survey Kit.
+* Created by Quickbird Studios
+* Copyright 2022, Quickbird Studios GmbH. All rights reserved.
 
 ## Releases
 
