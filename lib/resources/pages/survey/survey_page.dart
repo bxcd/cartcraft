@@ -72,6 +72,9 @@ class _SurveyPageState extends State<SurveyPage> {
                   appBarTheme: AppBarTheme(
                       backgroundColor: Theme.of(context).backgroundColor,
                       elevation: 0,
+                      iconTheme: IconThemeData(
+                        color: Colors.red,
+                    ),
                   ),
                   outlinedButtonTheme: OutlinedButtonThemeData(
                     style: ButtonStyle(
