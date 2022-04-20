@@ -21,6 +21,7 @@ class CustomTextAnswerFormat implements TextAnswerFormat {
 
   factory CustomTextAnswerFormat.fromJson(Map<String, dynamic> json) =>
       _$CustomTextAnswerFormatFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CustomTextAnswerFormatToJson(this);
 }
 
