@@ -264,6 +264,7 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const CustomTextAnswerFormat(
             maxLines: 20,
+            height: 200,
           ),
         ),
         CustomQuestionStep(

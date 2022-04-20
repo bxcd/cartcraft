@@ -5,6 +5,7 @@ import 'package:survey_kit/survey_kit.dart';
 @JsonSerializable()
 class CustomTextAnswerFormat implements TextAnswerFormat {
   final int maxLines;
+  final double height;
   @JsonKey(defaultValue: '')
   final String hint;
 
@@ -15,6 +16,7 @@ class CustomTextAnswerFormat implements TextAnswerFormat {
   const CustomTextAnswerFormat({
     this.maxLines,
     this.hint = '',
+    this.height = 50,
     this.validationRegEx,
   }) : super();
 
@@ -27,6 +29,7 @@ CustomTextAnswerFormat _$CustomTextAnswerFormatFromJson(Map<String, dynamic> jso
   return CustomTextAnswerFormat(
     maxLines: json['maxLines'] as int,
     hint: json['hint'] as String ?? '',
+    height: json['height'] as double,
     validationRegEx: json['validationRegEx'] as String,
   );
 }
@@ -35,5 +38,6 @@ Map<String, dynamic> _$CustomTextAnswerFormatToJson(CustomTextAnswerFormat insta
     <String, dynamic>{
       'maxLines': instance.maxLines,
       'hint': instance.hint,
+      'height': instance.height,
       'validationRegEx': instance.validationRegEx,
     };

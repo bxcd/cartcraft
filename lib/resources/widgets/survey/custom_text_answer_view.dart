@@ -86,7 +86,7 @@ class _CustomTextAnswerViewState extends State<CustomTextAnswerView> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 50.0,
+            height: _textAnswerFormat.height,
             color: Theme.of(context).textTheme.bodyText1.color,
             child: TextField(
               decoration: textFieldInputDecoration(
