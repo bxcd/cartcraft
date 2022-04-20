@@ -161,9 +161,9 @@ class _SurveyPageState extends State<SurveyPage> {
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
+              TextChoice(text: 'Logistics', value: 'logistics'),
               TextChoice(text: 'Usability', value: 'usability'),
               TextChoice(text: 'Appeal', value: 'appeal'),
-              TextChoice(text: 'Conversion', value: 'conversion'),
               TextChoice(text: 'Other', value: 'other'),
             ],
           ),
@@ -175,8 +175,8 @@ class _SurveyPageState extends State<SurveyPage> {
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: 'Performance', value: 'performance'),
-              TextChoice(text: 'Continuity', value: 'continuity'),
-              TextChoice(text: 'Integration', value: 'integration'),
+              TextChoice(text: 'Conversion', value: 'conversion'),
+              TextChoice(text: 'Branding', value: 'branding'),
               TextChoice(text: 'Other', value: 'other'),
             ],
           ),

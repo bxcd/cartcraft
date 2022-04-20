@@ -78,16 +78,16 @@ List<String> getRecommendations(SurveyResult r) {
           } break;
         case "product":
           switch (s2ResultString) {
+            case "logistics": break;
             case "usability": break;
             case "appeal": break;
-            case "conversion": break;
             case "other": break;
           } break;
         case "business":
           switch (s2ResultString) {
             case "performance": break;
-            case "continuity": break;
-            case "integration": break;
+            case "conversion": break;
+            case "branding": break;
             case "other": break;
           } break;
         case "graphics":
