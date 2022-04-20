@@ -6,6 +6,7 @@ import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
 
 import '../../widgets/survey/custom_completion_step.dart';
+import '../../widgets/survey/custom_question_step.dart';
 import '../survey/result_page.dart';
 
 class SurveyPage extends StatefulWidget {
@@ -256,7 +257,7 @@ class _SurveyPageState extends State<SurveyPage> {
             maximumValueDescription: 'Speed',
           ),
         ),
-        QuestionStep(
+        CustomQuestionStep(
           title: 'Additional Details',
           text:
           'What other aspects of your project are important and how can they be addressed or improved?',
@@ -265,7 +266,7 @@ class _SurveyPageState extends State<SurveyPage> {
             maxLines: 20,
           ),
         ),
-        QuestionStep(
+        CustomQuestionStep(
           title: 'Contact address',
           text:
           'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',

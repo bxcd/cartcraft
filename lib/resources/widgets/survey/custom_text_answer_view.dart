@@ -94,7 +94,6 @@ class _CustomTextAnswerViewState extends State<CustomTextAnswerView> {
               ),
               minLines: 3,
               maxLines: _textAnswerFormat.maxLines,
-              expands: true,
               controller: _controller,
               style: TextStyle(
                 color: Theme.of(context).backgroundColor,
