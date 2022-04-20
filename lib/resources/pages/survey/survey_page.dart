@@ -264,14 +264,16 @@ class _SurveyPageState extends State<SurveyPage> {
           answerFormat: const CustomTextAnswerFormat(
             maxLines: 20,
             height: 200,
+            hint: 'Type your comments here...'
           ),
         ),
         CustomQuestionStep(
-          title: 'Contact address',
+          title: 'Email address',
           text:
           'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',
           isOptional: true,
           answerFormat: const CustomTextAnswerFormat(
+            hint: 'your@email.address',
             maxLines: 1,
           ),
         ),
