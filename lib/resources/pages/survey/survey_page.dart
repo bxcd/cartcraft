@@ -66,40 +66,10 @@ class _SurveyPageState extends State<SurveyPage> {
                       minimumSize: MaterialStateProperty.all(
                         const Size(150.0, 60.0),
                       ),
-                      side: MaterialStateProperty.resolveWith(
-                            (Set<MaterialState> state) {
-                          if (state.contains(MaterialState.disabled)) {
-                            return const BorderSide(
-                              color: Colors.white,
-                            );
-                          }
-                          return const BorderSide(
-                            color: Colors.red,
-                          );
-                        },
-                      ),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                      ),
-                      textStyle: MaterialStateProperty.resolveWith(
-                            (Set<MaterialState> state) {
-                          if (state.contains(MaterialState.disabled)) {
-                            return Theme.of(context)
-                                .textTheme
-                                .button
-                                ?.copyWith(
-                              color: Colors.white,
-                            );
-                          }
-                          return Theme.of(context)
-                              .textTheme
-                              .button
-                              ?.copyWith(
-                            color: Colors.red,
-                          );
-                        },
                       ),
                     ),
                   ),
