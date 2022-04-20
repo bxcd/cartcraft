@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:survey_kit/src/answer_format/answer_format.dart';
 import 'package:survey_kit/survey_kit.dart';
 
 @JsonSerializable()
