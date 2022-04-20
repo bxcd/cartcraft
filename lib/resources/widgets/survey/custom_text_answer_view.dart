@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:survey_kit/src/views/decoration/input_decoration.dart';
 import 'package:survey_kit/src/result/question/text_question_result.dart';
 import 'package:survey_kit/src/steps/predefined_steps/question_step.dart';
@@ -85,12 +86,15 @@ class _CustomTextAnswerViewState extends State<CustomTextAnswerView> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 500.0,
+            height: 50.0,
             color: Theme.of(context).textTheme.bodyText1.color,
             child: TextField(
               decoration: textFieldInputDecoration(
                 hint: _textAnswerFormat.hint,
               ),
+              minLines: 3,
+              maxLines: _textAnswerFormat.maxLines,
+              expands: true,
               controller: _controller,
               style: TextStyle(
                 color: Theme.of(context).backgroundColor,
