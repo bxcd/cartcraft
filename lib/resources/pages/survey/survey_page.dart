@@ -61,6 +61,7 @@ class _SurveyPageState extends State<SurveyPage> {
                   'next': 'Next',
                 },
                 themeData: Theme.of(context).copyWith(
+                  primaryColor: Colors.red,
                   outlinedButtonTheme: OutlinedButtonThemeData(
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all(
@@ -111,8 +112,8 @@ class _SurveyPageState extends State<SurveyPage> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: 'Service Matcher',
-          text: 'Get service recommendations from Code Dart\nby submitting a brief form.\n\nAll responses are optional\nand your information is kept anonymous.',
+          title: '',
+          text: 'Get service recommendations from Code Dart\nby submitting a brief form.\n\n\n\nAll responses are optional\nand your information is kept anonymous.\n\n',
           buttonText: 'Start',
         ),
         QuestionStep(
