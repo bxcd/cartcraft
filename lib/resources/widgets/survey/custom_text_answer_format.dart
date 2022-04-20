@@ -3,14 +3,14 @@ import 'package:survey_kit/survey_kit.dart';
 
 @JsonSerializable()
 class CustomTextAnswerFormat implements TextAnswerFormat {
-  final int maxLines;
   final double height;
+  @override final int maxLines;
   @JsonKey(defaultValue: '')
-  final String hint;
+  @override final String hint;
 
   /// Regular expression by which the text gets validated
   ///  e.g '^(?!\s*$).+' checks if the entered text is empty
-  final String validationRegEx;
+  @override final String validationRegEx;
 
   const CustomTextAnswerFormat({
     this.maxLines,
