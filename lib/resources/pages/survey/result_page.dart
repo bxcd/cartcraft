@@ -1,195 +1,249 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:survey_kit/survey_kit.dart';
+import 'package:flutter_app/app/controllers/product_loader_controller.dart';
+import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
+import 'package:flutter_app/resources/widgets/cached_image_widget.dart';
+import 'package:flutter_app/resources/widgets/home_drawer_widget.dart';
+import 'package:flutter_app/resources/widgets/product/no_results_for_products_widget.dart';
+import 'package:flutter_app/resources/widgets/safearea_widget.dart';
+import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:nylo_support/helpers/helper.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:woosignal/models/response/woosignal_app.dart';
+import 'package:woosignal/models/response/product_category.dart' as ws_category;
 import 'package:woosignal/models/response/products.dart' as ws_product;
 
-import '../../../app/controllers/product_loader_controller.dart';
-import '../../../bootstrap/helpers.dart';
-
 class ResultPage extends StatefulWidget {
-  ResultPage({Key key, this.title, this.result}) :
-        super(key: key);
+  ResultPage({Key key, @required this.wooSignalApp}) : super(key: key);
 
-  // This widget is the result page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-  final SurveyResult result;
-  final ProductLoaderController _productLoaderController =
-  ProductLoaderController();
+  final WooSignalApp wooSignalApp;
 
   @override
-  State<ResultPage> createState() => _ResultPageState();
+  _ResultPageState createState() => _ResultPageState();
 }
 
-// TODO: Display recommendations
-//  1. Get List<Product> containing all products
-//  2. In getRecommendations(), add product from List<Product> to recommendations
-//  3. When getRecommendations() is complete,
-//    a. Display recommendations on result page, and/or
-//    b. Provide link to add to and navigate to cart
-//
-//  Considerations:
-//  * To add to cart, need SKU with options selected
-//  * To list product, need SKU (with or without options selected)
-//  * To select options, need service speed and cost survey responses
-//  * If survey questions are optional, adding to cart is conditional
-//  * If adding to cart is conditional, value of feature is limited
-//    * not only to its advantage over alternatives, but also
-//    * to its accessibility, with low confidence on meeting required condition
-//  * User can also add to cart from product detail page
-//
-//  Preferred Approach:
-//  2. continued ...factoring in service speed and cost where applicable
-//  3. a. only
-
 class _ResultPageState extends State<ResultPage> {
+  Widget activeWidget;
+  final RefreshController _refreshController =
+  RefreshController(initialRefresh: false);
+
+  final ProductLoaderController _productLoaderController =
+  ProductLoaderController();
+  List<ws_category.ProductCategory> _categories = [];
+
+  bool _shouldStopRequests = false, _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _home();
+  }
+
+  _home() async {
+    await fetchProducts();
+    await _fetchCategories();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  _fetchCategories() async {
+    _categories =
+    await appWooSignal((api) => api.getProductCategories(perPage: 100));
+  }
+
+  _modalBottomSheetMenu() {
+    wsModalBottom(
+      context,
+      title: trans("Categories"),
+      bodyWidget: ListView.separated(
+        itemCount: _categories.length,
+        separatorBuilder: (cxt, i) => Divider(),
+        itemBuilder: (BuildContext context, int index) => ListTile(
+          title: Text(parseHtmlString(_categories[index].name)),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, "/browse-category",
+                arguments: _categories[index])
+                .then((value) => setState(() {}));
+          },
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<ws_product.Product> products = widget._productLoaderController.getResults();
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-
-    void _navigateToHomePage() {
-      setState(() {
-        // This call to setState tells the Flutter framework that something has
-        // changed in this State, which causes it to rerun the build method below
-        // so that the display can reflect the updated values. If we changed
-        // _counter without calling setState(), then the build method would not be
-        // called again, and so nothing would appear to happen.
-        // Navigator.of(context).pop();
-        // Navigator.of(context).push(MaterialPageRoute(
-        //     builder: (context) => HomePage(title: 'Code Dart')));
-      });
-    }
-
+    List<ws_product.Product> products = _productLoaderController.getResults();
     return Scaffold(
-      backgroundColor: Colors.white,
-
+      drawer: HomeDrawerWidget(wooSignalApp: widget.wooSignalApp),
       appBar: AppBar(
-        backgroundColor: Colors.black87,
-        // Here we take the value from the MyResultPage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: OrientationBuilder(
-      builder: (context, orientation) =>
-        Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: SingleChildScrollView(
-            child: Column(
-              // Column is also a layout widget. It takes a list of children and
-              // arranges them vertically. By default, it sizes itself to fit its
-              // children horizontally, and tries to be as tall as its parent.
-              //
-              // Invoke "debug painting" (press "p" in the console, choose the
-              // "Toggle Debug Paint" action from the Flutter Inspector in Android
-              // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-              // to see the wireframe for each widget.
-              //
-              // Column has various properties to control how it sizes itself and
-              // how it positions its children. Here we use mainAxisAlignment to
-              // center the children vertically; the main axis here is the vertical
-              // axis because Columns are vertical (the cross axis would be
-              // horizontal).
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+        title: StoreLogo(height: 55),
+        centerTitle: true,
+        actions: [
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(right: 8),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: _modalBottomSheetMenu,
+                child: Text(
+                  trans("Categories"),
+                  style: Theme.of(context).textTheme.bodyText2,
                 ),
-                Container(
-                  child: Image.asset(
-                    'assets/codedart-icon.png',
-                    height: 175.0,
-                    fit: BoxFit.none,
-                  ),
-                ),
-                const Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                ),
-                Text(
-                  'Your recommendations:\n',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                Text(
-                  getRecommendations(widget.result).toString(),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                const Padding(
-                   padding: const EdgeInsets.symmetric(vertical: 24.0),
-                ),
-                OutlinedButton(
-                  style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all(
-                      const Size(150.0, 60.0),
-                    ),
-                    side: MaterialStateProperty.resolveWith(
-                          (Set<MaterialState> state) {
-                        if (state.contains(MaterialState.disabled)) {
-                          return const BorderSide(
-                            color: Colors.white,
-                          );
-                        }
-                        return const BorderSide(
-                          color: Colors.red,
-                        );
-                      },
-                    ),
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    textStyle: MaterialStateProperty.resolveWith(
-                          (Set<MaterialState> state) {
-                        if (state.contains(MaterialState.disabled)) {
-                          return Theme.of(context)
-                              .textTheme
-                              .button
-                              ?.copyWith(
-                            color: Colors.red,
-                          );
-                        }
-                        return Theme.of(context)
-                            .textTheme
-                            .button
-                            ?.copyWith(
-                          color: Colors.red,
-                        );
-                      },
-                    ),
-                  ),
-                  // onPressed:  _navigateToHomePage,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 150,
-                    child: const Text(
-                      'HOME',
-                      style: TextStyle(
-                        color: Colors.red,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
+        ],
+      ),
+      body: SafeAreaWidget(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            (_isLoading
+                ? Expanded(child: AppLoaderWidget())
+                : Expanded(
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child: Swiper(
+                      itemBuilder: (BuildContext context, int index) {
+                        return CachedImageWidget(
+                          image: widget.wooSignalApp.bannerImages[index],
+                          fit: BoxFit.cover,
+                        );
+                      },
+                      itemCount: widget.wooSignalApp.bannerImages.length,
+                      viewportFraction: 0.8,
+                      scale: 0.9,
+                    ),
+                    height: MediaQuery.of(context).size.height / 2.5,
+                  ),
+                  Container(
+                    height: 100,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(trans("Must have")),
+                        Flexible(
+                          child: Text(
+                            trans("Our selection of new items"),
+                            style: Theme.of(context).textTheme.headline4,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 250,
+                    child: SmartRefresher(
+                      enablePullDown: true,
+                      enablePullUp: true,
+                      footer: CustomFooter(
+                        builder: (BuildContext context, LoadStatus mode) {
+                          Widget body;
+                          if (mode == LoadStatus.idle) {
+                            body = Text(trans("pull up load"));
+                          } else if (mode == LoadStatus.loading) {
+                            body = CupertinoActivityIndicator();
+                          } else if (mode == LoadStatus.failed) {
+                            body =
+                                Text(trans("Load Failed! Click retry!"));
+                          } else if (mode == LoadStatus.canLoading) {
+                            body = Text(trans("release to load more"));
+                          } else {
+                            return SizedBox.shrink();
+                          }
+                          return Container(
+                            height: 55.0,
+                            child: Center(child: body),
+                          );
+                        },
+                      ),
+                      controller: _refreshController,
+                      onRefresh: _onRefresh,
+                      onLoading: _onLoading,
+                      child:
+                      (products.length != null && products.isNotEmpty
+                          ? StaggeredGridView.countBuilder(
+                        crossAxisCount: 2,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: products.length,
+                        itemBuilder:
+                            (BuildContext context, int index) {
+                          return Container(
+                            height: 250,
+                            child: ProductItemContainer(
+                              product: products[index],
+                              onTap: _showProduct,
+                            ),
+                          );
+                        },
+                        staggeredTileBuilder: (int index) {
+                          return StaggeredTile.fit(2);
+                        },
+                        mainAxisSpacing: 4.0,
+                        crossAxisSpacing: 4.0,
+                      )
+                          : NoResultsForProductsWidget()),
+                    ),
+                  )
+                ],
+              ),
+              flex: 1,
+            )),
+          ],
         ),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  _onRefresh() async {
+    _productLoaderController.clear();
+    await fetchProducts();
+
+    setState(() {
+      _shouldStopRequests = false;
+      _refreshController.refreshCompleted(resetFooterState: true);
+    });
+  }
+
+  _onLoading() async {
+    await fetchProducts();
+
+    if (mounted) {
+      setState(() {});
+      if (_shouldStopRequests) {
+        _refreshController.loadNoData();
+      } else {
+        _refreshController.loadComplete();
+      }
+    }
+  }
+
+  Future fetchProducts() async {
+    await _productLoaderController.loadProducts(
+        hasResults: (result) {
+          if (result == false) {
+            setState(() {
+              _shouldStopRequests = true;
+            });
+            return false;
+          }
+          return true;
+        },
+        didFinish: () => setState(() {}));
+  }
+
+  _showProduct(ws_product.Product product) =>
+      Navigator.pushNamed(context, "/product-detail", arguments: product);
 }
