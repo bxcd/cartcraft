@@ -39,12 +39,12 @@ import 'package:platform_alert_dialog/platform_alert_dialog.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:status_alert/status_alert.dart';
 import 'package:survey_kit/survey_kit.dart';
-import 'package:woosignal/models/response/products.dart';
 import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
+import 'package:woosignal/models/response/products.dart' as ws_product;
 
 
-List<Product> getRecommendations(SurveyResult r, List<Product> p) {
+List<ws_product.Product> getRecommendations(SurveyResult r, List<ws_product.Product> p) {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
   List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
@@ -64,8 +64,8 @@ List<Product> getRecommendations(SurveyResult r, List<Product> p) {
       }
     }
   }
-  List<Product> products;
-  List<Product> recommendations;
+  List<ws_product.Product> products;
+  List<ws_product.Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
     for (int j = 0; j < s2ResultStringsList[i].length; j++) {
