@@ -77,6 +77,10 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   //  speedOverSavings offset this percent adjustment positively for one value
   //  and negatively for the other. The combination of adjustments is the
   //  minimum required to satisfy both response values.
+
+  // Alternative: Focus on one consistent implementation without input from
+  //  second part of the survey. Second part of survey is for providing a basis
+  //  and context for follow-up client discussions where options can be explored
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
@@ -186,6 +190,8 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
       }
     }
   }
+  // TODO:
+  //
   return recommendations;
 }
 
