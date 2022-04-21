@@ -13,14 +13,17 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:nylo_support/helpers/helper.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:survey_kit/survey_kit.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
 import 'package:woosignal/models/response/product_category.dart' as ws_category;
 import 'package:woosignal/models/response/products.dart' as ws_product;
 
 class ResultPage extends StatefulWidget {
-  ResultPage({Key key}) : super(key: key);
+  ResultPage({Key key, this.result}) : super(key: key);
+
 
   final WooSignalApp wooSignalApp = AppHelper.instance.appConfig;
+  final SurveyResult result;
 
   @override
   _ResultPageState createState() => _ResultPageState();
@@ -79,6 +82,7 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     List<ws_product.Product> products = _productLoaderController.getResults();
+    List<ws_product.Product> recommendations = getRecommendations(widget.result, products);
     return Scaffold(
       drawer: HomeDrawerWidget(wooSignalApp: widget.wooSignalApp),
       appBar: AppBar(
@@ -174,17 +178,17 @@ class _ResultPageState extends State<ResultPage> {
                       onRefresh: _onRefresh,
                       onLoading: _onLoading,
                       child:
-                      (products.length != null && products.isNotEmpty
+                      (recommendations.length != null && recommendations.isNotEmpty
                           ? StaggeredGridView.countBuilder(
                         crossAxisCount: 2,
                         scrollDirection: Axis.horizontal,
-                        itemCount: products.length,
+                        itemCount: recommendations.length,
                         itemBuilder:
                             (BuildContext context, int index) {
                           return Container(
                             height: 250,
                             child: ProductItemContainer(
-                              product: products[index],
+                              product: recommendations[index],
                               onTap: _showProduct,
                             ),
                           );
