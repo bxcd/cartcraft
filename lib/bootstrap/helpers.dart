@@ -81,7 +81,7 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   // Alternative: Focus on one consistent implementation without input from
   //  second part of the survey. Second part of survey is for providing a basis
   //  and context for follow-up client discussions where options can be explored
-  List<Product> recommendations;
+  List<Product> recommendations = List.empty(growable: true);
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
     for (int j = 0; j < s2ResultStringsList[i].length; j++) {

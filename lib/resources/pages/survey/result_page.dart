@@ -64,7 +64,7 @@ class _ResultPageState extends State<ResultPage> {
       context,
       title: trans("Categories"),
       bodyWidget: ListView.separated(
-        itemCount: _categories.length,
+        itemCount: _categories.length ,
         separatorBuilder: (cxt, i) => Divider(),
         itemBuilder: (BuildContext context, int index) => ListTile(
           title: Text(parseHtmlString(_categories[index].name)),
