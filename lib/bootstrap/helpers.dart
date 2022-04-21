@@ -95,13 +95,11 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
               recommendations.add(p);
               break;
             case "software":
-              if (daysRemaining > 30) daysRemaining = 30;
               String sku = "TEC-APP-PKG";
               Product p = getProductFromList(pList, sku);
               recommendations.add(p);
               break;
             case "website":
-              if (daysRemaining > 21) daysRemaining = 21;
               String sku = "TEC-WEB-PKG";
               Product p = getProductFromList(pList, sku);
               recommendations.add(p);
@@ -152,7 +150,6 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
         case "graphics":
           switch (s2ResultString) {
             case "logo":
-              if (daysRemaining > 3) daysRemaining = 3;
               Product p = getProductFromList(pList, "GFX-LOG-PKG");
               recommendations.add(p);
               break;
@@ -161,7 +158,6 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
               recommendations.add(p);
               break;
             case "collateral":
-              if (daysRemaining > 3) daysRemaining = 21;
               Product p1 = getProductFromList(pList, "GFX-BCD-PKG");
               Product p2 = getProductFromList(pList, "GFX-ALL-SVC");
               recommendations.add(p1);
@@ -190,8 +186,6 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
       }
     }
   }
-  // TODO:
-  //
   return recommendations;
 }
 
