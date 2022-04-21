@@ -70,6 +70,9 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   int speedOverSavings;
   // TODO: Determine if speed goal can be met under cost goal
   //  if not, use speedOverSavings to adjust daysRemaining and speedOverSavings
+  //  e.g. cannot meet speed and cost goals together, speedOverSavings == 1,
+  //    add to daysRemaining and subtract from costPerProject until goals met
+  //    with adjustment magnitudes depending on the degree of speedOverSavings
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
