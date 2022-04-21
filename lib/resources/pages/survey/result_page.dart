@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:survey_kit/survey_kit.dart';
+import 'package:woosignal/models/response/products.dart' as ws_product;
 
+import '../../../app/controllers/product_loader_controller.dart';
 import '../../../bootstrap/helpers.dart';
 
 class ResultPage extends StatefulWidget {
-  const ResultPage({Key key, this.title, this.result}) :
+  ResultPage({Key key, this.title, this.result}) :
         super(key: key);
 
   // This widget is the result page of your application. It is stateful, meaning
@@ -18,6 +20,8 @@ class ResultPage extends StatefulWidget {
 
   final String title;
   final SurveyResult result;
+  final ProductLoaderController _productLoaderController =
+  ProductLoaderController();
 
   @override
   State<ResultPage> createState() => _ResultPageState();
@@ -45,8 +49,10 @@ class ResultPage extends StatefulWidget {
 //  3. a. only
 
 class _ResultPageState extends State<ResultPage> {
+
   @override
   Widget build(BuildContext context) {
+    List<ws_product.Product> products = widget._productLoaderController.getResults();
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
