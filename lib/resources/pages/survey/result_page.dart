@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app/controllers/product_loader_controller.dart';
+import 'package:flutter_app/bootstrap/app_helper.dart';
 import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
 import 'package:flutter_app/resources/widgets/cached_image_widget.dart';
@@ -17,9 +18,9 @@ import 'package:woosignal/models/response/product_category.dart' as ws_category;
 import 'package:woosignal/models/response/products.dart' as ws_product;
 
 class ResultPage extends StatefulWidget {
-  ResultPage({Key key, @required this.wooSignalApp}) : super(key: key);
+  ResultPage({Key key}) : super(key: key);
 
-  final WooSignalApp wooSignalApp;
+  final WooSignalApp wooSignalApp = AppHelper.instance.appConfig;
 
   @override
   _ResultPageState createState() => _ResultPageState();
