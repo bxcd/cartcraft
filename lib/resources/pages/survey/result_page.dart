@@ -139,7 +139,7 @@ class _ResultPageState extends State<ResultPage> {
                         Text(trans("Must have")),
                         Flexible(
                           child: Text(
-                            trans("Our selection of new items"),
+                            trans("Your recommendations"),
                             style: Theme.of(context).textTheme.headline4,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
