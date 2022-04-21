@@ -64,7 +64,6 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
       }
     }
   }
-  List<Product> products = List.from(pList);
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
