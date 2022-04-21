@@ -77,38 +77,91 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
               Product p = getProductFromList(pList, "TEC-SYS-PKG");
               recommendations.add(p);
               break;
-            case "software": break;
-            case "website": break;
-            case "other": break;
+            case "software":
+              Product p = getProductFromList(pList, "TEC-APP-PKG");
+              recommendations.add(p);
+              break;
+            case "website":
+              Product p = getProductFromList(pList, "TEC-WEB-PKG");
+              recommendations.add(p);
+              break;
+            case "other":
+              Product p = getProductFromList(pList, "TEC-ALL-SVC");
+              recommendations.add(p);
+              break;
           } break;
         case "product":
-          switch (s2ResultString) {
-            case "logistics": break;
-            case "usability": break;
-            case "appeal": break;
-            case "other": break;
-          } break;
+          // switch (s2ResultString) {
+          //   case "logistics":
+          //     Product p = getProductFromList(pList, "PRD-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "usability":
+          //     Product p = getProductFromList(pList, "PRD-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "appeal":
+          //     Product p = getProductFromList(pList, "PRD-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "other":
+              Product p = getProductFromList(pList, "PRD-ALL-SVC");
+              recommendations.add(p);
+          //     break;
+/*          } */break;
         case "business":
-          switch (s2ResultString) {
-            case "performance": break;
-            case "conversion": break;
-            case "branding": break;
-            case "other": break;
-          } break;
+          // switch (s2ResultString) {
+          //   case "performance":
+          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "conversion":
+          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "branding":
+          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "other":
+              Product p = getProductFromList(pList, "BUS-ALL-SVC");
+              recommendations.add(p);
+          //     break;
+/*          } */break;
         case "graphics":
           switch (s2ResultString) {
-            case "logo": break;
-            case "illustration": break;
-            case "collateral": break;
-            case "other": break;
+            case "logo":
+              Product p = getProductFromList(pList, "GFX-LOG-PKG");
+              recommendations.add(p);
+              break;
+            case "illustration":
+              Product p = getProductFromList(pList, "GFX-ALL-SVC");
+              recommendations.add(p);
+              break;
+            case "collateral":
+              Product p1 = getProductFromList(pList, "GFX-BCD-PKG");
+              Product p2 = getProductFromList(pList, "GFX-ALL-SVC");
+              recommendations.add(p1);
+              recommendations.add(p2);
+              break;
+            case "other":
+              Product p = getProductFromList(pList, "GFX-ALL-SVC");
+              recommendations.add(p);
+              break;
           } break;
         case "content":
-          switch (s2ResultString) {
-            case "writing": break;
-            case "audio": break;
-            case "video": break;
-            case "other": break;
-          } break;
+          // switch (s2ResultString) {
+          //   case "writing":
+          //     break;
+          //   case "audio":
+          //     break;
+          //   case "video":
+          //     break;
+          //   case "other":
+          //     break;
+          Product p = getProductFromList(pList, "CTT-ALL-SVC");
+          recommendations.add(p);
+/*          } */break;
         default:
           break;
       }
