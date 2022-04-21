@@ -52,7 +52,7 @@ class _SurveyPageState extends State<SurveyPage> {
                       // launch result page passing r argument
                       // move/handle _generateRecommendations from result page
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ResultPage()));
+                          builder: (context) => ResultPage(result: r)));
                     });
                   }
                 },
