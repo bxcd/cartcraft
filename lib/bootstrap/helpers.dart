@@ -64,8 +64,12 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
       }
     }
   }
-  // TODO: Get days remaining from service date
+  // TODO: Get days remaining from service date and estimated cost per project
   int daysRemaining;
+  int costPerProject;
+  int speedOverSavings;
+  // TODO: Determine if speed goal can be met under cost goal
+  //  if not, use speedOverSavings to adjust daysRemaining and speedOverSavings
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
