@@ -44,7 +44,7 @@ import 'package:woosignal/woosignal.dart';
 import 'package:woosignal/models/response/products.dart';
 
 
-List<Product> getRecommendations(SurveyResult r, List<Product> p) {
+List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
   List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
@@ -64,7 +64,7 @@ List<Product> getRecommendations(SurveyResult r, List<Product> p) {
       }
     }
   }
-  List<Product> products;
+  List<Product> products = List.from(pList);
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
@@ -73,7 +73,10 @@ List<Product> getRecommendations(SurveyResult r, List<Product> p) {
       switch (s1ResultString) {
         case "tech":
           switch (s2ResultString) {
-            case "systems": break;
+            case "systems":
+              Product p = getProductFromList(pList, "TEC-SYS-PKG");
+              recommendations.add(p);
+              break;
             case "software": break;
             case "website": break;
             case "other": break;
@@ -112,6 +115,13 @@ List<Product> getRecommendations(SurveyResult r, List<Product> p) {
     }
   }
   return recommendations;
+}
+
+Product getProductFromList(List<Product> pList, String sku) {
+  for (Product p in pList) {
+    if (p.sku == sku) return p;
+  }
+  return null;
 }
 
 
