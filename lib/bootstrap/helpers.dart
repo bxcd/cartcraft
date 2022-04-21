@@ -75,7 +75,7 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
         case "systems":
           // TODO: Test days remaining against product express range
           String sku = "TEC-SYS-PKG";
-          if (daysRemaining < 21) sku += '-EXP';
+          if (daysRemaining < 21) sku += '-EPT';
           Product p = getProductFromList(pList, sku);
           recommendations.add(p);
           break;
