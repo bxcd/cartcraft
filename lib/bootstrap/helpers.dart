@@ -44,7 +44,7 @@ import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
 
 
-List<String> getRecommendations(SurveyResult r) {
+List<Product> getRecommendations(SurveyResult r, List<Product> p) {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
   List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
@@ -64,7 +64,8 @@ List<String> getRecommendations(SurveyResult r) {
       }
     }
   }
-  List<String> recommendations = List.generate(1, (index) => ',');
+  List<Product> products;
+  List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
     for (int j = 0; j < s2ResultStringsList[i].length; j++) {
