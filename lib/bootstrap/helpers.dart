@@ -73,6 +73,12 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   //  e.g. cannot meet speed and cost goals together, speedOverSavings == 1,
   //    add to daysRemaining and subtract from costPerProject until goals met
   //    with adjustment magnitudes depending on the degree of speedOverSavings
+  //    at speedOverSavings == 3, adjustment magnitudes each as a percent of
+  //    the corresponding response value (i.e. daysRemaining, costPerProject)
+  //    are equal, as well as at the minimum percent adjustment required
+  //    to meet both cost and speed goals. Shifts in either direction to
+  //    speedOverSavings offset this percent adjustment amount positively
+  //    for one value and negatively for the other.
   List<Product> recommendations;
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
