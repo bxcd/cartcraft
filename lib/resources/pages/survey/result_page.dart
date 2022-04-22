@@ -18,6 +18,7 @@ import 'package:woosignal/models/response/woosignal_app.dart';
 import 'package:woosignal/models/response/product_category.dart' as ws_category;
 import 'package:woosignal/models/response/products.dart' as ws_product;
 
+// TODO: Consider saving recommendations as wish list items and replace result page
 class ResultPage extends StatefulWidget {
   ResultPage({Key key, this.result}) : super(key: key);
 
