@@ -233,12 +233,7 @@ class _NoticHomeWidgetState extends State<NoticHomeWidget> {
   Future fetchProducts() async {
     await _productLoaderController.loadProducts(
         hasResults: (result) {
-          if (result == false) {
-            setState(() {
-              _shouldStopRequests = true;
-            });
-            return false;
-          }
+          if (result == false) { return false; }
           return true;
         },
         didFinish: () => setState(() {}));

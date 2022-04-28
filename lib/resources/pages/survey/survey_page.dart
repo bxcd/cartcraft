@@ -1,9 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bootstrap/helpers.dart';
 import 'package:flutter_app/resources/widgets/survey/custom_text_answer_format.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
+import 'package:woosignal/models/response/products.dart' as ws_product;
 
+import '../../../app/controllers/product_loader_controller.dart';
 import '../../widgets/survey/custom_completion_step.dart';
 import '../../widgets/survey/custom_question_step.dart';
 
@@ -13,7 +16,11 @@ class SurveyPage extends StatefulWidget {
 }
 
 class _SurveyPageState extends State<SurveyPage> {
+
   bool isLoading;
+
+  final ProductLoaderController _productLoaderController =
+  ProductLoaderController();
 
   @override
   void initState() {
@@ -40,6 +47,12 @@ class _SurveyPageState extends State<SurveyPage> {
                 onResult: (SurveyResult r) {
                   if (kDebugMode) {
                     print(r.finishReason);
+                    fetchProducts();
+
+                    List<ws_product.Product> products
+                    = _productLoaderController.getResults();
+
+                    saveRecommendations(r, products);
                     _actionWishlist();
                   }
                 },
@@ -334,8 +347,20 @@ class _SurveyPageState extends State<SurveyPage> {
     }
     return Future.value(task);
   }
+
   _actionWishlist() async {
     Navigator.pop(context);
     Navigator.pushNamed(context, "/wishlist");
+  }
+
+  Future fetchProducts() async {
+    await _productLoaderController.loadProducts(
+        hasResults: (result) {
+          if (result == false) {
+            return false;
+          }
+          return true;
+        },
+        didFinish: () => setState(() {}));
   }
 }
