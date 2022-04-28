@@ -6,7 +6,6 @@ import 'package:survey_kit/survey_kit.dart';
 
 import '../../widgets/survey/custom_completion_step.dart';
 import '../../widgets/survey/custom_question_step.dart';
-import '../survey/result_page.dart';
 
 class SurveyPage extends StatefulWidget {
   @override
