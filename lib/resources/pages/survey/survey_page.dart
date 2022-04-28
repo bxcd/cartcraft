@@ -42,18 +42,7 @@ class _SurveyPageState extends State<SurveyPage> {
                 onResult: (SurveyResult r) {
                   if (kDebugMode) {
                     print(r.finishReason);
-                    setState(() {
-                      // This call to setState tells the Flutter framework that something has
-                      // changed in this State, which causes it to rerun the build method below
-                      // so that the display can reflect the updated values. If we changed
-                      // _counter without calling setState(), then the build method would not be
-                      // called again, and so nothing would appear to happen.
-                      Navigator.of(context).pop();
-                      // launch result page passing r argument
-                      // move/handle _generateRecommendations from result page
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ResultPage(result: r)));
-                    });
+                    _actionWishlist();
                   }
                 },
                 task: task,
@@ -347,5 +336,8 @@ class _SurveyPageState extends State<SurveyPage> {
     }
     return Future.value(task);
   }
-
+  _actionWishlist() async {
+    Navigator.pop(context);
+    Navigator.pushNamed(context, "/wishlist");
+  }
 }
