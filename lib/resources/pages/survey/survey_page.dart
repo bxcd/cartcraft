@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
 import 'package:cartcraft/resources/widgets/survey/custom_text_answer_format.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:survey_kit/survey_kit.dart';
@@ -17,7 +18,7 @@ class SurveyPage extends StatefulWidget {
 
 class _SurveyPageState extends State<SurveyPage> {
 
-  bool isLoading;
+  bool _isLoading = true;
 
   final ProductLoaderController _productLoaderController =
   ProductLoaderController();
@@ -25,88 +26,93 @@ class _SurveyPageState extends State<SurveyPage> {
   @override
   void initState() {
     super.initState();
-    isLoading = true;
+    _home();
+  }
+
+  _home() async {
+    await fetchProducts();
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    List<ws_product.Product> products = _productLoaderController.getResults();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(trans("Survey")),
       ),
       body: SafeArea(
-        child: FutureBuilder<Task>(
-          future: getSampleTask(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done &&
-                snapshot.hasData &&
-                snapshot.data != null) {
-              final task = snapshot.data;
-              return SurveyKit(
-                onResult: (SurveyResult r) async {
-                  if (kDebugMode) {
-                    print(r.finishReason);
-                    await fetchProducts();
-
-                    List<ws_product.Product> products
-                    = _productLoaderController.getResults();
-
-                    await saveRecommendations(r, products);
-                    _actionWishlist();
-                  }
-                },
-                task: task,
-                showProgress: true,
-                localizations: const {
-                  'cancel': 'Cancel',
-                  'next': 'Next',
-                },
-                themeData: Theme.of(context).copyWith(
-                  colorScheme: ColorScheme.fromSwatch(
-                    primarySwatch: Colors.red,
-                    brightness: Theme.of(context).brightness,
-                  ),
-                  hintColor: Theme.of(context).backgroundColor,
-                  primaryColor: Colors.red.shade500,
-                  appBarTheme: AppBarTheme(
+        child: _isLoading
+          ? AppLoaderWidget()
+          : FutureBuilder<Task>(
+            future: getSampleTask(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData &&
+                  snapshot.data != null) {
+                final task = snapshot.data;
+                return SurveyKit(
+                  onResult: (SurveyResult r) async {
+                    if (kDebugMode) {
+                      print(r.finishReason);
+                      await saveRecommendations(r, products);
+                      _actionWishlist();
+                    }
+                  },
+                  task: task,
+                  showProgress: true,
+                  localizations: const {
+                    'cancel': 'Cancel',
+                    'next': 'Next',
+                  },
+                  themeData: Theme.of(context).copyWith(
+                    colorScheme: ColorScheme.fromSwatch(
+                      primarySwatch: Colors.red,
+                      brightness: Theme.of(context).brightness,
+                    ),
+                    hintColor: Theme.of(context).backgroundColor,
+                    primaryColor: Colors.red.shade500,
+                    appBarTheme: AppBarTheme(
                       backgroundColor: Theme.of(context).backgroundColor,
                       elevation: 0,
                       iconTheme: IconThemeData(
                         color: Colors.red,
-                    ),
-                  ),
-                  outlinedButtonTheme: OutlinedButtonThemeData(
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
-                        const Size(150.0, 60.0),
                       ),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    outlinedButtonTheme: OutlinedButtonThemeData(
+                      style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all(
+                          const Size(150.0, 60.0),
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    textButtonTheme: TextButtonThemeData(
+                      style: ButtonStyle(
+                        textStyle: MaterialStateProperty.all(
+                          Theme.of(context).textTheme.button?.copyWith(
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  textButtonTheme: TextButtonThemeData(
-                    style: ButtonStyle(
-                      textStyle: MaterialStateProperty.all(
-                        Theme.of(context).textTheme.button?.copyWith(
-                          color: Colors.red,
-                        ),
-                      ),
-                    ),
+                  surveyProgressbarConfiguration: SurveyProgressConfiguration(
+                    backgroundColor: Colors.red,
                   ),
-                ),
-                surveyProgressbarConfiguration: SurveyProgressConfiguration(
-                  backgroundColor: Colors.red,
-                ),
-              );
-            }
-            return const CircularProgressIndicator.adaptive();
-          },
+                );
+              }
+              return const CircularProgressIndicator.adaptive();
+            },
+          ),
         ),
-      ),
     );
   }
 
@@ -266,9 +272,9 @@ class _SurveyPageState extends State<SurveyPage> {
           'What other aspects of your project are important and how can they be addressed or improved?',
           isOptional: true,
           answerFormat: const CustomTextAnswerFormat(
-            maxLines: 20,
-            height: 200,
-            hint: 'Type your comments here...'
+              maxLines: 20,
+              height: 200,
+              hint: 'Type your comments here...'
           ),
         ),
         CustomQuestionStep(
@@ -355,12 +361,7 @@ class _SurveyPageState extends State<SurveyPage> {
 
   Future fetchProducts() async {
     await _productLoaderController.loadProducts(
-        hasResults: (result) {
-          if (result == false) {
-            return false;
-          }
-          return true;
-        },
+        hasResults: (result) { return result; },
         didFinish: () => setState(() {}));
   }
 }
