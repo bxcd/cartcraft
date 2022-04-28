@@ -43,8 +43,7 @@ import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
 import 'package:woosignal/models/response/products.dart';
 
-
-List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
+void getRecommendations(SurveyResult r, List<Product> pList) async {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
   List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
@@ -67,7 +66,6 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
   // int daysRemaining; // Determine days remaining from service date
   // int costPerProject; // Determine estimated cost per project
   // int speedOverSavings; // Get speed over savings rating
-  List<Product> recommendations = List.empty(growable: true);
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
     for (int j = 0; j < s2ResultStringsList[i].length; j++) {
@@ -78,21 +76,21 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
             case "systems":
               String sku = "TEC-ALL-SVC";
               Product p = getProductFromList(pList, sku);
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
             case "software":
               String sku = "TEC-APP-PKG";
               Product p = getProductFromList(pList, sku);
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
             case "website":
               String sku = "TEC-WEB-PKG";
               Product p = getProductFromList(pList, sku);
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
             case "other":
               Product p = getProductFromList(pList, "TEC-ALL-SVC");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
           } break;
         case "product":
@@ -111,7 +109,7 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
           //     break;
           //   case "other":
               Product p = getProductFromList(pList, "PRD-ALL-SVC");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
           //     break;
 /*          } */break;
         case "business":
@@ -130,28 +128,28 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
           //     break;
           //   case "other":
               Product p = getProductFromList(pList, "BUS-ALL-SVC");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
           //     break;
 /*          } */break;
         case "graphics":
           switch (s2ResultString) {
             case "logo":
               Product p = getProductFromList(pList, "GFX-LOG-PKG");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
             case "illustration":
               Product p = getProductFromList(pList, "GFX-ALL-SVC");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
             case "collateral":
               Product p1 = getProductFromList(pList, "GFX-BCD-PKG");
               Product p2 = getProductFromList(pList, "GFX-ALL-SVC");
-              recommendations.add(p1);
-              recommendations.add(p2);
+              await saveWishlistProduct(product: p1);
+              await saveWishlistProduct(product: p2);
               break;
             case "other":
               Product p = getProductFromList(pList, "GFX-ALL-SVC");
-              recommendations.add(p);
+              await saveWishlistProduct(product: p);
               break;
           } break;
         case "content":
@@ -165,14 +163,13 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
           //   case "other":
           //     break;
           Product p = getProductFromList(pList, "CTT-ALL-SVC");
-          recommendations.add(p);
+          await saveWishlistProduct(product: p);
 /*          } */break;
         default:
           break;
       }
     }
   }
-  return recommendations;
 }
 
 Product getProductFromList(List<Product> pList, String sku) {
