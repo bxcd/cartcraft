@@ -43,7 +43,7 @@ import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
 import 'package:woosignal/models/response/products.dart';
 
-Future<void> saveRecommendations(SurveyResult r, List<Product> pList) async {
+Future saveRecommendations(SurveyResult r, List<Product> pList) async {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
   List<List<String>> s2ResultStringsList = List.generate(1, (index) => s2ResultStrings);
