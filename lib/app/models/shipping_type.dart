@@ -9,7 +9,7 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
 import 'package:woosignal/models/response/shipping_method.dart';
 
 class ShippingType {

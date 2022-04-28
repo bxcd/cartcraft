@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class CheckoutSelectCouponWidget extends StatelessWidget {

@@ -11,11 +11,11 @@
 //  This file has been modified from its original form by Code Dart.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
-import 'package:flutter_app/resources/widgets/app_version_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/shared_pref/sp_auth.dart';
+import 'package:cartcraft/resources/widgets/app_version_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/theme/helper/ny_theme.dart';
 import 'package:nylo_support/helpers/helper.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';

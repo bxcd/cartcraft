@@ -12,10 +12,10 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/data/order_wc.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/pages/checkout/checkout_confirmation.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/data/order_wc.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/pages/checkout/checkout_confirmation.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/payload/order_wc.dart';

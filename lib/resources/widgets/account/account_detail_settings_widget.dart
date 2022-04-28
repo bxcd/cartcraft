@@ -9,7 +9,7 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
+import 'package:cartcraft/bootstrap/shared_pref/sp_auth.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class AccountDetailSettingsWidget extends StatelessWidget {

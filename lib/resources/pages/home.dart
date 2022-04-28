@@ -9,10 +9,10 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/resources/widgets/compo_theme_widget.dart';
-import 'package:flutter_app/resources/widgets/mello_theme_widget.dart';
-import 'package:flutter_app/resources/widgets/notic_theme_widget.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/resources/widgets/compo_theme_widget.dart';
+import 'package:cartcraft/resources/widgets/mello_theme_widget.dart';
+import 'package:cartcraft/resources/widgets/notic_theme_widget.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
 
 class HomePage extends StatefulWidget {

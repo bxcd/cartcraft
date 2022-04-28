@@ -9,7 +9,7 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/widgets/cached_image_widget.dart';
+import 'package:cartcraft/resources/widgets/cached_image_widget.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/products.dart';

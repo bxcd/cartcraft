@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/config/app_font.dart';
-import 'package:flutter_app/resources/themes/styles/base_styles.dart';
-import 'package:flutter_app/resources/themes/text_theme/default_text_theme.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/config/app_font.dart';
+import 'package:cartcraft/resources/themes/styles/base_styles.dart';
+import 'package:cartcraft/resources/themes/text_theme/default_text_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 

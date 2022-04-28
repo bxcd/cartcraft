@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class CheckoutPaymentTypeWidget extends StatelessWidget {

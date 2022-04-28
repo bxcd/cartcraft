@@ -9,18 +9,18 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/product_detail_controller.dart';
-import 'package:flutter_app/app/models/cart_line_item.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/enums/wishlist_action_enums.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/product/cart_icon_widget.dart';
-import 'package:flutter_app/resources/widgets/future_build_widget.dart';
-import 'package:flutter_app/resources/widgets/product/product_detail_body_widget.dart';
-import 'package:flutter_app/resources/widgets/product/product_detail_footer_actions_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/app/controllers/product_detail_controller.dart';
+import 'package:cartcraft/app/models/cart_line_item.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/enums/wishlist_action_enums.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
+import 'package:cartcraft/resources/widgets/product/cart_icon_widget.dart';
+import 'package:cartcraft/resources/widgets/future_build_widget.dart';
+import 'package:cartcraft/resources/widgets/product/product_detail_body_widget.dart';
+import 'package:cartcraft/resources/widgets/product/product_detail_footer_actions_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/product_variation.dart'
     as ws_product_variation;

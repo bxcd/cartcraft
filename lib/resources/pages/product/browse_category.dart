@@ -9,14 +9,14 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/product_category_search_loader_controller.dart';
-import 'package:flutter_app/app/controllers/browse_category_controller.dart';
-import 'package:flutter_app/bootstrap/enums/sort_enums.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/safearea_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/app/controllers/product_category_search_loader_controller.dart';
+import 'package:cartcraft/app/controllers/browse_category_controller.dart';
+import 'package:cartcraft/bootstrap/enums/sort_enums.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
+import 'package:cartcraft/resources/widgets/safearea_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_support/helpers/helper.dart';
 import 'package:nylo_support/widgets/ny_state.dart';
 import 'package:nylo_support/widgets/ny_stateful_widget.dart';

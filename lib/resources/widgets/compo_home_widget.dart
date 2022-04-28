@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/cached_image_widget.dart';
-import 'package:flutter_app/resources/widgets/home_drawer_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
+import 'package:cartcraft/resources/widgets/cached_image_widget.dart';
+import 'package:cartcraft/resources/widgets/home_drawer_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/product_category.dart';

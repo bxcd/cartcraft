@@ -11,12 +11,12 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/app/models/cart_line_item.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
-import 'package:flutter_app/app/models/shipping_type.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/bootstrap/shared_pref/shared_key.dart';
+import 'package:cartcraft/app/models/cart_line_item.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
+import 'package:cartcraft/app/models/shipping_type.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/shared_pref/shared_key.dart';
 import 'package:nylo_support/helpers/helper.dart';
 import 'package:woosignal/models/response/shipping_method.dart';
 import 'package:woosignal/models/response/tax_rate.dart';

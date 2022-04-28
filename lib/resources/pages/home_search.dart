@@ -9,9 +9,9 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/safearea_widget.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
+import 'package:cartcraft/resources/widgets/safearea_widget.dart';
 import 'package:nylo_support/helpers/helper.dart';
 
 import '../widgets/woosignal_ui.dart';

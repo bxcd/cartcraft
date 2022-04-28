@@ -9,11 +9,11 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/checkout_status_controller.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
+import 'package:cartcraft/app/controllers/checkout_status_controller.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
 import 'package:nylo_support/widgets/ny_state.dart';
 import 'package:nylo_support/widgets/ny_stateful_widget.dart';
 import 'package:woosignal/models/response/order.dart' as ws_order;

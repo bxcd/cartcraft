@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-import 'package:flutter_app/bootstrap/enums/symbol_position_enums.dart';
+import 'package:cartcraft/bootstrap/enums/symbol_position_enums.dart';
 
 /*
 |--------------------------------------------------------------------------

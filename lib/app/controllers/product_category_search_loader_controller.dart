@@ -9,7 +9,7 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/app/controllers/woosignal_api_loader_controller.dart';
+import 'package:cartcraft/app/controllers/woosignal_api_loader_controller.dart';
 import 'package:woosignal/models/response/product_category.dart';
 import 'package:woosignal/models/response/products.dart';
 

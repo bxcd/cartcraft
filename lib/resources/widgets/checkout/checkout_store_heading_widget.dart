@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 
 class CheckoutStoreHeadingWidget extends StatelessWidget {
   const CheckoutStoreHeadingWidget({Key key}) : super(key: key);

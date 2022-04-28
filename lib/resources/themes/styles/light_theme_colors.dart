@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/resources/themes/styles/base_styles.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/resources/themes/styles/base_styles.dart';
 
 /*
 |--------------------------------------------------------------------------

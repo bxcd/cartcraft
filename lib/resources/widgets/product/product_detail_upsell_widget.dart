@@ -10,10 +10,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/product_loader_controller.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/product/no_results_for_products_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/app/controllers/product_loader_controller.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/product/no_results_for_products_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

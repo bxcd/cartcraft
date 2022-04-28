@@ -10,10 +10,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/controllers/customer_orders_loader_controller.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/app/controllers/customer_orders_loader_controller.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/shared_pref/sp_auth.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:woosignal/models/response/order.dart';

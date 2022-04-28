@@ -1,8 +1,8 @@
-import 'package:flutter_app/app/models/payment_type.dart';
-import 'package:flutter_app/app/providers/cash_on_delivery.dart';
-import 'package:flutter_app/app/providers/paypal_pay.dart';
-import 'package:flutter_app/app/providers/stripe_pay.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:cartcraft/app/models/payment_type.dart';
+import 'package:cartcraft/app/providers/cash_on_delivery.dart';
+import 'package:cartcraft/app/providers/paypal_pay.dart';
+import 'package:cartcraft/app/providers/stripe_pay.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
 
 /*
 |--------------------------------------------------------------------------

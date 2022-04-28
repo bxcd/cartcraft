@@ -8,7 +8,7 @@
 //  distributed under the License is distributed on an "AS IS" BASIS,
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-import 'package:flutter_app/app/models/default_shipping.dart';
+import 'package:cartcraft/app/models/default_shipping.dart';
 
 class CustomerCountry {
   String countryCode;

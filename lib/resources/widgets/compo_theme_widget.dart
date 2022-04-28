@@ -12,13 +12,13 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/models/bottom_nav_item.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
-import 'package:flutter_app/resources/pages/product/cart.dart';
-import 'package:flutter_app/resources/pages/home_search.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/compo_home_widget.dart';
+import 'package:cartcraft/app/models/bottom_nav_item.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/shared_pref/sp_auth.dart';
+import 'package:cartcraft/resources/pages/product/cart.dart';
+import 'package:cartcraft/resources/pages/home_search.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/compo_home_widget.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';
 
 import '../pages/account/account_detail.dart';

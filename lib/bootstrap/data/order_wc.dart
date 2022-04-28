@@ -10,12 +10,12 @@
 
 import 'dart:io';
 
-import 'package:flutter_app/app/models/billing_details.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/app/models/cart_line_item.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/shared_pref/sp_auth.dart';
+import 'package:cartcraft/app/models/billing_details.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/app/models/cart_line_item.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/shared_pref/sp_auth.dart';
 import 'package:woosignal/models/payload/order_wc.dart';
 import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';

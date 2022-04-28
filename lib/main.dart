@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bootstrap/app.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/boot.dart';
-import 'package:flutter_app/routes/router.dart';
+import 'package:cartcraft/bootstrap/app.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/boot.dart';
+import 'package:cartcraft/routes/router.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 void main() async {

@@ -1,9 +1,9 @@
-import 'package:flutter_app/bootstrap/base_theme_config.dart';
-import 'package:flutter_app/resources/themes/dark_theme.dart';
-import 'package:flutter_app/resources/themes/light_theme.dart';
-import 'package:flutter_app/resources/themes/styles/base_styles.dart';
-import 'package:flutter_app/resources/themes/styles/dark_theme_colors.dart';
-import 'package:flutter_app/resources/themes/styles/light_theme_colors.dart';
+import 'package:cartcraft/bootstrap/base_theme_config.dart';
+import 'package:cartcraft/resources/themes/dark_theme.dart';
+import 'package:cartcraft/resources/themes/light_theme.dart';
+import 'package:cartcraft/resources/themes/styles/base_styles.dart';
+import 'package:cartcraft/resources/themes/styles/dark_theme_colors.dart';
+import 'package:cartcraft/resources/themes/styles/light_theme_colors.dart';
 
 /*
 |--------------------------------------------------------------------------

@@ -9,21 +9,21 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/app/models/checkout_session.dart';
-import 'package:flutter_app/app/models/customer_country.dart';
-import 'package:flutter_app/app/models/payment_type.dart';
-import 'package:flutter_app/bootstrap/app_helper.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/resources/widgets/app_loader_widget.dart';
-import 'package:flutter_app/resources/widgets/buttons.dart';
-import 'package:flutter_app/resources/widgets/checkout/checkout_coupon_amount_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout/checkout_payment_type_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout/checkout_select_coupon_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout/checkout_shipping_type_widget.dart';
-import 'package:flutter_app/resources/widgets/checkout/checkout_user_details_widget.dart';
-import 'package:flutter_app/resources/widgets/safearea_widget.dart';
-import 'package:flutter_app/resources/widgets/woosignal_ui.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/app/models/checkout_session.dart';
+import 'package:cartcraft/app/models/customer_country.dart';
+import 'package:cartcraft/app/models/payment_type.dart';
+import 'package:cartcraft/bootstrap/app_helper.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/resources/widgets/app_loader_widget.dart';
+import 'package:cartcraft/resources/widgets/buttons.dart';
+import 'package:cartcraft/resources/widgets/checkout/checkout_coupon_amount_widget.dart';
+import 'package:cartcraft/resources/widgets/checkout/checkout_payment_type_widget.dart';
+import 'package:cartcraft/resources/widgets/checkout/checkout_select_coupon_widget.dart';
+import 'package:cartcraft/resources/widgets/checkout/checkout_shipping_type_widget.dart';
+import 'package:cartcraft/resources/widgets/checkout/checkout_user_details_widget.dart';
+import 'package:cartcraft/resources/widgets/safearea_widget.dart';
+import 'package:cartcraft/resources/widgets/woosignal_ui.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/models/response/woosignal_app.dart';

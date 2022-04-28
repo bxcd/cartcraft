@@ -9,10 +9,10 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/app/models/cart_line_item.dart';
-import 'package:flutter_app/bootstrap/enums/wishlist_action_enums.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/app/models/cart_line_item.dart';
+import 'package:cartcraft/bootstrap/enums/wishlist_action_enums.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import 'package:woosignal/models/response/products.dart';
 import 'package:woosignal/models/response/product_variation.dart'

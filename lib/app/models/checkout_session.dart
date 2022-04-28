@@ -9,13 +9,13 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'dart:convert';
-import 'package:flutter_app/app/models/billing_details.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/app/models/customer_address.dart';
-import 'package:flutter_app/app/models/payment_type.dart';
-import 'package:flutter_app/app/models/shipping_type.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/bootstrap/shared_pref/shared_key.dart';
+import 'package:cartcraft/app/models/billing_details.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/app/models/customer_address.dart';
+import 'package:cartcraft/app/models/payment_type.dart';
+import 'package:cartcraft/app/models/shipping_type.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/shared_pref/shared_key.dart';
 import 'package:nylo_support/helpers/helper.dart';
 import 'package:woosignal/models/response/coupon.dart';
 import 'package:woosignal/models/response/tax_rate.dart';

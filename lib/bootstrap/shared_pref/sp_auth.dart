@@ -9,9 +9,9 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/app/models/cart.dart';
-import 'package:flutter_app/bootstrap/helpers.dart';
-import 'package:flutter_app/bootstrap/shared_pref/shared_key.dart';
+import 'package:cartcraft/app/models/cart.dart';
+import 'package:cartcraft/bootstrap/helpers.dart';
+import 'package:cartcraft/bootstrap/shared_pref/shared_key.dart';
 import 'package:nylo_support/helpers/helper.dart';
 
 Future<bool> authCheck() async => ((await getUser()) != null);
