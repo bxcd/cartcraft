@@ -12,7 +12,6 @@ class SurveyPage extends StatefulWidget {
   _SurveyPageState createState() => _SurveyPageState();
 }
 
-// TODO:
 class _SurveyPageState extends State<SurveyPage> {
   bool isLoading;
 
