@@ -73,11 +73,11 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
       switch (s1ResultString) {
         case "tech":
           switch (s2ResultString) {
-            case "systems":
-              String sku = "TEC-ALL-SVC";
-              Product p = getProductFromList(pList, sku);
-              await saveWishlistProduct(product: p);
-              break;
+            // case "systems":
+            //   String sku = "TEC-ALL-SVC";
+            //   Product p = getProductFromList(pList, sku);
+            //   await saveWishlistProduct(product: p);
+            //   break;
             case "software":
               String sku = "TEC-APP-PKG";
               Product p = getProductFromList(pList, sku);
@@ -88,7 +88,7 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
               Product p = getProductFromList(pList, sku);
               await saveWishlistProduct(product: p);
               break;
-            case "other":
+            default:
               Product p = getProductFromList(pList, "TEC-ALL-SVC");
               await saveWishlistProduct(product: p);
               break;
@@ -137,17 +137,17 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
               Product p = getProductFromList(pList, "GFX-LOG-PKG");
               await saveWishlistProduct(product: p);
               break;
-            case "illustration":
-              Product p = getProductFromList(pList, "GFX-ALL-SVC");
-              await saveWishlistProduct(product: p);
-              break;
+            // case "illustration":
+            //   Product p = getProductFromList(pList, "GFX-ALL-SVC");
+            //   await saveWishlistProduct(product: p);
+            //   break;
             case "collateral":
               Product p1 = getProductFromList(pList, "GFX-BCD-PKG");
               Product p2 = getProductFromList(pList, "GFX-ALL-SVC");
               await saveWishlistProduct(product: p1);
               await saveWishlistProduct(product: p2);
               break;
-            case "other":
+            default:
               Product p = getProductFromList(pList, "GFX-ALL-SVC");
               await saveWishlistProduct(product: p);
               break;
