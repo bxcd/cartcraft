@@ -1,21 +1,5 @@
-# Official WooSignal App Template for WooCommerce
-
-# Label StoreMax
-# Version: 5.8.0
-# Author: Anthony Gordon
-# Homepage: https://woosignal.com
-# Documentation: https://woosignal.com/docs/app/label-storemax
-
-### Change App Icon
-# 1 Replace: public/assets/icon/appicon.png (1024px1024px icon size)
-# 2 Run this command from the terminal: "flutter pub run flutter_launcher_icons:main"
-
-### Uploading the IOS/Android app
-# IOS https://flutter.dev/docs/deployment/ios
-# Android https://flutter.dev/docs/deployment/android
-
-name: flutter_app
-description: Label StoreMax
+name: cartcraft
+description: eCommerce with survey and product recommendation
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
