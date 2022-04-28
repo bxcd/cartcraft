@@ -64,23 +64,9 @@ List<Product> getRecommendations(SurveyResult r, List<Product> pList) {
       }
     }
   }
-  // TODO:
-  int daysRemaining; // Determine days remaining from service date
-  int costPerProject; // Determine estimated cost per project
-  int speedOverSavings; // Get speed over savings rating
-  // TODO: Determine if both daysRemaining and costPerProject are achievable
-  //  if the combination of response values i.e. daysRemaining, costPerProject
-  //  is not achievable, add to daysRemaining and subtract from costPerProject
-  //  until response values are met. Each adjustment, as the percent of the
-  //  corresponding response value to be adjusted, is equivalent for either
-  //  response value where speedOverSavings == 3. Shifts in either direction to
-  //  speedOverSavings offset this percent adjustment positively for one value
-  //  and negatively for the other. The combination of adjustments is the
-  //  minimum required to satisfy both response values.
-
-  // Alternative: Focus on one consistent implementation without input from
-  //  second part of the survey. Second part of survey is for providing a basis
-  //  and context for follow-up client discussions where options can be explored
+  // int daysRemaining; // Determine days remaining from service date
+  // int costPerProject; // Determine estimated cost per project
+  // int speedOverSavings; // Get speed over savings rating
   List<Product> recommendations = List.empty(growable: true);
   for (int i = 0; i < s1ResultStrings.length; i++) {
     String s1ResultString = s1ResultStrings[i];
