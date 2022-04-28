@@ -299,7 +299,7 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
-          text: 'Your recommendations are being generated.',
+          text: 'Tap submit to generate your recommendations,\nwhich will appear in your wishlist',
           title: 'Thank you',
           buttonText: 'Submit',
         ),
