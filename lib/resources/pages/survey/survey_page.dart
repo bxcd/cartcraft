@@ -44,15 +44,15 @@ class _SurveyPageState extends State<SurveyPage> {
                 snapshot.data != null) {
               final task = snapshot.data;
               return SurveyKit(
-                onResult: (SurveyResult r) {
+                onResult: (SurveyResult r) async {
                   if (kDebugMode) {
                     print(r.finishReason);
-                    fetchProducts();
+                    await fetchProducts();
 
                     List<ws_product.Product> products
                     = _productLoaderController.getResults();
 
-                    saveRecommendations(r, products);
+                    await saveRecommendations(r, products);
                     _actionWishlist();
                   }
                 },
