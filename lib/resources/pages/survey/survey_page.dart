@@ -60,6 +60,7 @@ class _SurveyPageState extends State<SurveyPage> {
                       print(r.finishReason);
                       await saveRecommendations(r, products);
                       _actionWishlist();
+                      shareFeedback(r);
                     }
                   },
                   task: task,
