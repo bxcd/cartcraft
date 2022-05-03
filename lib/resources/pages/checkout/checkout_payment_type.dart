@@ -46,7 +46,7 @@ class _CheckoutPaymentTypePageState extends State<CheckoutPaymentTypePage> {
     if (paymentTypes.isEmpty &&
         getEnv('APP_DEBUG', defaultValue: false) == true) {
       NyLogger.info(
-          'You have no payment methods set. Visit the WooSignal dashboard (https://woosignal.com/dashboard) to set a payment method.');
+          'You have no payment methods set. Visit the WooSignal dashboard (https://coded.art/dashboard) to set a payment method.');
     }
     return Scaffold(
       resizeToAvoidBottomInset: false,

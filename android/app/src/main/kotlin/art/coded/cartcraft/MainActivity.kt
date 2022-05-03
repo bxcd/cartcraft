@@ -1,4 +1,4 @@
-package com.woosignal.android
+package art.coded.wireframe
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity

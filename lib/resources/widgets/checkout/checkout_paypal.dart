@@ -79,8 +79,8 @@ class WebViewState extends NyState<PayPalCheckout> {
     bool liveMode =
         envVal('PAYPAL_LIVE_MODE', defaultValue: _wooSignalApp.paypalLiveMode);
     return liveMode == true
-        ? "https://www.paypal.com/cgi-bin/webscr"
-        : "https://www.sandbox.paypal.com/cgi-bin/webscr";
+        ? "https://www.paypal.art/cgi-bin/webscr"
+        : "https://www.sandbox.paypal.art/cgi-bin/webscr";
   }
 
   @override
@@ -111,7 +111,7 @@ class WebViewState extends NyState<PayPalCheckout> {
       <html><head><title>$strProcessingPayment...</title></head>
 <body onload="document.forms['paypal_form'].submit();">
 <div style="text-align:center;">
-<img src="https://woosignal.com/images/paypal_logo.png" height="50" />
+<img src="https://coded.art/images/paypal_logo.png" height="50" />
 </div>
 <center><h4>$strPleaseWait</h4></center>
 <form method="post" name="paypal_form" action="${getPayPalUrl()}">
@@ -120,8 +120,8 @@ class WebViewState extends NyState<PayPalCheckout> {
 <input type="hidden" name="lc" value="${envVal('PAYPAL_LOCALE', defaultValue: _wooSignalApp.paypalLocale)}">
 <input type="hidden" name="currency_code" value="${_wooSignalApp.currencyMeta.code}">
 <input type="hidden" name="business" value="${envVal('PAYPAL_ACCOUNT_EMAIL', defaultValue: _wooSignalApp.paypalEmail)}">
-<input type="hidden" name="return" value="https://woosignal.com/paypal/payment~success">
-<input type="hidden" name="cancel_return" value="https://woosignal.com/paypal/payment~failure">
+<input type="hidden" name="return" value="https://coded.art/paypal/payment~success">
+<input type="hidden" name="cancel_return" value="https://coded.art/paypal/payment~failure">
 <input type="hidden" name="item_name" value="${getPayPalItemName()}">
 <input type="hidden" name="custom" value="${getPayPalPaymentType()}">
 <input type="hidden" name="address_override" value="1">

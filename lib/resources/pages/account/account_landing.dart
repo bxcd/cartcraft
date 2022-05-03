@@ -139,7 +139,7 @@ class _AccountLandingPageState extends State<AccountLandingPage> {
                     openBrowserTab(url: forgotPasswordUrl);
                   } else {
                     NyLogger.info(
-                        "No URL found for \"forgot password\".\nAdd your forgot password URL here https://woosignal.com/dashboard/apps");
+                        "No URL found for \"forgot password\".\nAdd your forgot password URL here https://coded.art/dashboard/apps");
                   }
                 }),
             widget.showBackButton

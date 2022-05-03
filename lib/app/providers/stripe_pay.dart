@@ -42,7 +42,7 @@ stripePay(context,
 
   if (Stripe.stripeAccountId == '') {
     NyLogger.error(
-        'You need to connect your Stripe account to WooSignal via the dashboard https://woosignal.com/dashboard');
+        'You need to connect your Stripe account to WooSignal via the dashboard https://coded.art/dashboard');
     return;
   }
 
