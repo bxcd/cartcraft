@@ -62,6 +62,22 @@ String getStepTitle(int step) {
   }
 }
 
+String getStepText(int step) {
+  switch (step) {
+    case (0): return "Get service recommendations from Code Dart\nby submitting a brief form.\n\n\n\nAll responses are optional\nand your information is kept anonymous.\n\n";
+    case (7): return "Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.";
+    case (8): return "Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.";
+    case (9): return "Has your project set a target cost?\nCode Dart offers flexible package and bundle options to help you keep costs under control.";
+    case (10): return "Rate your preference between cost savings and completion speed.";
+    case (11): return "What other aspects of your project are important and how can they be addressed or improved?";
+    case (12): return "What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.";
+    case (13): return "What is the best time of day to contact you with your offer.";
+    default: return getStepTitle(step) + " Aspects";
+  }
+}
+
+String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
+
 // TODO: Add shareFeedback method
 Future shareFeedback(SurveyResult r) async {
   // Build a message string by processing responses from survey steps 8 - 13
