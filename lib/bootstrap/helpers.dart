@@ -100,7 +100,7 @@ Future shareFeedback(SurveyResult r) async {
     }
   }
   print(message);
-  // TODO: Replace with push to Firebase database
+  // TODO: Replace with push to Firebase RT DB or CM
   final Email email = Email(
     body: message,
     subject: 'Survey Feedback',
