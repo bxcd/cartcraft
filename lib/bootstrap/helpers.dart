@@ -74,13 +74,12 @@ String getStepText(int step) {
     case (12): return "What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.";
     case (13): return "What is the best time of day to contact you with your offer.";
     case (14): return "Tap submit to generate your recommendations,\nwhich will appear in your wishlist";
-    default: return getStepTitle(step) + " Aspects";
+    default: return formatStepText(getStepTitle(step).toLowerCase());
   }
 }
 
-String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
+String formatStepText(String s) { return "What" + s + "can be improved?"; }
 
-// TODO: Add shareFeedback method
 Future shareFeedback(SurveyResult r) async {
   // Build a message string by processing responses from survey steps 8 - 13
   String message;
@@ -95,7 +94,7 @@ Future shareFeedback(SurveyResult r) async {
         message += titleStr + ": " + resultStr + "\n";
       }
     }
-    // Send message
+    // TODO: Send message
 }
 
 Future saveRecommendations(SurveyResult r, List<Product> pList) async {
