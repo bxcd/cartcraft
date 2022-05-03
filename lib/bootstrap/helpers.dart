@@ -89,7 +89,6 @@ String getAspect(int step) {
 String formatStepText(String s) { return "What aspects of your " + s + " can be improved?"; }
 
 Future shareFeedback(SurveyResult r) async {
-  // Build a message string by processing responses from survey steps 8 - 13
   String message = "";
   List<StepResult> stepResults = r.results;
   for (int i = 0; i < stepResults.length; i++) {
@@ -101,6 +100,7 @@ Future shareFeedback(SurveyResult r) async {
     }
   }
   print(message);
+  // TODO: Replace with push to Firebase database
   final Email email = Email(
     body: message,
     subject: 'Survey Feedback',
