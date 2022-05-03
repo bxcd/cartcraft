@@ -43,7 +43,42 @@ import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
 import 'package:woosignal/models/response/products.dart';
 
-// TODO: Add shareFeedback method 
+String getStepTitle(int step) {
+  switch (step) {
+    case (0): return "";
+    case (1): return "Business Aspects";
+    case (2): return "Tech Development Aspects";
+    case (3): return "Product Design Aspects";
+    case (4): return "Business Operations Aspects";
+    case (5): return "Graphic Design Aspects";
+    case (6): return "Content Production Aspects";
+    case (7): return "Special Offer";
+    case (8): return "Project Timeline";
+    case (9): return "Project Cost";
+    case (10): return "Speed vs. Savings";
+    case (11): return "Additional Details";
+    case (12): return "Email address";
+    case (13): return "Contact Time";
+  }
+}
+
+// TODO: Add shareFeedback method
+Future shareFeedback(SurveyResult r) async {
+  // Build a message string by processing responses from survey steps 8 - 13
+  String message;
+  List<StepResult> stepResults = r.results;
+  for (int i = 0; i < stepResults.length; i++) {
+    List<QuestionResult> questionResults = stepResults[i].results;
+    for (int j = 0; j < questionResults.length; j++) {
+      if (i < 7) { continue; }
+      else {
+        String resultStr = questionResults[j].valueIdentifier;
+        String titleStr = getStepTitle(i);
+        message += titleStr + ": " + resultStr + "\n";
+      }
+    }
+    // Send message
+}
 
 Future saveRecommendations(SurveyResult r, List<Product> pList) async {
   List<String> s1ResultStrings = List.generate(1, (index) => "");

@@ -364,4 +364,6 @@ class _SurveyPageState extends State<SurveyPage> {
         hasResults: (result) { return result; },
         didFinish: () => setState(() {}));
   }
+
+  List<String>
 }
