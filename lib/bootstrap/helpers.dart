@@ -46,12 +46,6 @@ import 'package:woosignal/models/response/products.dart';
 String getStepTitle(int step) {
   switch (step) {
     case (0): return "";
-    case (1): return "Business Aspects";
-    case (2): return "Tech Development Aspects";
-    case (3): return "Product Design Aspects";
-    case (4): return "Business Operations Aspects";
-    case (5): return "Graphic Design Aspects";
-    case (6): return "Content Production Aspects";
     case (7): return "Special Offer";
     case (8): return "Project Timeline";
     case (9): return "Project Cost";
@@ -60,6 +54,7 @@ String getStepTitle(int step) {
     case (12): return "Email address";
     case (13): return "Contact Time";
     case (14): return "Thank you";
+    default: return getAspect(step) + " Aspect";
   }
 }
 
@@ -78,7 +73,18 @@ String getStepText(int step) {
   }
 }
 
-String formatStepText(String s) { return "What" + s + "can be improved?"; }
+String getAspect(int step) {
+  switch (step) {
+    case (2): return "Tech Development";
+    case (3): return "Product Design";
+    case (4): return "Business Operations";
+    case (5): return "Graphic Design";
+    case (6): return "Content Production";
+    default: return "";
+  }
+}
+
+String formatStepText(String s) { return "What aspects of your " + s + "can be improved?"; }
 
 Future shareFeedback(SurveyResult r) async {
   // Build a message string by processing responses from survey steps 8 - 13
