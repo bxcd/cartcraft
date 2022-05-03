@@ -75,6 +75,7 @@ String getStepText(int step) {
 
 String getAspect(int step) {
   switch (step) {
+    case (1): return "Company";
     case (2): return "Tech Development";
     case (3): return "Product Design";
     case (4): return "Business Operations";
