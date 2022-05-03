@@ -85,7 +85,7 @@ String getAspect(int step) {
   }
 }
 
-String formatStepText(String s) { return "What aspects of your " + s + "can be improved?"; }
+String formatStepText(String s) { return "What aspects of your " + s + " can be improved?"; }
 
 Future shareFeedback(SurveyResult r) async {
   // Build a message string by processing responses from survey steps 8 - 13
