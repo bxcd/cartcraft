@@ -213,7 +213,7 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
             //   await saveWishlistProduct(product: p);
             //   break;
             case "collateral":
-              Product p1 = getProductFromList(pList, "GFX-BCD-PKG");
+              Product p1 = getProductFromList(pList, "GFX-CRD-PKG");
               Product p2 = getProductFromList(pList, "GFX-ALL-SVC");
               await saveWishlistProduct(product: p1);
               await saveWishlistProduct(product: p2);
