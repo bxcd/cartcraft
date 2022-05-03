@@ -1,4 +1,4 @@
-package art.coded.wireframe
+package art.coded.cartcraft
 
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterFragmentActivity
