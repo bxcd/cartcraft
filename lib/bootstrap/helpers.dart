@@ -32,6 +32,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'package:money_formatter/money_formatter.dart';
 import 'package:nylo_framework/nylo_framework.dart';
@@ -103,7 +104,13 @@ Future shareFeedback(SurveyResult r) async {
         message += titleStr + ": " + resultStr + "\n";
       }
     }
-    // TODO: Send message
+    final Email email = Email(
+      body: message,
+      subject: 'Survey Feedback',
+      recipients: ['info@coded.art'],
+      isHTML: false,
+    );
+    await FlutterEmailSender.send(email);
   }
 }
 
