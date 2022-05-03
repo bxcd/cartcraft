@@ -96,11 +96,11 @@ Future shareFeedback(SurveyResult r) async {
     List<QuestionResult> questionResults = stepResults[i].results;
     for (int j = 0; j < questionResults.length; j++) {
       String resultStr = questionResults[j].valueIdentifier;
-      String titleStr = getStepTitle(i);
+      String titleStr = getStepTitle(int.parse(questionResults[j].id.id));
       message += (titleStr + ": " + resultStr + "\n");
     }
-    print(message);
   }
+  print(message);
   final Email email = Email(
     body: message,
     subject: 'Survey Feedback',
