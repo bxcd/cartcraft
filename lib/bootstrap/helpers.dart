@@ -43,6 +43,8 @@ import 'package:woosignal/models/response/tax_rate.dart';
 import 'package:woosignal/woosignal.dart';
 import 'package:woosignal/models/response/products.dart';
 
+// TODO: Add shareFeedback method 
+
 Future saveRecommendations(SurveyResult r, List<Product> pList) async {
   List<String> s1ResultStrings = List.generate(1, (index) => "");
   List<String> s2ResultStrings = List.generate(1, (index) => "");
