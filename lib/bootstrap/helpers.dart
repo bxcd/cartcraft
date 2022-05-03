@@ -90,20 +90,16 @@ String formatStepText(String s) { return "What aspects of your " + s + " can be 
 
 Future shareFeedback(SurveyResult r) async {
   // Build a message string by processing responses from survey steps 8 - 13
-  String message;
+  String message = "";
   List<StepResult> stepResults = r.results;
   for (int i = 0; i < stepResults.length; i++) {
     List<QuestionResult> questionResults = stepResults[i].results;
     for (int j = 0; j < questionResults.length; j++) {
-      if (i < 7) {
-        continue;
-      }
-      else {
         String resultStr = questionResults[j].valueIdentifier;
         String titleStr = getStepTitle(i);
-        message += titleStr + ": " + resultStr + "\n";
-      }
+        message += (titleStr + ": " + resultStr + "\n");
     }
+    print(message);
     final Email email = Email(
       body: message,
       subject: 'Survey Feedback',
