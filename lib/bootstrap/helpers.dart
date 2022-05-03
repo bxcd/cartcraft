@@ -95,19 +95,19 @@ Future shareFeedback(SurveyResult r) async {
   for (int i = 0; i < stepResults.length; i++) {
     List<QuestionResult> questionResults = stepResults[i].results;
     for (int j = 0; j < questionResults.length; j++) {
-        String resultStr = questionResults[j].valueIdentifier;
-        String titleStr = getStepTitle(i);
-        message += (titleStr + ": " + resultStr + "\n");
+      String resultStr = questionResults[j].valueIdentifier;
+      String titleStr = getStepTitle(i);
+      message += (titleStr + ": " + resultStr + "\n");
     }
     print(message);
-    final Email email = Email(
-      body: message,
-      subject: 'Survey Feedback',
-      recipients: ['info@coded.art'],
-      isHTML: false,
-    );
-    await FlutterEmailSender.send(email);
   }
+  final Email email = Email(
+    body: message,
+    subject: 'Survey Feedback',
+    recipients: ['info@coded.art'],
+    isHTML: false,
+  );
+  await FlutterEmailSender.send(email);
 }
 
 Future saveRecommendations(SurveyResult r, List<Product> pList) async {
