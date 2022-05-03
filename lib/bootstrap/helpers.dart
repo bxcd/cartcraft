@@ -94,7 +94,9 @@ Future shareFeedback(SurveyResult r) async {
   for (int i = 0; i < stepResults.length; i++) {
     List<QuestionResult> questionResults = stepResults[i].results;
     for (int j = 0; j < questionResults.length; j++) {
-      if (i < 7) { continue; }
+      if (i < 7) {
+        continue;
+      }
       else {
         String resultStr = questionResults[j].valueIdentifier;
         String titleStr = getStepTitle(i);
@@ -102,6 +104,7 @@ Future shareFeedback(SurveyResult r) async {
       }
     }
     // TODO: Send message
+  }
 }
 
 Future saveRecommendations(SurveyResult r, List<Product> pList) async {
