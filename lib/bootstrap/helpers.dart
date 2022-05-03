@@ -166,11 +166,11 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
           } break;
         case "product":
           // switch (s2ResultString) {
-          //   case "logistics":
+          //   case "usability":
           //     Product p = getProductFromList(pList, "PRD-ALL-SVC");
           //     recommendations.add(p);
           //     break;
-          //   case "usability":
+          //   case "quality":
           //     Product p = getProductFromList(pList, "PRD-ALL-SVC");
           //     recommendations.add(p);
           //     break;
@@ -185,15 +185,15 @@ Future saveRecommendations(SurveyResult r, List<Product> pList) async {
 /*          } */break;
         case "business":
           // switch (s2ResultString) {
-          //   case "performance":
-          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
-          //     recommendations.add(p);
-          //     break;
-          //   case "conversion":
-          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
-          //     recommendations.add(p);
-          //     break;
           //   case "branding":
+          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "sourcing":
+          //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
+          //     recommendations.add(p);
+          //     break;
+          //   case "outreach":
           //     Product p = getProductFromList(pList, "BUS-ALL-SVC");
           //     recommendations.add(p);
           //     break;
