@@ -132,11 +132,13 @@ class _SurveyPageState extends State<SurveyPage> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
+          stepIdentifier: StepIdentifier(id: '0'),
           title: getStepTitle(0),
           text: getStepText(0),
           buttonText: 'Start',
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '1'),
           title: getStepTitle(1),
           text: getStepText(1),
           isOptional: true,
@@ -153,6 +155,7 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         // One question step for each possible input in QuestionStep1
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '2'),
           title: getStepTitle(2),
           text: getStepText(2),
           isOptional: true,
@@ -166,6 +169,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '3'),
           title: getStepTitle(3),
           text: getStepText(3),
           isOptional: true,
@@ -179,6 +183,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '4'),
           title: getStepTitle(4),
           text: getStepText(4),
           isOptional: true,
@@ -192,6 +197,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '5'),
           title: getStepTitle(5),
           text: getStepText(5),
           isOptional: true,
@@ -205,6 +211,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '6'),
           title: getStepTitle(6),
           text: getStepText(6),
           isOptional: true,
@@ -218,6 +225,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '7'),
           title: getStepTitle(7),
           text: getStepText(7),
           isOptional: true,
@@ -230,6 +238,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '8'),
           title: getStepTitle(8),
           text: getStepText(8),
           isOptional: true,
@@ -240,6 +249,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '9'),
           title: getStepTitle(9),
           text: getStepText(9),
           isOptional: true,
@@ -255,6 +265,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '10'),
           title: getStepTitle(10),
           text: getStepText(10),
           isOptional: true,
@@ -268,6 +279,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         CustomQuestionStep(
+          stepIdentifier: StepIdentifier(id: '11'),
           title: getStepTitle(11),
           text: getStepText(11),
           isOptional: true,
@@ -278,6 +290,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         CustomQuestionStep(
+          stepIdentifier: StepIdentifier(id: '12'),
           title: getStepTitle(12),
           text: getStepText(12),
           isOptional: true,
@@ -287,6 +300,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
+          stepIdentifier: StepIdentifier(id: '13'),
           title: getStepTitle(13),
           text: getStepText(13),
           answerFormat: const TimeAnswerFormat(
@@ -297,7 +311,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         CustomCompletionStep(
-          stepIdentifier: StepIdentifier(id: '100'),
+          stepIdentifier: StepIdentifier(id: '14'),
           title: getStepTitle(14),
           text: getStepText(14),
           buttonText: 'Submit',
