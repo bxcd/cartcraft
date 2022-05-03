@@ -116,7 +116,6 @@ class _SurveyPageState extends State<SurveyPage> {
     );
   }
 
-  static String formatText(String s) { return "What aspects of your " + s + " can be improved?"; }
   int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
   List<String> selections = List.generate(1, (index) => "");
   static const List<String> areaSteps = [
@@ -132,13 +131,13 @@ class _SurveyPageState extends State<SurveyPage> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: '',
-          text: 'Get service recommendations from Code Dart\nby submitting a brief form.\n\n\n\nAll responses are optional\nand your information is kept anonymous.\n\n',
+          title: getStepTitle(0),
+          text: getStepText(0),
           buttonText: 'Start',
         ),
         QuestionStep(
-          title: 'Business Aspects',
-          text: 'What aspects of your business can be improved?',
+          title: getStepTitle(1),
+          text: getStepText(1),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -153,8 +152,8 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         // One question step for each possible input in QuestionStep1
         QuestionStep(
-          title: 'Tech Development Aspects',
-          text: formatText('tech development'),
+          title: getStepTitle(2),
+          text: getStepText(2),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -165,8 +164,9 @@ class _SurveyPageState extends State<SurveyPage> {
             ],
           ),
         ),
-        QuestionStep(title: 'Product Design Aspects',
-          text: formatText('product design'),
+        QuestionStep(
+          title: getStepTitle(3),
+          text: getStepText(3),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -178,8 +178,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Business Operations Aspects',
-          text: formatText('processes'),
+          title: getStepTitle(4),
+          text: getStepText(4),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -191,8 +191,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Graphic Design Aspects',
-          text: formatText('graphic design'),
+          title: getStepTitle(5),
+          text: getStepText(5),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -204,8 +204,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Content Production Aspects',
-          text: formatText('content production'),
+          title: getStepTitle(6),
+          text: getStepText(6),
           isOptional: true,
           answerFormat: const MultipleChoiceAnswerFormat(
             textChoices: [
@@ -217,8 +217,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Special offer',
-          text: 'Are you willing to answer more detailed questions to receive a special offer?\nYour responses will not be shared with third-parties.',
+          title: getStepTitle(7),
+          text: getStepText(7),
           isOptional: true,
           answerFormat: const SingleChoiceAnswerFormat(
             textChoices: [
@@ -229,8 +229,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Project Timeline',
-          text: 'Has your project set a target completion date?\nCode Dart offers focused, expedited service to help you stay ahead.',
+          title: getStepTitle(8),
+          text: getStepText(8),
           isOptional: true,
           answerFormat: DateAnswerFormat(
               minDate: DateTime.utc(1970),
@@ -239,8 +239,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Project Cost',
-          text: 'Has your project set a target cost?\nCode Dart offers flexible package and bundle options to help you keep costs under control.',
+          title: getStepTitle(9),
+          text: getStepText(9),
           isOptional: true,
           answerFormat: const SingleChoiceAnswerFormat(
             textChoices: [
@@ -254,8 +254,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Speed vs. Savings',
-          text: 'Rate your preference between cost savings and completion speed.',
+          title: getStepTitle(10),
+          text: getStepText(10),
           isOptional: true,
           answerFormat: const ScaleAnswerFormat(
             step: 1,
@@ -267,9 +267,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         CustomQuestionStep(
-          title: 'Additional Details',
-          text:
-          'What other aspects of your project are important and how can they be addressed or improved?',
+          title: getStepTitle(11),
+          text: getStepText(11),
           isOptional: true,
           answerFormat: const CustomTextAnswerFormat(
               maxLines: 20,
@@ -278,9 +277,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         CustomQuestionStep(
-          title: 'Email address',
-          text:
-          'What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.',
+          title: getStepTitle(12),
+          text: getStepText(12),
           isOptional: true,
           answerFormat: const CustomTextAnswerFormat(
             hint: 'your@email.address',
@@ -288,8 +286,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: 'Contact time',
-          text: 'What is the best time of day to contact you with your offer.',
+          title: getStepTitle(13),
+          text: getStepText(13),
           answerFormat: const TimeAnswerFormat(
             defaultValue: TimeOfDay(
               hour: 12,
@@ -299,8 +297,8 @@ class _SurveyPageState extends State<SurveyPage> {
         ),
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '100'),
-          text: 'Tap submit to generate your recommendations,\nwhich will appear in your wishlist',
-          title: 'Thank you',
+          title: getStepTitle(14),
+          text: getStepText(14),
           buttonText: 'Submit',
         ),
       ],
