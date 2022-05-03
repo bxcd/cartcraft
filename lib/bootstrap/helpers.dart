@@ -59,6 +59,7 @@ String getStepTitle(int step) {
     case (11): return "Additional Details";
     case (12): return "Email address";
     case (13): return "Contact Time";
+    case (14): return "Thank you";
   }
 }
 
@@ -72,6 +73,7 @@ String getStepText(int step) {
     case (11): return "What other aspects of your project are important and how can they be addressed or improved?";
     case (12): return "What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.";
     case (13): return "What is the best time of day to contact you with your offer.";
+    case (14): return "Tap submit to generate your recommendations,\nwhich will appear in your wishlist";
     default: return getStepTitle(step) + " Aspects";
   }
 }
