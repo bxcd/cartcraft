@@ -15,10 +15,10 @@ To use:
 
 ## Attributions
 
-This app uses Label StoreMax.
+This app uses [Label StoreMax](https://woosignal.com/woocommerce-app/label-storemax).
 * Created by Anthony Gordon
 * Copyright 2022, WooSignal Ltd. All rights reserved.
 
-This app uses Survey Kit.
+This app uses [Survey Kit](https://pub.dev/packages/survey_kit).
 * Created by Quickbird Studios
 * Copyright 2022, Quickbird Studios GmbH. All rights reserved.
