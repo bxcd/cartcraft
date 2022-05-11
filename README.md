@@ -10,7 +10,7 @@ To use:
 
 * Press a product from the home screen, and either add the product to your favorites or to your cart
 * Press the cart to proceed through purchase
-* Press the menu icon at the top-left to access your wishlist and a survey
+* Press the menu icon at the top-left to access wishlist, survey, cart, or dark mode
 * Complete the survey to get product recommendations and an optional offer
 
 ## Attributions
