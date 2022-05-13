@@ -1,6 +1,6 @@
 # cartcraft
 
-A shopping app that generates product recommendations from survey responses.
+A multiplatform shopping app that generates product recommendations from survey responses.
 
 * Webpage: https://coded.art/app
 * Android: https://play.google.com/store/apps/details?id=art.coded.cartcraft
@@ -22,3 +22,4 @@ This app uses [Label StoreMax](https://woosignal.com/woocommerce-app/label-store
 This app uses [Survey Kit](https://pub.dev/packages/survey_kit).
 * Created by Quickbird Studios
 * Copyright 2022, Quickbird Studios GmbH. All rights reserved.
+
