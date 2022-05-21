@@ -118,6 +118,7 @@ class _SurveyPageState extends State<SurveyPage> {
   }
 
   int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
+  bool offerRequested = false;
   List<String> selections = List.generate(1, (index) => "");
   static const List<String> areaSteps = [
     'tech',
@@ -313,7 +314,7 @@ class _SurveyPageState extends State<SurveyPage> {
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '14'),
           title: getStepTitle(14),
-          text: getStepText(14),
+          text: getStepText(14) + (offerRequested ? ",\n\nas well as an email form.\nInclude in the form other\npertinent project details\nbefore sending." : "."),
           buttonText: 'Submit',
         ),
       ],
@@ -324,6 +325,7 @@ class _SurveyPageState extends State<SurveyPage> {
         resultToStepIdentifierMapper: (input) {
           switch (input) {
             case 'yes':
+              offerRequested = true;
               return task.steps[8].stepIdentifier;
             default:
               return task.steps[14].stepIdentifier;
