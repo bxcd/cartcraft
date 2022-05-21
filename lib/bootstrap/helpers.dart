@@ -74,6 +74,15 @@ String getStepText(int step) {
   }
 }
 
+String formatStepText(String s) { return "What aspects of your " + s + " can be improved?"; }
+
+String formatOfferText(bool offerRequested) {
+  return (offerRequested ?
+    ",\n\nas well as an email form.\nInclude in the form other\npertinent project details\nbefore sending."
+    : ".");
+}
+
+
 String getAspect(int step) {
   switch (step) {
     case (1): return "Company";
@@ -85,8 +94,6 @@ String getAspect(int step) {
     default: return "";
   }
 }
-
-String formatStepText(String s) { return "What aspects of your " + s + " can be improved?"; }
 
 Future shareFeedback(SurveyResult r) async {
   String message = "";
