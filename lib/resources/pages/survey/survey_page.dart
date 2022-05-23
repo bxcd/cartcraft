@@ -315,7 +315,6 @@ class _SurveyPageState extends State<SurveyPage> {
           stepIdentifier: StepIdentifier(id: '14'),
           title: getStepTitle(14),
           text: getStepText(14),
-          buttonText: 'Submit',
         ),
       ],
     );
