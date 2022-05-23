@@ -19,6 +19,7 @@ class SurveyPage extends StatefulWidget {
 class _SurveyPageState extends State<SurveyPage> {
 
   bool _isLoading = true;
+  bool _choseOffer = false;
 
   final ProductLoaderController _productLoaderController =
   ProductLoaderController();
@@ -60,7 +61,7 @@ class _SurveyPageState extends State<SurveyPage> {
                       print(r.finishReason);
                       await saveRecommendations(r, products);
                       _actionWishlist();
-                      shareFeedback(r);
+                      if (_choseOffer) shareFeedback(r);
                     }
                   },
                   task: task,
@@ -118,7 +119,6 @@ class _SurveyPageState extends State<SurveyPage> {
   }
 
   int currentSelectionIndex = 0; // Updated each time Q2 is completed for a Q1 input
-  bool offerRequested = false;
   List<String> selections = List.generate(1, (index) => "");
   static const List<String> areaSteps = [
     'tech',
@@ -314,7 +314,7 @@ class _SurveyPageState extends State<SurveyPage> {
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '14'),
           title: getStepTitle(14),
-          text: getStepText(14) + formatOfferText(offerRequested),
+          text: getStepText(14) + formatOfferText(_choseOffer),
           buttonText: 'Submit',
         ),
       ],
@@ -325,7 +325,7 @@ class _SurveyPageState extends State<SurveyPage> {
         resultToStepIdentifierMapper: (input) {
           switch (input) {
             case 'yes':
-              offerRequested = true;
+              _choseOffer = true;
               return task.steps[8].stepIdentifier;
             default:
               return task.steps[14].stepIdentifier;
