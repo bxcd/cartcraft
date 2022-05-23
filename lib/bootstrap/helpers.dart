@@ -69,18 +69,13 @@ String getStepText(int step) {
     case (11): return "What other aspects of your project are important and how can they be addressed or improved?";
     case (12): return "What is an email address where your offer can be delivered?\nNote: Your offer cannot be delivered without a valid email address.";
     case (13): return "What is the best time of day to contact you with your offer.";
-    case (14): return "Tap submit to generate your recommendations,\nwhich will appear in your wishlist";
+    case (14): return "Tap submit to generate your recommendations,\nwhich will appear in your wishlist.\n\n\n\n"
+        "if you chose to receive a special offer,\ninclude in the email form any\nother pertinent project details before sending.";
     default: return formatStepText(getStepTitle(step).toLowerCase());
   }
 }
 
 String formatStepText(String s) { return "What aspects of your " + s + " can be improved?"; }
-
-String formatOfferText(bool offerRequested) {
-  return (offerRequested ?
-    ",\n\nas well as an email form.\nInclude in the form other\npertinent project details\nbefore sending."
-    : ".");
-}
 
 
 String getAspect(int step) {

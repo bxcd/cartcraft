@@ -314,7 +314,7 @@ class _SurveyPageState extends State<SurveyPage> {
         CustomCompletionStep(
           stepIdentifier: StepIdentifier(id: '14'),
           title: getStepTitle(14),
-          text: getStepText(14) + formatOfferText(_choseOffer),
+          text: getStepText(14),
           buttonText: 'Submit',
         ),
       ],
